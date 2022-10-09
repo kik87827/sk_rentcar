@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+@@include('./include/head.html')
+<body>
+	<div id="app">
+		app
+	</div>
+	@@include('./include/script.html')
+	<script>
+		var designAlert = new DesignModal({
+			type: "confirm", // alert, confirm
+			message: "테스트",
+			identify_callback: function() {
+				console.log('확인');
+			},
+			cancel_callback: function() {
+				console.log('취소');
+			}
+		})
+		// 강제로 닫기 designAlert.removeHide();
+	</script>
+</body>
+</html>

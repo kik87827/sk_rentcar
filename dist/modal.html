@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1920" />
+	<link rel="stylesheet" href="./css/style.css" />
+	<title></title>
+</head>
+
+<body>
+	<div id="app">
+		app
+	</div>
+	<script src="./js/jquery-3.4.1.min.js"></script>
+	<script src="./js/dynamicListener.min.js"></script>
+	<script src="./js/ui.js"></script>
+	<script>
+		var designAlert = new DesignModal({
+			type: "confirm", // alert, confirm
+			message: "테스트",
+			identify_callback: function() {
+				console.log('확인');
+			},
+			cancel_callback: function() {
+				console.log('취소');
+			}
+		})
+		// 강제로 닫기 designAlert.removeHide();
+	</script>
+</body>
+
+</html>

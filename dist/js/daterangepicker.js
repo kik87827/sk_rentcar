@@ -732,11 +732,11 @@
                 for (var y = minYear; y <= maxYear; y++) {
                     yearHtml += '<option value="' + y + '"' +
                         (y === currentYear ? ' selected="selected"' : '') +
-                        '>' + y + '</option>';
+                        '>' + y + '년</option>';
                 }
                 yearHtml += '</select>';
 
-                dateHtml = monthHtml + yearHtml;
+                dateHtml = yearHtml + monthHtml;
             }
 
             html += '<th colspan="5" class="month">' + dateHtml + '</th>';

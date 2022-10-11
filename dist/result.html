@@ -64,15 +64,15 @@
 						<dl class="sort_hor_item">
 							<dt><span class="sort_hor_label">조회 기간</span></dt>
 							<dd>
-								<div class="choice_box_list">
+								<div class="choice_box_list d_parent">
 									<input type="radio" class="boxform_obj" name="cate03" id="cate03_01">
 									<label for="cate03_01" class="boxform_label">어제</label>
 									<input type="radio" class="boxform_obj" name="cate03" id="cate03_02">
 									<label for="cate03_02" class="boxform_label">전월</label>
 									<input type="radio" class="boxform_obj" name="cate03" id="cate03_03">
 									<label for="cate03_03" class="boxform_label">당월</label>
-									<input type="radio" class="boxform_obj" name="cate03" id="cate03_04">
-									<label for="cate03_04" class="boxform_label">직접 입력</label>
+									<input type="radio" class="boxform_obj d_layer_call" name="cate03" id="call_date">
+									<label for="call_date" class="boxform_label">직접 입력</label>
 								</div>
 								<div class="choice_date_box">2022.00.00</div>
 							</dd>
@@ -243,7 +243,7 @@
 				<div class="cont_vitem define_data">
 					<div class="cont_tabmenu_row">
 						<div class="cont_tabmenu_main">
-							<ul class="cont_tabmenu_list">
+							<ul class="cont_tabmenu_list" data-targetGroup="#tabcont_group">
 								<li class="active"><a href="#tabcont_01" class="cont_tabmenu">차량그룹</a></li>
 								<li><a href="#tabcont_02" class="cont_tabmenu">접수일자</a></li>
 								<li><a href="#tabcont_03" class="cont_tabmenu">대여일자</a></li>
@@ -256,17 +256,19 @@
 							</ul>
 						</div>
 					</div>
-					<div class="cont_tabcont_row">
+					<div class="cont_tabcont_row" id="tabcont_group">
 						<div class="tabcont active" id="tabcont_01">
 							<div class="tbcount_row">
 								<p class="tbcount_para">총 234건</p>
+								<p class="tbcount_para sym">중 <strong>2</strong>건 선택됨</p>
 							</div>
-							<div class="data_table_wrap">
+							<div class="data_table_wrap" data-row="20" id="tctable_01">
 								<style>
+									/* 폭 조절 */
 									#tctable_01 .colwid_01 {}
 
 									#tctable_01 .colwid_02 {
-										width: 4%;
+										width: 5%;
 									}
 
 									#tctable_01 .colwid_03 {
@@ -318,407 +320,418 @@
 										padding-right: 40px;
 									}
 								</style>
-								<table class="data_table" id="tctable_01">
-									<thead>
-										<tr>
-											<th class="has_check colwid_01"><input type="checkbox" class="design_check"></th>
-											<th class="colwid_02"><a href="javascript:;" class="data_th define_sort">차형</a></th>
-											<th class="colwid_03"><span class="data_th">차정</span></th>
-											<th class="align_type3 colwid_04"><a href="javascript:;" class="data_th define_sort">매출(백만원)</a></th>
-											<th class="align_type3 colwid_05"><a href="javascript:;" class="data_th define_sort">대당매출(원)</a></th>
-											<th class="align_type3 colwid_06"><a href="javascript:;" class="data_th define_sort">예약(건)</a></th>
-											<th class="align_type3 colwid_07"><a href="javascript:;" class="data_th define_sort">가동률(%)</a></th>
-											<th class="align_type3 colwid_08"><a href="javascript:;" class="data_th define_sort">운행률(%)</a></th>
-											<th class="align_type3 colwid_09"><a href="javascript:;" class="data_th define_sort">취소(건)</a></th>
-											<th class="align_type3 colwid_10"><a href="javascript:;" class="data_th define_sort">대여기간(일)</a></th>
-											<th class="align_type3 colwid_11"><a href="javascript:;" class="data_th define_sort">객단가(원)</a></th>
-											<th class="align_type3 colwid_12"><a href="javascript:;" class="data_th define_sort">회전율(%)</a></th>
-											<th class="align_type3 colwid_13"><a href="javascript:;" class="data_th define_sort">회수율(%)</a></th>
-											<th class="align_type3 colwid_14"><a href="javascript:;" class="data_th define_sort">운영대수</a></th>
-										</tr>
-									</thead>
-									<tfoot>
-										<tr>
-											<td class="has_check colwid_01"></td>
-											<td class="colwid_02">
-												<p class="tf_total_text">합계</p>
-											</td>
-											<td class="align_type2 colwid_03"></td>
-											<td class="align_type3 colwid_04">
-												<p class="tf_total_text">81,000,0000</p>
-											</td>
-											<td class="align_type3 colwid_05">
-												<p class="tf_total_text">81,000,0000</p>
-											</td>
-											<td class="align_type3 colwid_06">
-												<p class="tf_total_text">30</p>
-											</td>
-											<td class="align_type3 colwid_07">
-												<p class="tf_total_text">30</p>
-											</td>
-											<td class="align_type3 colwid_08">
-												<p class="tf_total_text">000</p>
-											</td>
-											<td class="align_type3 colwid_09">
-												<p class="tf_total_text">000</p>
-											</td>
-											<td class="align_type3 colwid_10">
-												<p class="tf_total_text">000</p>
-											</td>
-											<td class="align_type3 colwid_11">
-												<p class="tf_total_text">000</p>
-											</td>
-											<td class="align_type3 colwid_12">
-												<p class="tf_total_text">000</p>
-											</td>
-											<td class="align_type3 colwid_13">
-												<p class="tf_total_text">000</p>
-											</td>
-											<td class="align_type3 colwid_14">
-												<p class="tf_total_text">000</p>
-											</td>
-										</tr>
-									</tfoot>
-									<tbody>
-										<tr class="depth_one">
-											<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
-											<td class="colwid_02"><a href="javascript:;" class="fold_item"><span class="fold_item_text">경차</span></a></td>
-											<td class="align_type2 colwid_03"><span class="data_text">-</span></td>
-											<td class="align_type3 colwid_04"><span class="data_text number">15,000,000</span></td>
-											<td class="align_type3 colwid_05"><span class="data_text number">90,000</span></td>
-											<td class="align_type3 colwid_06"><span class="data_text number">13</span></td>
-											<td class="align_type3 colwid_07"><span class="data_text number">13</span></td>
-											<td class="align_type3 colwid_08"><span class="data_text number">-</span></td>
-											<td class="align_type3 colwid_09"><span class="data_text number">1</span></td>
-											<td class="align_type3 colwid_10"><span class="data_text number">3</span></td>
-											<td class="align_type3 colwid_11"><span class="data_text number">90,000</span></td>
-											<td class="align_type3 colwid_12"><span class="data_text number">1</span></td>
-											<td class="align_type3 colwid_13"><span class="data_text number">1</span></td>
-											<td class="align_type3 colwid_14"><span class="data_text number">13</span></td>
-										</tr>
-										<tr class="depth_two">
-											<td colspan="14">
-												<div class="depth_table_wrap">
-													<div class="depth_table">
-														<div class="depth_tr">
-															<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
-															<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type2 colwid_03"><span class="data_text">K3 1.6(가솔린)</span></div>
-															<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
-															<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
-															<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
-															<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
-															<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
-															<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
-															<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
-														</div>
-														<div class="depth_tr">
-															<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
-															<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type2 colwid_03"><span class="data_text">올뉴아반떼 1.6(가솔린)</span></div>
-															<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
-															<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
-															<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
-															<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
-															<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
-															<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
-															<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
+								<div class="thead_table_wrap">
+									<table class="data_table thead_table">
+										<thead>
+											<tr>
+												<th class="has_check colwid_01"><input type="checkbox" class="design_check" name="total_check"></th>
+												<th class="colwid_02"><a href="javascript:;" class="data_th define_sort">차형</a></th>
+												<th class="colwid_03"><span class="data_th">차정</span></th>
+												<th class="align_type3 colwid_04"><a href="javascript:;" class="data_th define_sort">매출(백만원)</a></th>
+												<th class="align_type3 colwid_05"><a href="javascript:;" class="data_th define_sort">대당매출(원)</a></th>
+												<th class="align_type3 colwid_06"><a href="javascript:;" class="data_th define_sort">예약(건)</a></th>
+												<th class="align_type3 colwid_07"><a href="javascript:;" class="data_th define_sort">가동률(%)</a></th>
+												<th class="align_type3 colwid_08"><a href="javascript:;" class="data_th define_sort">운행률(%)</a></th>
+												<th class="align_type3 colwid_09"><a href="javascript:;" class="data_th define_sort">취소(건)</a></th>
+												<th class="align_type3 colwid_10"><a href="javascript:;" class="data_th define_sort">대여기간(일)</a></th>
+												<th class="align_type3 colwid_11"><a href="javascript:;" class="data_th define_sort">객단가(원)</a></th>
+												<th class="align_type3 colwid_12"><a href="javascript:;" class="data_th define_sort">회전율(%)</a></th>
+												<th class="align_type3 colwid_13"><a href="javascript:;" class="data_th define_sort">회수율(%)</a></th>
+												<th class="align_type3 colwid_14"><a href="javascript:;" class="data_th define_sort">운영대수</a></th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+								<div class="tbody_table_wrap">
+									<table class="data_table">
+										<tbody>
+											<tr class="depth_one">
+												<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+												<td class="colwid_02"><a href="javascript:;" class="fold_item"><span class="fold_item_text">경차</span></a></td>
+												<td class="align_type2 colwid_03"><span class="data_text">-</span></td>
+												<td class="align_type3 colwid_04"><span class="data_text number">15,000,000</span></td>
+												<td class="align_type3 colwid_05"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_06"><span class="data_text number">13</span></td>
+												<td class="align_type3 colwid_07"><span class="data_text number">13</span></td>
+												<td class="align_type3 colwid_08"><span class="data_text number">-</span></td>
+												<td class="align_type3 colwid_09"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_10"><span class="data_text number">3</span></td>
+												<td class="align_type3 colwid_11"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_12"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_13"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_14"><span class="data_text number">13</span></td>
+											</tr>
+											<tr class="depth_two">
+												<td colspan="14">
+													<div class="depth_table_wrap">
+														<div class="depth_table">
+															<div class="depth_tr">
+																<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
+																<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type2 colwid_03"><span class="data_text">K3 1.6(가솔린)</span></div>
+																<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
+																<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
+																<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
+																<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
+																<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
+																<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
+																<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
+															</div>
+															<div class="depth_tr">
+																<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
+																<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type2 colwid_03"><span class="data_text">올뉴아반떼 1.6(가솔린)</span></div>
+																<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
+																<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
+																<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
+																<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
+																<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
+																<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
+																<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
+															</div>
 														</div>
 													</div>
-												</div>
-											</td>
-										</tr>
-										<tr class="depth_one">
-											<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
-											<td class="colwid_02"><a href="javascript:;" class="fold_item active"><span class="fold_item_text">소형</span></a></td>
-											<td class="align_type2 colwid_03"><span class="data_text">-</span></td>
-											<td class="align_type3 colwid_04"><span class="data_text number">15,000,000</span></td>
-											<td class="align_type3 colwid_05"><span class="data_text number">90,000</span></td>
-											<td class="align_type3 colwid_06"><span class="data_text number">13</span></td>
-											<td class="align_type3 colwid_07"><span class="data_text number">13</span></td>
-											<td class="align_type3 colwid_08"><span class="data_text number">-</span></td>
-											<td class="align_type3 colwid_09"><span class="data_text number">1</span></td>
-											<td class="align_type3 colwid_10"><span class="data_text number">3</span></td>
-											<td class="align_type3 colwid_11"><span class="data_text number">90,000</span></td>
-											<td class="align_type3 colwid_12"><span class="data_text number">1</span></td>
-											<td class="align_type3 colwid_13"><span class="data_text number">1</span></td>
-											<td class="align_type3 colwid_14"><span class="data_text number">13</span></td>
-										</tr>
-										<tr class="depth_two active">
-											<td colspan="14">
-												<div class="depth_table_wrap">
-													<div class="depth_table">
-														<div class="depth_tr">
-															<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
-															<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type2 colwid_03"><span class="data_text">K3 1.6(가솔린)</span></div>
-															<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
-															<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
-															<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
-															<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
-															<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
-															<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
-															<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
-														</div>
-														<div class="depth_tr">
-															<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
-															<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type2 colwid_03"><span class="data_text">올뉴아반떼 1.6(가솔린)</span></div>
-															<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
-															<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
-															<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
-															<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
-															<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
-															<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
-															<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
-														</div>
-													</div>
-												</div>
-											</td>
-										</tr>
-										<tr class="depth_one">
-											<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
-											<td class="colwid_02"><a href="javascript:;" class="fold_item"><span class="fold_item_text">중형</span></a></td>
-											<td class="align_type2 colwid_03"><span class="data_text">-</span></td>
-											<td class="align_type3 colwid_04"><span class="data_text number">15,000,000</span></td>
-											<td class="align_type3 colwid_05"><span class="data_text number">90,000</span></td>
-											<td class="align_type3 colwid_06"><span class="data_text number">13</span></td>
-											<td class="align_type3 colwid_07"><span class="data_text number">13</span></td>
-											<td class="align_type3 colwid_08"><span class="data_text number">-</span></td>
-											<td class="align_type3 colwid_09"><span class="data_text number">1</span></td>
-											<td class="align_type3 colwid_10"><span class="data_text number">3</span></td>
-											<td class="align_type3 colwid_11"><span class="data_text number">90,000</span></td>
-											<td class="align_type3 colwid_12"><span class="data_text number">1</span></td>
-											<td class="align_type3 colwid_13"><span class="data_text number">1</span></td>
-											<td class="align_type3 colwid_14"><span class="data_text number">13</span></td>
-										</tr>
-										<tr class="depth_two">
-											<td colspan="14">
-												<div class="depth_table_wrap">
-													<div class="depth_table">
-														<div class="depth_tr">
-															<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
-															<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type2 colwid_03"><span class="data_text">K3 1.6(가솔린)</span></div>
-															<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
-															<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
-															<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
-															<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
-															<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
-															<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
-															<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
-														</div>
-														<div class="depth_tr">
-															<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
-															<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type2 colwid_03"><span class="data_text">올뉴아반떼 1.6(가솔린)</span></div>
-															<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
-															<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
-															<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
-															<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
-															<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
-															<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
-															<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
+												</td>
+											</tr>
+											<tr class="depth_one">
+												<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+												<td class="colwid_02"><a href="javascript:;" class="fold_item"><span class="fold_item_text">소형</span></a></td>
+												<td class="align_type2 colwid_03"><span class="data_text">-</span></td>
+												<td class="align_type3 colwid_04"><span class="data_text number">15,000,000</span></td>
+												<td class="align_type3 colwid_05"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_06"><span class="data_text number">13</span></td>
+												<td class="align_type3 colwid_07"><span class="data_text number">13</span></td>
+												<td class="align_type3 colwid_08"><span class="data_text number">-</span></td>
+												<td class="align_type3 colwid_09"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_10"><span class="data_text number">3</span></td>
+												<td class="align_type3 colwid_11"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_12"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_13"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_14"><span class="data_text number">13</span></td>
+											</tr>
+											<tr class="depth_two">
+												<td colspan="14">
+													<div class="depth_table_wrap">
+														<div class="depth_table">
+															<div class="depth_tr">
+																<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
+																<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type2 colwid_03"><span class="data_text">K3 1.6(가솔린)</span></div>
+																<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
+																<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
+																<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
+																<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
+																<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
+																<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
+																<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
+															</div>
+															<div class="depth_tr">
+																<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
+																<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type2 colwid_03"><span class="data_text">올뉴아반떼 1.6(가솔린)</span></div>
+																<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
+																<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
+																<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
+																<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
+																<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
+																<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
+																<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
+															</div>
 														</div>
 													</div>
-												</div>
-											</td>
-										</tr>
-										<tr class="depth_one">
-											<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
-											<td class="colwid_02"><a href="javascript:;" class="fold_item"><span class="fold_item_text">대형</span></a></td>
-											<td class="align_type2 colwid_03"><span class="data_text">-</span></td>
-											<td class="align_type3 colwid_04"><span class="data_text number">15,000,000</span></td>
-											<td class="align_type3 colwid_05"><span class="data_text number">90,000</span></td>
-											<td class="align_type3 colwid_06"><span class="data_text number">13</span></td>
-											<td class="align_type3 colwid_07"><span class="data_text number">13</span></td>
-											<td class="align_type3 colwid_08"><span class="data_text number">-</span></td>
-											<td class="align_type3 colwid_09"><span class="data_text number">1</span></td>
-											<td class="align_type3 colwid_10"><span class="data_text number">3</span></td>
-											<td class="align_type3 colwid_11"><span class="data_text number">90,000</span></td>
-											<td class="align_type3 colwid_12"><span class="data_text number">1</span></td>
-											<td class="align_type3 colwid_13"><span class="data_text number">1</span></td>
-											<td class="align_type3 colwid_14"><span class="data_text number">13</span></td>
-										</tr>
-										<tr class="depth_two">
-											<td colspan="14">
-												<div class="depth_table_wrap">
-													<div class="depth_table">
-														<div class="depth_tr">
-															<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
-															<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type2 colwid_03"><span class="data_text">K3 1.6(가솔린)</span></div>
-															<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
-															<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
-															<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
-															<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
-															<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
-															<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
-															<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
-														</div>
-														<div class="depth_tr">
-															<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
-															<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type2 colwid_03"><span class="data_text">올뉴아반떼 1.6(가솔린)</span></div>
-															<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
-															<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
-															<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
-															<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
-															<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
-															<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
-															<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
-														</div>
-													</div>
-												</div>
-											</td>
-										</tr>
-										<tr class="depth_one">
-											<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
-											<td class="colwid_02"><a href="javascript:;" class="fold_item"><span class="fold_item_text">SUV</span></a></td>
-											<td class="align_type2 colwid_03"><span class="data_text">-</span></td>
-											<td class="align_type3 colwid_04"><span class="data_text number">15,000,000</span></td>
-											<td class="align_type3 colwid_05"><span class="data_text number">90,000</span></td>
-											<td class="align_type3 colwid_06"><span class="data_text number">13</span></td>
-											<td class="align_type3 colwid_07"><span class="data_text number">13</span></td>
-											<td class="align_type3 colwid_08"><span class="data_text number">-</span></td>
-											<td class="align_type3 colwid_09"><span class="data_text number">1</span></td>
-											<td class="align_type3 colwid_10"><span class="data_text number">3</span></td>
-											<td class="align_type3 colwid_11"><span class="data_text number">90,000</span></td>
-											<td class="align_type3 colwid_12"><span class="data_text number">1</span></td>
-											<td class="align_type3 colwid_13"><span class="data_text number">1</span></td>
-											<td class="align_type3 colwid_14"><span class="data_text number">13</span></td>
-										</tr>
-										<tr class="depth_two">
-											<td colspan="14">
-												<div class="depth_table_wrap">
-													<div class="depth_table">
-														<div class="depth_tr">
-															<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
-															<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type2 colwid_03"><span class="data_text">K3 1.6(가솔린)</span></div>
-															<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
-															<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
-															<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
-															<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
-															<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
-															<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
-															<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
-														</div>
-														<div class="depth_tr">
-															<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
-															<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type2 colwid_03"><span class="data_text">올뉴아반떼 1.6(가솔린)</span></div>
-															<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
-															<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
-															<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
-															<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
-															<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
-															<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
-															<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
+												</td>
+											</tr>
+											<tr class="depth_one">
+												<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+												<td class="colwid_02"><a href="javascript:;" class="fold_item"><span class="fold_item_text">중형</span></a></td>
+												<td class="align_type2 colwid_03"><span class="data_text">-</span></td>
+												<td class="align_type3 colwid_04"><span class="data_text number">15,000,000</span></td>
+												<td class="align_type3 colwid_05"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_06"><span class="data_text number">13</span></td>
+												<td class="align_type3 colwid_07"><span class="data_text number">13</span></td>
+												<td class="align_type3 colwid_08"><span class="data_text number">-</span></td>
+												<td class="align_type3 colwid_09"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_10"><span class="data_text number">3</span></td>
+												<td class="align_type3 colwid_11"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_12"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_13"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_14"><span class="data_text number">13</span></td>
+											</tr>
+											<tr class="depth_two">
+												<td colspan="14">
+													<div class="depth_table_wrap">
+														<div class="depth_table">
+															<div class="depth_tr">
+																<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
+																<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type2 colwid_03"><span class="data_text">K3 1.6(가솔린)</span></div>
+																<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
+																<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
+																<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
+																<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
+																<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
+																<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
+																<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
+															</div>
+															<div class="depth_tr">
+																<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
+																<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type2 colwid_03"><span class="data_text">올뉴아반떼 1.6(가솔린)</span></div>
+																<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
+																<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
+																<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
+																<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
+																<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
+																<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
+																<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
+															</div>
 														</div>
 													</div>
-												</div>
-											</td>
-										</tr>
-										<tr class="depth_one">
-											<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
-											<td class="colwid_02"><a href="javascript:;" class="fold_item"><span class="fold_item_text">승합</span></a></td>
-											<td class="align_type2 colwid_03"><span class="data_text">-</span></td>
-											<td class="align_type3 colwid_04"><span class="data_text number">15,000,000</span></td>
-											<td class="align_type3 colwid_05"><span class="data_text number">90,000</span></td>
-											<td class="align_type3 colwid_06"><span class="data_text number">13</span></td>
-											<td class="align_type3 colwid_07"><span class="data_text number">13</span></td>
-											<td class="align_type3 colwid_08"><span class="data_text number">-</span></td>
-											<td class="align_type3 colwid_09"><span class="data_text number">1</span></td>
-											<td class="align_type3 colwid_10"><span class="data_text number">3</span></td>
-											<td class="align_type3 colwid_11"><span class="data_text number">90,000</span></td>
-											<td class="align_type3 colwid_12"><span class="data_text number">1</span></td>
-											<td class="align_type3 colwid_13"><span class="data_text number">1</span></td>
-											<td class="align_type3 colwid_14"><span class="data_text number">13</span></td>
-										</tr>
-										<tr class="depth_two">
-											<td colspan="14">
-												<div class="depth_table_wrap">
-													<div class="depth_table">
-														<div class="depth_tr">
-															<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
-															<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type2 colwid_03"><span class="data_text">K3 1.6(가솔린)</span></div>
-															<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
-															<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
-															<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
-															<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
-															<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
-															<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
-															<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
-														</div>
-														<div class="depth_tr">
-															<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
-															<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type2 colwid_03"><span class="data_text">올뉴아반떼 1.6(가솔린)</span></div>
-															<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
-															<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
-															<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
-															<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
-															<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
-															<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
-															<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
-															<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
+												</td>
+											</tr>
+											<tr class="depth_one">
+												<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+												<td class="colwid_02"><a href="javascript:;" class="fold_item"><span class="fold_item_text">대형</span></a></td>
+												<td class="align_type2 colwid_03"><span class="data_text">-</span></td>
+												<td class="align_type3 colwid_04"><span class="data_text number">15,000,000</span></td>
+												<td class="align_type3 colwid_05"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_06"><span class="data_text number">13</span></td>
+												<td class="align_type3 colwid_07"><span class="data_text number">13</span></td>
+												<td class="align_type3 colwid_08"><span class="data_text number">-</span></td>
+												<td class="align_type3 colwid_09"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_10"><span class="data_text number">3</span></td>
+												<td class="align_type3 colwid_11"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_12"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_13"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_14"><span class="data_text number">13</span></td>
+											</tr>
+											<tr class="depth_two">
+												<td colspan="14">
+													<div class="depth_table_wrap">
+														<div class="depth_table">
+															<div class="depth_tr">
+																<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
+																<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type2 colwid_03"><span class="data_text">K3 1.6(가솔린)</span></div>
+																<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
+																<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
+																<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
+																<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
+																<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
+																<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
+																<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
+															</div>
+															<div class="depth_tr">
+																<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
+																<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type2 colwid_03"><span class="data_text">올뉴아반떼 1.6(가솔린)</span></div>
+																<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
+																<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
+																<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
+																<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
+																<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
+																<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
+																<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
+															</div>
 														</div>
 													</div>
-												</div>
-											</td>
-										</tr>
-									</tbody>
-								</table>
+												</td>
+											</tr>
+											<tr class="depth_one">
+												<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+												<td class="colwid_02"><a href="javascript:;" class="fold_item"><span class="fold_item_text">SUV</span></a></td>
+												<td class="align_type2 colwid_03"><span class="data_text">-</span></td>
+												<td class="align_type3 colwid_04"><span class="data_text number">15,000,000</span></td>
+												<td class="align_type3 colwid_05"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_06"><span class="data_text number">13</span></td>
+												<td class="align_type3 colwid_07"><span class="data_text number">13</span></td>
+												<td class="align_type3 colwid_08"><span class="data_text number">-</span></td>
+												<td class="align_type3 colwid_09"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_10"><span class="data_text number">3</span></td>
+												<td class="align_type3 colwid_11"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_12"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_13"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_14"><span class="data_text number">13</span></td>
+											</tr>
+											<tr class="depth_two">
+												<td colspan="14">
+													<div class="depth_table_wrap">
+														<div class="depth_table">
+															<div class="depth_tr">
+																<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
+																<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type2 colwid_03"><span class="data_text">K3 1.6(가솔린)</span></div>
+																<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
+																<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
+																<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
+																<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
+																<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
+																<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
+																<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
+															</div>
+															<div class="depth_tr">
+																<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
+																<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type2 colwid_03"><span class="data_text">올뉴아반떼 1.6(가솔린)</span></div>
+																<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
+																<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
+																<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
+																<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
+																<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
+																<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
+																<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
+															</div>
+														</div>
+													</div>
+												</td>
+											</tr>
+											<tr class="depth_one">
+												<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+												<td class="colwid_02"><a href="javascript:;" class="fold_item"><span class="fold_item_text">승합</span></a></td>
+												<td class="align_type2 colwid_03"><span class="data_text">-</span></td>
+												<td class="align_type3 colwid_04"><span class="data_text number">15,000,000</span></td>
+												<td class="align_type3 colwid_05"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_06"><span class="data_text number">13</span></td>
+												<td class="align_type3 colwid_07"><span class="data_text number">13</span></td>
+												<td class="align_type3 colwid_08"><span class="data_text number">-</span></td>
+												<td class="align_type3 colwid_09"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_10"><span class="data_text number">3</span></td>
+												<td class="align_type3 colwid_11"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_12"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_13"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_14"><span class="data_text number">13</span></td>
+											</tr>
+											<tr class="depth_two">
+												<td colspan="14">
+													<div class="depth_table_wrap">
+														<div class="depth_table">
+															<div class="depth_tr">
+																<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
+																<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type2 colwid_03"><span class="data_text">K3 1.6(가솔린)</span></div>
+																<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
+																<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
+																<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
+																<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
+																<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
+																<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
+																<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
+															</div>
+															<div class="depth_tr">
+																<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
+																<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type2 colwid_03"><span class="data_text">올뉴아반떼 1.6(가솔린)</span></div>
+																<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
+																<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
+																<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
+																<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
+																<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
+																<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
+																<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
+																<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
+															</div>
+														</div>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="tfoot_table_wrap">
+									<table class="data_table tfoot_table">
+										<tfoot>
+											<tr>
+												<td class="has_check colwid_01"></td>
+												<td class="colwid_02">
+													<p class="tf_total_text">합계</p>
+												</td>
+												<td class="align_type2 colwid_03"></td>
+												<td class="align_type3 colwid_04">
+													<p class="tf_total_text">81,000,0000</p>
+												</td>
+												<td class="align_type3 colwid_05">
+													<p class="tf_total_text">81,000,0000</p>
+												</td>
+												<td class="align_type3 colwid_06">
+													<p class="tf_total_text">30</p>
+												</td>
+												<td class="align_type3 colwid_07">
+													<p class="tf_total_text">30</p>
+												</td>
+												<td class="align_type3 colwid_08">
+													<p class="tf_total_text">000</p>
+												</td>
+												<td class="align_type3 colwid_09">
+													<p class="tf_total_text">000</p>
+												</td>
+												<td class="align_type3 colwid_10">
+													<p class="tf_total_text">000</p>
+												</td>
+												<td class="align_type3 colwid_11">
+													<p class="tf_total_text">000</p>
+												</td>
+												<td class="align_type3 colwid_12">
+													<p class="tf_total_text">000</p>
+												</td>
+												<td class="align_type3 colwid_13">
+													<p class="tf_total_text">000</p>
+												</td>
+												<td class="align_type3 colwid_14">
+													<p class="tf_total_text">000</p>
+												</td>
+											</tr>
+										</tfoot>
+									</table>
+								</div>
 							</div>
+
 							<p class="data_table_paging">
 								<span class="data_paging_current">1</span>
 								<span class="data_paging_part">/</span>
@@ -728,25 +741,1211 @@
 						<div class="tabcont" id="tabcont_02">
 							<div class="tbcount_row">
 								<p class="tbcount_para">총 234건</p>
+								<p class="tbcount_para sym">중 <strong>2</strong>건 선택됨</p>
 							</div>
-							접수일자
+							<div class="data_table_wrap" data-row="20" id="tctable_02">
+								<style>
+									/* 폭 조절 */
+									#tctable_02 .colwid_01 {}
+
+									#tctable_02 .colwid_02 {
+										width: 12%;
+									}
+
+									#tctable_02 .colwid_03 {}
+
+									#tctable_02 .colwid_04 {
+										width: 18%;
+									}
+
+									#tctable_02 .colwid_05 {
+										width: 18%;
+									}
+
+									#tctable_02 .colwid_06 {
+										width: 18%;
+									}
+
+									#tctable_02 .colwid_07 {
+										width: 18%;
+										padding-right: 5%;
+									}
+								</style>
+								<div class="thead_table_wrap">
+									<table class="data_table thead_table">
+										<thead>
+											<tr>
+												<th class="has_check colwid_01"><input type="checkbox" class="design_check" name="total_check"></th>
+												<th class="colwid_02"><a href="javascript:;" class="data_th define_sort">출발일자</a></th>
+												<th class="align_type3 colwid_03"><a href="javascript:;" class="data_th define_sort">매출(백만원)</a></th>
+												<th class="align_type3 colwid_04"><a href="javascript:;" class="data_th define_sort">대당매출(원)</a></th>
+												<th class="align_type3 colwid_05"><a href="javascript:;" class="data_th define_sort">예약(건)</a></th>
+												<th class="align_type3 colwid_06"><a href="javascript:;" class="data_th define_sort">대여기간(일)</a></th>
+												<th class="align_type3 colwid_07"><a href="javascript:;" class="data_th define_sort">객단가(원)</a></th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+								<div class="tbody_table_wrap">
+									<table class="data_table">
+										<tbody>
+											<tr>
+												<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+												<td class="colwid_02"><span class="data_text">2022.06.13</span></td>
+												<td class="align_type3 colwid_03"><span class="data_text number">15,000,000</span></td>
+												<td class="align_type3 colwid_04"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_05"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_06"><span class="data_text number">3.5</span></td>
+												<td class="align_type3 colwid_07"><span class="data_text number">65,000</span></td>
+											</tr>
+											<tr>
+												<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+												<td class="colwid_02"><span class="data_text">2022.06.13</span></td>
+												<td class="align_type3 colwid_03"><span class="data_text number">15,000,000</span></td>
+												<td class="align_type3 colwid_04"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_05"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_06"><span class="data_text number">3.5</span></td>
+												<td class="align_type3 colwid_07"><span class="data_text number">65,000</span></td>
+											</tr>
+											<tr>
+												<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+												<td class="colwid_02"><span class="data_text">2022.06.13</span></td>
+												<td class="align_type3 colwid_03"><span class="data_text number">15,000,000</span></td>
+												<td class="align_type3 colwid_04"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_05"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_06"><span class="data_text number">3.5</span></td>
+												<td class="align_type3 colwid_07"><span class="data_text number">65,000</span></td>
+											</tr>
+											<tr>
+												<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+												<td class="colwid_02"><span class="data_text">2022.06.13</span></td>
+												<td class="align_type3 colwid_03"><span class="data_text number">15,000,000</span></td>
+												<td class="align_type3 colwid_04"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_05"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_06"><span class="data_text number">3.5</span></td>
+												<td class="align_type3 colwid_07"><span class="data_text number">65,000</span></td>
+											</tr>
+											<tr>
+												<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+												<td class="colwid_02"><span class="data_text">2022.06.13</span></td>
+												<td class="align_type3 colwid_03"><span class="data_text number">15,000,000</span></td>
+												<td class="align_type3 colwid_04"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_05"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_06"><span class="data_text number">3.5</span></td>
+												<td class="align_type3 colwid_07"><span class="data_text number">65,000</span></td>
+											</tr>
+											<tr>
+												<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+												<td class="colwid_02"><span class="data_text">2022.06.13</span></td>
+												<td class="align_type3 colwid_03"><span class="data_text number">15,000,000</span></td>
+												<td class="align_type3 colwid_04"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_05"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_06"><span class="data_text number">3.5</span></td>
+												<td class="align_type3 colwid_07"><span class="data_text number">65,000</span></td>
+											</tr>
+											<tr>
+												<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+												<td class="colwid_02"><span class="data_text">2022.06.13</span></td>
+												<td class="align_type3 colwid_03"><span class="data_text number">15,000,000</span></td>
+												<td class="align_type3 colwid_04"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_05"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_06"><span class="data_text number">3.5</span></td>
+												<td class="align_type3 colwid_07"><span class="data_text number">65,000</span></td>
+											</tr>
+											<tr>
+												<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+												<td class="colwid_02"><span class="data_text">2022.06.13</span></td>
+												<td class="align_type3 colwid_03"><span class="data_text number">15,000,000</span></td>
+												<td class="align_type3 colwid_04"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_05"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_06"><span class="data_text number">3.5</span></td>
+												<td class="align_type3 colwid_07"><span class="data_text number">65,000</span></td>
+											</tr>
+											<tr>
+												<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+												<td class="colwid_02"><span class="data_text">2022.06.13</span></td>
+												<td class="align_type3 colwid_03"><span class="data_text number">15,000,000</span></td>
+												<td class="align_type3 colwid_04"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_05"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_06"><span class="data_text number">3.5</span></td>
+												<td class="align_type3 colwid_07"><span class="data_text number">65,000</span></td>
+											</tr>
+											<tr>
+												<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+												<td class="colwid_02"><span class="data_text">2022.06.13</span></td>
+												<td class="align_type3 colwid_03"><span class="data_text number">15,000,000</span></td>
+												<td class="align_type3 colwid_04"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_05"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_06"><span class="data_text number">3.5</span></td>
+												<td class="align_type3 colwid_07"><span class="data_text number">65,000</span></td>
+											</tr>
+											<tr>
+												<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+												<td class="colwid_02"><span class="data_text">2022.06.13</span></td>
+												<td class="align_type3 colwid_03"><span class="data_text number">15,000,000</span></td>
+												<td class="align_type3 colwid_04"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_05"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_06"><span class="data_text number">3.5</span></td>
+												<td class="align_type3 colwid_07"><span class="data_text number">65,000</span></td>
+											</tr>
+											<tr>
+												<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+												<td class="colwid_02"><span class="data_text">2022.06.13</span></td>
+												<td class="align_type3 colwid_03"><span class="data_text number">15,000,000</span></td>
+												<td class="align_type3 colwid_04"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_05"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_06"><span class="data_text number">3.5</span></td>
+												<td class="align_type3 colwid_07"><span class="data_text number">65,000</span></td>
+											</tr>
+											<tr>
+												<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+												<td class="colwid_02"><span class="data_text">2022.06.13</span></td>
+												<td class="align_type3 colwid_03"><span class="data_text number">15,000,000</span></td>
+												<td class="align_type3 colwid_04"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_05"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_06"><span class="data_text number">3.5</span></td>
+												<td class="align_type3 colwid_07"><span class="data_text number">65,000</span></td>
+											</tr>
+											<tr>
+												<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+												<td class="colwid_02"><span class="data_text">2022.06.13</span></td>
+												<td class="align_type3 colwid_03"><span class="data_text number">15,000,000</span></td>
+												<td class="align_type3 colwid_04"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_05"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_06"><span class="data_text number">3.5</span></td>
+												<td class="align_type3 colwid_07"><span class="data_text number">65,000</span></td>
+											</tr>
+											<tr>
+												<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+												<td class="colwid_02"><span class="data_text">2022.06.13</span></td>
+												<td class="align_type3 colwid_03"><span class="data_text number">15,000,000</span></td>
+												<td class="align_type3 colwid_04"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_05"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_06"><span class="data_text number">3.5</span></td>
+												<td class="align_type3 colwid_07"><span class="data_text number">65,000</span></td>
+											</tr>
+											<tr>
+												<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+												<td class="colwid_02"><span class="data_text">2022.06.13</span></td>
+												<td class="align_type3 colwid_03"><span class="data_text number">15,000,000</span></td>
+												<td class="align_type3 colwid_04"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_05"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_06"><span class="data_text number">3.5</span></td>
+												<td class="align_type3 colwid_07"><span class="data_text number">65,000</span></td>
+											</tr>
+											<tr>
+												<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+												<td class="colwid_02"><span class="data_text">2022.06.13</span></td>
+												<td class="align_type3 colwid_03"><span class="data_text number">15,000,000</span></td>
+												<td class="align_type3 colwid_04"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_05"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_06"><span class="data_text number">3.5</span></td>
+												<td class="align_type3 colwid_07"><span class="data_text number">65,000</span></td>
+											</tr>
+											<tr>
+												<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+												<td class="colwid_02"><span class="data_text">2022.06.13</span></td>
+												<td class="align_type3 colwid_03"><span class="data_text number">15,000,000</span></td>
+												<td class="align_type3 colwid_04"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_05"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_06"><span class="data_text number">3.5</span></td>
+												<td class="align_type3 colwid_07"><span class="data_text number">65,000</span></td>
+											</tr>
+											<tr>
+												<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+												<td class="colwid_02"><span class="data_text">2022.06.13</span></td>
+												<td class="align_type3 colwid_03"><span class="data_text number">15,000,000</span></td>
+												<td class="align_type3 colwid_04"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_05"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_06"><span class="data_text number">3.5</span></td>
+												<td class="align_type3 colwid_07"><span class="data_text number">65,000</span></td>
+											</tr>
+											<tr>
+												<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+												<td class="colwid_02"><span class="data_text">2022.06.13</span></td>
+												<td class="align_type3 colwid_03"><span class="data_text number">15,000,000</span></td>
+												<td class="align_type3 colwid_04"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_05"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_06"><span class="data_text number">3.5</span></td>
+												<td class="align_type3 colwid_07"><span class="data_text number">65,000</span></td>
+											</tr>
+											<tr>
+												<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+												<td class="colwid_02"><span class="data_text">2022.06.13</span></td>
+												<td class="align_type3 colwid_03"><span class="data_text number">15,000,000</span></td>
+												<td class="align_type3 colwid_04"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_05"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_06"><span class="data_text number">3.5</span></td>
+												<td class="align_type3 colwid_07"><span class="data_text number">65,000</span></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="tfoot_table_wrap">
+									<table class="data_table tfoot_table">
+										<tfoot>
+											<tr>
+												<td class="has_check colwid_01"></td>
+												<td class="colwid_02">
+													<p class="tf_total_text">합계</p>
+												</td>
+												<td class="align_type3 colwid_03">
+													<p class="tf_total_text">81,000,0000</p>
+												</td>
+												<td class="align_type3 colwid_04">
+													<p class="tf_total_text">11,200,000</p>
+												</td>
+												<td class="align_type3 colwid_05">
+													<p class="tf_total_text">105</p>
+												</td>
+												<td class="align_type3 colwid_06">
+													<p class="tf_total_text">4</p>
+												</td>
+												<td class="align_type3 colwid_07">
+													<p class="tf_total_text">325,450</p>
+												</td>
+											</tr>
+										</tfoot>
+									</table>
+								</div>
+							</div>
+							<p class="data_table_paging">
+								<span class="data_paging_current">1</span>
+								<span class="data_paging_part">/</span>
+								<span class="data_paging_length">20</span>
+							</p>
 						</div>
 						<div class="tabcont" id="tabcont_03">
-							<div class="tbcount_row">
-								<p class="tbcount_para">총 234건</p>
+							<div class="tbcount_sort_row">
+								<div class="tbcount_row">
+									<p class="tbcount_para">총 234건</p>
+									<p class="tbcount_para sym">중 <strong>2</strong>건 선택됨</p>
+								</div>
+								<div class="tbcount_sort_right">
+									<ul class="form_flex_list" data-formGroup="#tbsort_item_group">
+										<li>
+											<div class="form_choice_item">
+												<input type="radio" class="design_radio" id="sort_radio_01" name="sort_radio" data-formTarget="#sort_tb_item01" checked>
+												<label for="sort_radio_01" class="form_choice_label">비교선택 없음</label>
+											</div>
+										</li>
+										<li>
+											<div class="form_choice_item">
+												<input type="radio" class="design_radio" id="sort_radio_02" name="sort_radio" data-formTarget="#sort_tb_item02">
+												<label for="sort_radio_02" class="form_choice_label">전월</label>
+											</div>
+										</li>
+										<li>
+											<div class="form_choice_item">
+												<input type="radio" class="design_radio" id="sort_radio_03" name="sort_radio" data-formTarget="#sort_tb_item03">
+												<label for="sort_radio_03" class="form_choice_label">전년동월</label>
+											</div>
+										</li>
+									</ul>
+								</div>
 							</div>
-							대여일자
+							<div class="tbsort_item_group" id="tbsort_item_group">
+								<div class="tbsort_item active" id="sort_tb_item01">
+									<div class="data_table_wrap" data-row="20" id="tctable_03_01">
+										<style>
+											/* 폭 조절 */
+											#tctable_03_01 .colwid_01 {}
+
+											#tctable_03_01 .colwid_02 {
+												width: 12%;
+											}
+
+											#tctable_03_01 .colwid_03 {}
+
+											#tctable_03_01 .colwid_04 {
+												width: 12%;
+											}
+
+											#tctable_03_01 .colwid_05 {
+												width: 10%;
+											}
+
+											#tctable_03_01 .colwid_06 {
+												width: 10%;
+											}
+
+											#tctable_03_01 .colwid_07 {
+												width: 10%;
+											}
+
+											#tctable_03_01 .colwid_08 {
+												width: 11%;
+											}
+
+											#tctable_03_01 .colwid_09 {
+												width: 11%;
+											}
+
+											#tctable_03_01 .colwid_10 {
+												width: 12%;
+												padding-right: 3%;
+											}
+										</style>
+										<div class="thead_table_wrap">
+											<table class="data_table thead_table">
+												<thead>
+													<tr>
+														<th class="has_check colwid_01"><input type="checkbox" class="design_check" name="total_check"></th>
+														<th class="colwid_02"><a href="javascript:;" class="data_th define_sort">대여일자</a></th>
+														<th class="align_type3 colwid_03"><a href="javascript:;" class="data_th define_sort">매출(백만원)</a></th>
+														<th class="align_type3 colwid_04"><a href="javascript:;" class="data_th define_sort">대당매출(원)</a></th>
+														<th class="align_type3 colwid_05"><a href="javascript:;" class="data_th define_sort">예약(건)</a></th>
+														<th class="align_type3 colwid_06"><a href="javascript:;" class="data_th define_sort">가동률(%)</a></th>
+														<th class="align_type3 colwid_07"><a href="javascript:;" class="data_th define_sort">취소(건)</a></th>
+														<th class="align_type3 colwid_08"><a href="javascript:;" class="data_th define_sort">대여기간(일)</a></th>
+														<th class="align_type3 colwid_09"><a href="javascript:;" class="data_th define_sort">객단가(원)</a></th>
+														<th class="align_type3 colwid_10"><a href="javascript:;" class="data_th define_sort">운영대수</a></th>
+													</tr>
+												</thead>
+											</table>
+										</div>
+										<div class="tbody_table_wrap">
+											<table class="data_table">
+												<tbody>
+													<tr>
+														<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+														<td class="colwid_02"><span class="data_text">2022.06.13</span></td>
+														<td class="align_type3 colwid_03"><span class="data_text number">15,000,000</span></td>
+														<td class="align_type3 colwid_04"><span class="data_text number">90,000</span></td>
+														<td class="align_type3 colwid_05"><span class="data_text number">1</span></td>
+														<td class="align_type3 colwid_06"><span class="data_text number">56</span></td>
+														<td class="align_type3 colwid_07"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_08"><span class="data_text number">3.5</span></td>
+														<td class="align_type3 colwid_09"><span class="data_text number">65,000</span></td>
+														<td class="align_type3 colwid_10"><span class="data_text number">24</span></td>
+													</tr>
+													<tr>
+														<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+														<td class="colwid_02"><span class="data_text">2022.06.13</span></td>
+														<td class="align_type3 colwid_03"><span class="data_text number">15,000,000</span></td>
+														<td class="align_type3 colwid_04"><span class="data_text number">90,000</span></td>
+														<td class="align_type3 colwid_05"><span class="data_text number">1</span></td>
+														<td class="align_type3 colwid_06"><span class="data_text number">56</span></td>
+														<td class="align_type3 colwid_07"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_08"><span class="data_text number">3.5</span></td>
+														<td class="align_type3 colwid_09"><span class="data_text number">65,000</span></td>
+														<td class="align_type3 colwid_10"><span class="data_text number">24</span></td>
+													</tr>
+													<tr>
+														<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+														<td class="colwid_02"><span class="data_text">2022.06.13</span></td>
+														<td class="align_type3 colwid_03"><span class="data_text number">15,000,000</span></td>
+														<td class="align_type3 colwid_04"><span class="data_text number">90,000</span></td>
+														<td class="align_type3 colwid_05"><span class="data_text number">1</span></td>
+														<td class="align_type3 colwid_06"><span class="data_text number">56</span></td>
+														<td class="align_type3 colwid_07"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_08"><span class="data_text number">3.5</span></td>
+														<td class="align_type3 colwid_09"><span class="data_text number">65,000</span></td>
+														<td class="align_type3 colwid_10"><span class="data_text number">24</span></td>
+													</tr>
+													<tr>
+														<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+														<td class="colwid_02"><span class="data_text">2022.06.13</span></td>
+														<td class="align_type3 colwid_03"><span class="data_text number">15,000,000</span></td>
+														<td class="align_type3 colwid_04"><span class="data_text number">90,000</span></td>
+														<td class="align_type3 colwid_05"><span class="data_text number">1</span></td>
+														<td class="align_type3 colwid_06"><span class="data_text number">56</span></td>
+														<td class="align_type3 colwid_07"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_08"><span class="data_text number">3.5</span></td>
+														<td class="align_type3 colwid_09"><span class="data_text number">65,000</span></td>
+														<td class="align_type3 colwid_10"><span class="data_text number">24</span></td>
+													</tr>
+													<tr>
+														<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+														<td class="colwid_02"><span class="data_text">2022.06.13</span></td>
+														<td class="align_type3 colwid_03"><span class="data_text number">15,000,000</span></td>
+														<td class="align_type3 colwid_04"><span class="data_text number">90,000</span></td>
+														<td class="align_type3 colwid_05"><span class="data_text number">1</span></td>
+														<td class="align_type3 colwid_06"><span class="data_text number">56</span></td>
+														<td class="align_type3 colwid_07"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_08"><span class="data_text number">3.5</span></td>
+														<td class="align_type3 colwid_09"><span class="data_text number">65,000</span></td>
+														<td class="align_type3 colwid_10"><span class="data_text number">24</span></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<div class="tfoot_table_wrap">
+											<table class="data_table tfoot_table">
+												<tfoot>
+													<tr>
+														<td class="has_check colwid_01"></td>
+														<td class="colwid_02">
+															<p class="tf_total_text">합계</p>
+														</td>
+														<td class="align_type3 colwid_03">
+															<p class="tf_total_text">81,000,0000</p>
+														</td>
+														<td class="align_type3 colwid_04">
+															<p class="tf_total_text">108,000</p>
+														</td>
+														<td class="align_type3 colwid_05">
+															<p class="tf_total_text">105</p>
+														</td>
+														<td class="align_type3 colwid_06">
+															<p class="tf_total_text">73</p>
+														</td>
+														<td class="align_type3 colwid_07">
+															<p class="tf_total_text">5</p>
+														</td>
+														<td class="align_type3 colwid_08">
+															<p class="tf_total_text">4</p>
+														</td>
+														<td class="align_type3 colwid_09">
+															<p class="tf_total_text">325,450</p>
+														</td>
+														<td class="align_type3 colwid_10">
+															<p class="tf_total_text">285</p>
+														</td>
+													</tr>
+												</tfoot>
+											</table>
+										</div>
+									</div>
+									<p class="data_table_paging">
+										<span class="data_paging_current">1</span>
+										<span class="data_paging_part">/</span>
+										<span class="data_paging_length">20</span>
+									</p>
+								</div>
+								<div class="tbsort_item" id="sort_tb_item02">
+									<div class="data_table_wrap" data-row="20" id="tctable_03_02">
+										<style>
+											/* 폭 조절 */
+											#tctable_03_02 .colwid_01 {}
+
+											#tctable_03_02 .colwid_02 {}
+
+											#tctable_03_02 .colwid_03 {
+												width: 6%;
+											}
+
+											#tctable_03_02 .colwid_04 {
+												width: 6%;
+											}
+
+											#tctable_03_02 .colwid_05 {
+												width: 6%;
+											}
+
+											#tctable_03_02 .colwid_06 {
+												width: 6%;
+											}
+
+											#tctable_03_02 .colwid_07 {
+												width: 5%;
+											}
+
+											#tctable_03_02 .colwid_08 {
+												width: 5%;
+											}
+
+											#tctable_03_02 .colwid_09 {
+												width: 5%;
+											}
+
+											#tctable_03_02 .colwid_10 {
+												width: 5%;
+											}
+
+											#tctable_03_02 .colwid_11 {
+												width: 5%;
+											}
+
+											#tctable_03_02 .colwid_12 {
+												width: 5%;
+											}
+
+											#tctable_03_02 .colwid_13 {
+												width: 4.8%;
+											}
+
+											#tctable_03_02 .colwid_14 {
+												width: 4.8%;
+											}
+
+											#tctable_03_02 .colwid_15 {
+												width: 4.8%;
+											}
+
+											#tctable_03_02 .colwid_16 {
+												width: 4.8%;
+											}
+
+											#tctable_03_02 .colwid_17 {
+												width: 5%;
+											}
+
+											#tctable_03_02 .colwid_18 {
+												width: 5%;
+											}
+
+											#tctable_03_02 .colwid_19 {
+												width: 4.8%;
+											}
+
+											#tctable_03_02 .colwid_20 {
+												width: 4.8%;
+											}
+										</style>
+										<div class="thead_table_wrap type2">
+											<table class="data_table thead_table">
+												<thead>
+													<tr>
+														<th class="has_check colwid_01"><input type="checkbox" class="design_check" name="total_check"></th>
+														<th class="colwid_02"><span class="data_th">대여일자</span></th>
+														<th colspan="2"><span class="data_th">매출(백만원)</span></th>
+														<th colspan="2"><span class="data_th">대당 매출(백만원)</span></th>
+														<th colspan="2"><span class="data_th">예약(건)</span></th>
+														<th colspan="2"><span class="data_th">가동율(%)</span></th>
+														<th colspan="2"><span class="data_th">운행율(횟수)</span></th>
+														<th colspan="2"><span class="data_th">취소(건)</span></th>
+														<th colspan="2"><span class="data_th">대여기간(일)</span></th>
+														<th colspan="2"><span class="data_th">객단가(원)</span></th>
+														<th colspan="2"><span class="data_th">운영대수(건)</span></th>
+													</tr>
+													<tr class="type2">
+														<th class="has_check colwid_01"></th>
+														<th class="colwid_02"></th>
+														<th class="colwid_03"><a href="javascript:;" class="data_th define_sort">2022.12</a></th>
+														<th class="colwid_04 bgtype2"><a href="javascript:;" class="data_th define_sort">2022.11</a></th>
+														<th class="colwid_05"><a href="javascript:;" class="data_th define_sort">2022.10</a></th>
+														<th class="colwid_06 bgtype2"><a href="javascript:;" class="data_th define_sort">2022.09</a></th>
+														<th class="colwid_07"><a href="javascript:;" class="data_th define_sort">2022.08</a></th>
+														<th class="colwid_08 bgtype2"><a href="javascript:;" class="data_th define_sort">2022.07</a></th>
+														<th class="colwid_09"><a href="javascript:;" class="data_th define_sort">2022.06</a></th>
+														<th class="colwid_10 bgtype2"><a href="javascript:;" class="data_th define_sort">2022.05</a></th>
+														<th class="colwid_11"><a href="javascript:;" class="data_th define_sort">2022.04</a></th>
+														<th class="colwid_12 bgtype2"><a href="javascript:;" class="data_th define_sort">2022.03</a></th>
+														<th class="colwid_13"><a href="javascript:;" class="data_th define_sort">2022.02</a></th>
+														<th class="colwid_14 bgtype2"><a href="javascript:;" class="data_th define_sort">2022.01</a></th>
+														<th class="colwid_15"><a href="javascript:;" class="data_th define_sort">2021.12</a></th>
+														<th class="colwid_16 bgtype2"><a href="javascript:;" class="data_th define_sort">2022.11</a></th>
+														<th class="colwid_17"><a href="javascript:;" class="data_th define_sort">2021.10</a></th>
+														<th class="colwid_18 bgtype2"><a href="javascript:;" class="data_th define_sort">2021.09</a></th>
+														<th class="colwid_19"><a href="javascript:;" class="data_th define_sort">2021.08</a></th>
+														<th class="colwid_20 bgtype2"><a href="javascript:;" class="data_th define_sort">2021.07</a></th>
+													</tr>
+												</thead>
+											</table>
+										</div>
+										<div class="tbody_table_wrap type2">
+											<table class="data_table">
+												<tbody>
+													<tr>
+														<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+														<td class="colwid_02"><span class="data_text">05.02</span></td>
+														<td class="align_type3 colwid_03"><span class="data_text number">23,000,000</span></td>
+														<td class="align_type3 colwid_04 bgtype2"><span class="data_text number">6,000,000</span></td>
+														<td class="align_type3 colwid_05"><span class="data_text number">23,000,000</span></td>
+														<td class="align_type3 colwid_06 bgtype2"><span class="data_text number">6,000,000</span></td>
+														<td class="align_type3 colwid_07"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_08 bgtype2"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_09"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_10 bgtype2"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_11"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_12 bgtype2"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_13"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_14 bgtype2"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_15"><span class="data_text number">2.5</span></td>
+														<td class="align_type3 colwid_16 bgtype2"><span class="data_text number">2.5</span></td>
+														<td class="align_type3 colwid_17"><span class="data_text number">98,000</span></td>
+														<td class="align_type3 colwid_18 bgtype2"><span class="data_text number">98,000</span></td>
+														<td class="align_type3 colwid_19"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_20 bgtype2"><span class="data_text number">46</span></td>
+													</tr>
+													<tr>
+														<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+														<td class="colwid_02"><span class="data_text">05.02</span></td>
+														<td class="align_type3 colwid_03"><span class="data_text number">23,000,000</span></td>
+														<td class="align_type3 colwid_04 bgtype2"><span class="data_text number">6,000,000</span></td>
+														<td class="align_type3 colwid_05"><span class="data_text number">23,000,000</span></td>
+														<td class="align_type3 colwid_06 bgtype2"><span class="data_text number">6,000,000</span></td>
+														<td class="align_type3 colwid_07"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_08 bgtype2"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_09"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_10 bgtype2"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_11"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_12 bgtype2"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_13"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_14 bgtype2"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_15"><span class="data_text number">2.5</span></td>
+														<td class="align_type3 colwid_16 bgtype2"><span class="data_text number">2.5</span></td>
+														<td class="align_type3 colwid_17"><span class="data_text number">98,000</span></td>
+														<td class="align_type3 colwid_18 bgtype2"><span class="data_text number">98,000</span></td>
+														<td class="align_type3 colwid_19"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_20 bgtype2"><span class="data_text number">46</span></td>
+													</tr>
+													<tr>
+														<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+														<td class="colwid_02"><span class="data_text">05.02</span></td>
+														<td class="align_type3 colwid_03"><span class="data_text number">23,000,000</span></td>
+														<td class="align_type3 colwid_04 bgtype2"><span class="data_text number">6,000,000</span></td>
+														<td class="align_type3 colwid_05"><span class="data_text number">23,000,000</span></td>
+														<td class="align_type3 colwid_06 bgtype2"><span class="data_text number">6,000,000</span></td>
+														<td class="align_type3 colwid_07"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_08 bgtype2"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_09"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_10 bgtype2"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_11"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_12 bgtype2"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_13"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_14 bgtype2"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_15"><span class="data_text number">2.5</span></td>
+														<td class="align_type3 colwid_16 bgtype2"><span class="data_text number">2.5</span></td>
+														<td class="align_type3 colwid_17"><span class="data_text number">98,000</span></td>
+														<td class="align_type3 colwid_18 bgtype2"><span class="data_text number">98,000</span></td>
+														<td class="align_type3 colwid_19"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_20 bgtype2"><span class="data_text number">46</span></td>
+													</tr>
+													<tr>
+														<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+														<td class="colwid_02"><span class="data_text">05.02</span></td>
+														<td class="align_type3 colwid_03"><span class="data_text number">23,000,000</span></td>
+														<td class="align_type3 colwid_04 bgtype2"><span class="data_text number">6,000,000</span></td>
+														<td class="align_type3 colwid_05"><span class="data_text number">23,000,000</span></td>
+														<td class="align_type3 colwid_06 bgtype2"><span class="data_text number">6,000,000</span></td>
+														<td class="align_type3 colwid_07"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_08 bgtype2"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_09"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_10 bgtype2"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_11"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_12 bgtype2"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_13"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_14 bgtype2"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_15"><span class="data_text number">2.5</span></td>
+														<td class="align_type3 colwid_16 bgtype2"><span class="data_text number">2.5</span></td>
+														<td class="align_type3 colwid_17"><span class="data_text number">98,000</span></td>
+														<td class="align_type3 colwid_18 bgtype2"><span class="data_text number">98,000</span></td>
+														<td class="align_type3 colwid_19"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_20 bgtype2"><span class="data_text number">46</span></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<div class="tfoot_table_wrap type2">
+											<table class="data_table tfoot_table">
+												<tfoot>
+													<tr>
+														<td class="has_check colwid_01"></td>
+														<td class="colwid_02">
+															<p class="tf_total_text">합계</p>
+														</td>
+														<td class="align_type3 colwid_03">
+															<p class="tf_total_text">81,000,0000</p>
+														</td>
+														<td class="align_type3 colwid_04">
+															<p class="tf_total_text">81,000,0000</p>
+														</td>
+														<td class="align_type3 colwid_05">
+															<p class="tf_total_text">11,200,000</p>
+														</td>
+														<td class="align_type3 colwid_06">
+															<p class="tf_total_text">11,200,000</p>
+														</td>
+														<td class="align_type3 colwid_07">
+															<p class="tf_total_text">105</p>
+														</td>
+														<td class="align_type3 colwid_08">
+															<p class="tf_total_text">105</p>
+														</td>
+														<td class="align_type3 colwid_09">
+															<p class="tf_total_text">73</p>
+														</td>
+														<td class="align_type3 colwid_10">
+															<p class="tf_total_text">73</p>
+														</td>
+														<td class="align_type3 colwid_11">
+															<p class="tf_total_text">5</p>
+														</td>
+														<td class="align_type3 colwid_12">
+															<p class="tf_total_text">5</p>
+														</td>
+														<td class="align_type3 colwid_13">
+															<p class="tf_total_text">4</p>
+														</td>
+														<td class="align_type3 colwid_14">
+															<p class="tf_total_text">4</p>
+														</td>
+														<td class="align_type3 colwid_15">
+															<p class="tf_total_text">5</p>
+														</td>
+														<td class="align_type3 colwid_16">
+															<p class="tf_total_text">285</p>
+														</td>
+														<td class="align_type3 colwid_17">
+															<p class="tf_total_text">285</p>
+														</td>
+														<td class="align_type3 colwid_18">
+															<p class="tf_total_text">285</p>
+														</td>
+														<td class="align_type3 colwid_19">
+															<p class="tf_total_text">285</p>
+														</td>
+														<td class="align_type3 colwid_20">
+															<p class="tf_total_text">285</p>
+														</td>
+													</tr>
+												</tfoot>
+											</table>
+										</div>
+									</div>
+									<p class="data_table_paging">
+										<span class="data_paging_current">1</span>
+										<span class="data_paging_part">/</span>
+										<span class="data_paging_length">20</span>
+									</p>
+								</div>
+								<div class="tbsort_item" id="sort_tb_item03">
+									<div class="data_table_wrap" data-row="20" id="tctable_03_03">
+										<style>
+											/* 폭 조절 */
+											#tctable_03_03 .colwid_01 {}
+
+											#tctable_03_03 .colwid_02 {}
+
+											#tctable_03_03 .colwid_03 {
+												width: 6%;
+											}
+
+											#tctable_03_03 .colwid_04 {
+												width: 6%;
+											}
+
+											#tctable_03_03 .colwid_05 {
+												width: 6%;
+											}
+
+											#tctable_03_03 .colwid_06 {
+												width: 6%;
+											}
+
+											#tctable_03_03 .colwid_07 {
+												width: 5%;
+											}
+
+											#tctable_03_03 .colwid_08 {
+												width: 5%;
+											}
+
+											#tctable_03_03 .colwid_09 {
+												width: 5%;
+											}
+
+											#tctable_03_03 .colwid_10 {
+												width: 5%;
+											}
+
+											#tctable_03_03 .colwid_11 {
+												width: 5%;
+											}
+
+											#tctable_03_03 .colwid_12 {
+												width: 5%;
+											}
+
+											#tctable_03_03 .colwid_13 {
+												width: 4.8%;
+											}
+
+											#tctable_03_03 .colwid_14 {
+												width: 4.8%;
+											}
+
+											#tctable_03_03 .colwid_15 {
+												width: 4.8%;
+											}
+
+											#tctable_03_03 .colwid_16 {
+												width: 4.8%;
+											}
+
+											#tctable_03_03 .colwid_17 {
+												width: 5%;
+											}
+
+											#tctable_03_03 .colwid_18 {
+												width: 5%;
+											}
+
+											#tctable_03_03 .colwid_19 {
+												width: 4.8%;
+											}
+
+											#tctable_03_03 .colwid_20 {
+												width: 4.8%;
+											}
+										</style>
+										<div class="thead_table_wrap type2">
+											<table class="data_table thead_table">
+												<thead>
+													<tr>
+														<th class="has_check colwid_01"><input type="checkbox" class="design_check" name="total_check"></th>
+														<th class="colwid_02"><span class="data_th">대여일자</span></th>
+														<th colspan="2"><span class="data_th">매출(백만원)</span></th>
+														<th colspan="2"><span class="data_th">대당 매출(백만원)</span></th>
+														<th colspan="2"><span class="data_th">예약(건)</span></th>
+														<th colspan="2"><span class="data_th">가동율(%)</span></th>
+														<th colspan="2"><span class="data_th">운행율(횟수)</span></th>
+														<th colspan="2"><span class="data_th">취소(건)</span></th>
+														<th colspan="2"><span class="data_th">대여기간(일)</span></th>
+														<th colspan="2"><span class="data_th">객단가(원)</span></th>
+														<th colspan="2"><span class="data_th">운영대수(건)</span></th>
+													</tr>
+													<tr class="type2">
+														<th class="colwid_01"></th>
+														<th class="colwid_02"></th>
+														<th class="colwid_03"><a href="javascript:;" class="data_th define_sort">2022</a></th>
+														<th class="colwid_04 bgtype2"><a href="javascript:;" class="data_th define_sort">2021</a></th>
+														<th class="colwid_05"><a href="javascript:;" class="data_th define_sort">2022</a></th>
+														<th class="colwid_06 bgtype2"><a href="javascript:;" class="data_th define_sort">2021</a></th>
+														<th class="colwid_07"><a href="javascript:;" class="data_th define_sort">2022</a></th>
+														<th class="colwid_08 bgtype2"><a href="javascript:;" class="data_th define_sort">2021</a></th>
+														<th class="colwid_09"><a href="javascript:;" class="data_th define_sort">2022</a></th>
+														<th class="colwid_10 bgtype2"><a href="javascript:;" class="data_th define_sort">2021</a></th>
+														<th class="colwid_11"><a href="javascript:;" class="data_th define_sort">2022</a></th>
+														<th class="colwid_12 bgtype2"><a href="javascript:;" class="data_th define_sort">2021</a></th>
+														<th class="colwid_13"><a href="javascript:;" class="data_th define_sort">2022</a></th>
+														<th class="colwid_14 bgtype2"><a href="javascript:;" class="data_th define_sort">2021</a></th>
+														<th class="colwid_15"><a href="javascript:;" class="data_th define_sort">2022</a></th>
+														<th class="colwid_16 bgtype2"><a href="javascript:;" class="data_th define_sort">2021</a></th>
+														<th class="colwid_17"><a href="javascript:;" class="data_th define_sort">2022</a></th>
+														<th class="colwid_18 bgtype2"><a href="javascript:;" class="data_th define_sort">2021</a></th>
+														<th class="colwid_19"><a href="javascript:;" class="data_th define_sort">2022</a></th>
+														<th class="colwid_20 bgtype2"><a href="javascript:;" class="data_th define_sort">2021</a></th>
+													</tr>
+												</thead>
+											</table>
+										</div>
+										<div class="tbody_table_wrap type2">
+											<table class="data_table">
+												<tbody>
+													<tr>
+														<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+														<td class="colwid_02"><span class="data_text">05.02</span></td>
+														<td class="align_type3 colwid_03"><span class="data_text number">23,000,000</span></td>
+														<td class="align_type3 colwid_04 bgtype2"><span class="data_text number">6,000,000</span></td>
+														<td class="align_type3 colwid_05"><span class="data_text number">23,000,000</span></td>
+														<td class="align_type3 colwid_06 bgtype2"><span class="data_text number">6,000,000</span></td>
+														<td class="align_type3 colwid_07"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_08 bgtype2"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_09"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_10 bgtype2"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_11"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_12 bgtype2"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_13"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_14 bgtype2"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_15"><span class="data_text number">2.5</span></td>
+														<td class="align_type3 colwid_16 bgtype2"><span class="data_text number">2.5</span></td>
+														<td class="align_type3 colwid_17"><span class="data_text number">98,000</span></td>
+														<td class="align_type3 colwid_18 bgtype2"><span class="data_text number">98,000</span></td>
+														<td class="align_type3 colwid_19"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_20 bgtype2"><span class="data_text number">46</span></td>
+													</tr>
+													<tr>
+														<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+														<td class="colwid_02"><span class="data_text">05.02</span></td>
+														<td class="align_type3 colwid_03"><span class="data_text number">23,000,000</span></td>
+														<td class="align_type3 colwid_04 bgtype2"><span class="data_text number">6,000,000</span></td>
+														<td class="align_type3 colwid_05"><span class="data_text number">23,000,000</span></td>
+														<td class="align_type3 colwid_06 bgtype2"><span class="data_text number">6,000,000</span></td>
+														<td class="align_type3 colwid_07"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_08 bgtype2"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_09"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_10 bgtype2"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_11"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_12 bgtype2"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_13"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_14 bgtype2"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_15"><span class="data_text number">2.5</span></td>
+														<td class="align_type3 colwid_16 bgtype2"><span class="data_text number">2.5</span></td>
+														<td class="align_type3 colwid_17"><span class="data_text number">98,000</span></td>
+														<td class="align_type3 colwid_18 bgtype2"><span class="data_text number">98,000</span></td>
+														<td class="align_type3 colwid_19"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_20 bgtype2"><span class="data_text number">46</span></td>
+													</tr>
+													<tr>
+														<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+														<td class="colwid_02"><span class="data_text">05.02</span></td>
+														<td class="align_type3 colwid_03"><span class="data_text number">23,000,000</span></td>
+														<td class="align_type3 colwid_04 bgtype2"><span class="data_text number">6,000,000</span></td>
+														<td class="align_type3 colwid_05"><span class="data_text number">23,000,000</span></td>
+														<td class="align_type3 colwid_06 bgtype2"><span class="data_text number">6,000,000</span></td>
+														<td class="align_type3 colwid_07"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_08 bgtype2"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_09"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_10 bgtype2"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_11"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_12 bgtype2"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_13"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_14 bgtype2"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_15"><span class="data_text number">2.5</span></td>
+														<td class="align_type3 colwid_16 bgtype2"><span class="data_text number">2.5</span></td>
+														<td class="align_type3 colwid_17"><span class="data_text number">98,000</span></td>
+														<td class="align_type3 colwid_18 bgtype2"><span class="data_text number">98,000</span></td>
+														<td class="align_type3 colwid_19"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_20 bgtype2"><span class="data_text number">46</span></td>
+													</tr>
+													<tr>
+														<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+														<td class="colwid_02"><span class="data_text">05.02</span></td>
+														<td class="align_type3 colwid_03"><span class="data_text number">23,000,000</span></td>
+														<td class="align_type3 colwid_04 bgtype2"><span class="data_text number">6,000,000</span></td>
+														<td class="align_type3 colwid_05"><span class="data_text number">23,000,000</span></td>
+														<td class="align_type3 colwid_06 bgtype2"><span class="data_text number">6,000,000</span></td>
+														<td class="align_type3 colwid_07"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_08 bgtype2"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_09"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_10 bgtype2"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_11"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_12 bgtype2"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_13"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_14 bgtype2"><span class="data_text number">-</span></td>
+														<td class="align_type3 colwid_15"><span class="data_text number">2.5</span></td>
+														<td class="align_type3 colwid_16 bgtype2"><span class="data_text number">2.5</span></td>
+														<td class="align_type3 colwid_17"><span class="data_text number">98,000</span></td>
+														<td class="align_type3 colwid_18 bgtype2"><span class="data_text number">98,000</span></td>
+														<td class="align_type3 colwid_19"><span class="data_text number">46</span></td>
+														<td class="align_type3 colwid_20 bgtype2"><span class="data_text number">46</span></td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<div class="tfoot_table_wrap type2">
+											<table class="data_table tfoot_table">
+												<tfoot>
+													<tr>
+														<td class="has_check colwid_01"></td>
+														<td class="colwid_02">
+															<p class="tf_total_text">합계</p>
+														</td>
+														<td class="align_type3 colwid_03">
+															<p class="tf_total_text">81,000,0000</p>
+														</td>
+														<td class="align_type3 colwid_04">
+															<p class="tf_total_text">81,000,0000</p>
+														</td>
+														<td class="align_type3 colwid_05">
+															<p class="tf_total_text">11,200,000</p>
+														</td>
+														<td class="align_type3 colwid_06">
+															<p class="tf_total_text">11,200,000</p>
+														</td>
+														<td class="align_type3 colwid_07">
+															<p class="tf_total_text">105</p>
+														</td>
+														<td class="align_type3 colwid_08">
+															<p class="tf_total_text">105</p>
+														</td>
+														<td class="align_type3 colwid_09">
+															<p class="tf_total_text">73</p>
+														</td>
+														<td class="align_type3 colwid_10">
+															<p class="tf_total_text">73</p>
+														</td>
+														<td class="align_type3 colwid_11">
+															<p class="tf_total_text">5</p>
+														</td>
+														<td class="align_type3 colwid_12">
+															<p class="tf_total_text">5</p>
+														</td>
+														<td class="align_type3 colwid_13">
+															<p class="tf_total_text">4</p>
+														</td>
+														<td class="align_type3 colwid_14">
+															<p class="tf_total_text">4</p>
+														</td>
+														<td class="align_type3 colwid_15">
+															<p class="tf_total_text">5</p>
+														</td>
+														<td class="align_type3 colwid_16">
+															<p class="tf_total_text">285</p>
+														</td>
+														<td class="align_type3 colwid_17">
+															<p class="tf_total_text">285</p>
+														</td>
+														<td class="align_type3 colwid_18">
+															<p class="tf_total_text">285</p>
+														</td>
+														<td class="align_type3 colwid_19">
+															<p class="tf_total_text">285</p>
+														</td>
+														<td class="align_type3 colwid_20">
+															<p class="tf_total_text">285</p>
+														</td>
+													</tr>
+												</tfoot>
+											</table>
+										</div>
+									</div>
+									<p class="data_table_paging">
+										<span class="data_paging_current">1</span>
+										<span class="data_paging_part">/</span>
+										<span class="data_paging_length">20</span>
+									</p>
+								</div>
+							</div>
 						</div>
 						<div class="tabcont" id="tabcont_04">
 							<div class="tbcount_row">
 								<p class="tbcount_para">총 234건</p>
+								<p class="tbcount_para sym">중 <strong>2</strong>건 선택됨</p>
 							</div>
-							고객분류
+							<div class="data_table_wrap" data-row="20" id="tctable_04">
+								<style>
+									/* 폭 조절 */
+									#tctable_04 .colwid_01 {}
+
+									#tctable_04 .colwid_02 {
+										padding: 0 1.5%;
+									}
+
+									#tctable_04 .colwid_03 {
+										width: 12%;
+									}
+
+									#tctable_04 .colwid_04 {
+										width: 12%;
+									}
+
+									#tctable_04 .colwid_05 {
+										width: 12%;
+									}
+
+									#tctable_04 .colwid_06 {
+										width: 12%;
+									}
+
+									#tctable_04 .colwid_07 {
+										width: 12%;
+									}
+
+									#tctable_04 .colwid_08 {
+										width: 13%;
+									}
+
+									#tctable_04 .colwid_09 {
+										width: 13%;
+										padding-right: 3%;
+									}
+								</style>
+								<div class="thead_table_wrap">
+									<table class="data_table thead_table">
+										<thead>
+											<tr>
+												<th class="has_check colwid_01"><input type="checkbox" class="design_check" name="total_check"></th>
+												<th class="colwid_02"><a href="javascript:;" class="data_th define_sort">고객분류</a></th>
+												<th class="align_type3 colwid_03"><a href="javascript:;" class="data_th define_sort">매출(백만원)</a></th>
+												<th class="align_type3 colwid_04"><a href="javascript:;" class="data_th define_sort">대당매출(원)</a></th>
+												<th class="align_type3 colwid_05"><a href="javascript:;" class="data_th define_sort">예약(건)</a></th>
+												<th class="align_type3 colwid_06"><a href="javascript:;" class="data_th define_sort">취소(건)</a></th>
+												<th class="align_type3 colwid_07"><a href="javascript:;" class="data_th define_sort">대여기간(일)</a></th>
+												<th class="align_type3 colwid_08"><a href="javascript:;" class="data_th define_sort">객단가(원)</a></th>
+												<th class="align_type3 colwid_09"><a href="javascript:;" class="data_th define_sort">운영대수</a></th>
+											</tr>
+										</thead>
+									</table>
+								</div>
+								<div class="tbody_table_wrap">
+									<table class="data_table">
+										<tbody>
+											<tr>
+												<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+												<td class="align_type2 colwid_02"><span class="data_text">SKR 회원</span></td>
+												<td class="align_type3 colwid_03"><span class="data_text number">15,000,000</span></td>
+												<td class="align_type3 colwid_04"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_05"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_06"><span class="data_text number">-</span></td>
+												<td class="align_type3 colwid_07"><span class="data_text number">3.5</span></td>
+												<td class="align_type3 colwid_08"><span class="data_text number">65,000</span></td>
+												<td class="align_type3 colwid_09"><span class="data_text number">24</span></td>
+											</tr>
+											<tr>
+												<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+												<td class="align_type2 colwid_02"><span class="data_text">SKR 임직원</span></td>
+												<td class="align_type3 colwid_03"><span class="data_text number">15,000,000</span></td>
+												<td class="align_type3 colwid_04"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_05"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_06"><span class="data_text number">-</span></td>
+												<td class="align_type3 colwid_07"><span class="data_text number">3.5</span></td>
+												<td class="align_type3 colwid_08"><span class="data_text number">65,000</span></td>
+												<td class="align_type3 colwid_09"><span class="data_text number">24</span></td>
+											</tr>
+											<tr>
+												<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+												<td class="align_type2 colwid_02"><span class="data_text">비회원</span></td>
+												<td class="align_type3 colwid_03"><span class="data_text number">15,000,000</span></td>
+												<td class="align_type3 colwid_04"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_05"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_06"><span class="data_text number">-</span></td>
+												<td class="align_type3 colwid_07"><span class="data_text number">3.5</span></td>
+												<td class="align_type3 colwid_08"><span class="data_text number">65,000</span></td>
+												<td class="align_type3 colwid_09"><span class="data_text number">24</span></td>
+											</tr>
+											<tr>
+												<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+												<td class="align_type2 colwid_02"><span class="data_text">기타</span></td>
+												<td class="align_type3 colwid_03"><span class="data_text number">15,000,000</span></td>
+												<td class="align_type3 colwid_04"><span class="data_text number">90,000</span></td>
+												<td class="align_type3 colwid_05"><span class="data_text number">1</span></td>
+												<td class="align_type3 colwid_06"><span class="data_text number">-</span></td>
+												<td class="align_type3 colwid_07"><span class="data_text number">3.5</span></td>
+												<td class="align_type3 colwid_08"><span class="data_text number">65,000</span></td>
+												<td class="align_type3 colwid_09"><span class="data_text number">24</span></td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="tfoot_table_wrap">
+									<table class="data_table tfoot_table">
+										<tfoot>
+											<tr>
+												<td class="has_check colwid_01"></td>
+												<td class="colwid_02">
+													<p class="tf_total_text">합계</p>
+												</td>
+												<td class="align_type3 colwid_03">
+													<p class="tf_total_text">81,000,0000</p>
+												</td>
+												<td class="align_type3 colwid_04">
+													<p class="tf_total_text">11,200,000</p>
+												</td>
+												<td class="align_type3 colwid_05">
+													<p class="tf_total_text">105</p>
+												</td>
+												<td class="align_type3 colwid_06">
+													<p class="tf_total_text">5</p>
+												</td>
+												<td class="align_type3 colwid_07">
+													<p class="tf_total_text">4</p>
+												</td>
+												<td class="align_type3 colwid_08">
+													<p class="tf_total_text">325,450</p>
+												</td>
+												<td class="align_type3 colwid_09">
+													<p class="tf_total_text">285</p>
+												</td>
+											</tr>
+										</tfoot>
+									</table>
+								</div>
+							</div>
+							<p class="data_table_paging">
+								<span class="data_paging_current">1</span>
+								<span class="data_paging_part">/</span>
+								<span class="data_paging_length">20</span>
+							</p>
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
+
 		<!-- 레이어팝업 -->
 		<div class="dimlayer_z fulltype" id="main_popup">
 			<div class="fullpop_dim"></div>
@@ -815,9 +2014,9 @@
 									</div>
 								</div>
 								<div class="sb_content">
-									<div style="background:#ccc;display:flex;align-items:center;justify-content:center;width:100%;height:190px;font-size:12px;">
+									<div style="background:#ccc;position:relative;display:flex;align-items:center;justify-content:center;width:100%;height:190px;font-size:12px;">
 										chart
-										<div class="chart_tooltip_box">
+										<div class="chart_tooltip_box" style="top:30px;left:100px">
 											<table class="chart_tooltip_tb">
 												<tr>
 													<th><span class="chart_tooltip_label">실제 매출</span></th>
@@ -890,10 +2089,10 @@
 				<div class="fullpop_titlow">
 					<h4 class="fullpop_title">상세지표</h4>
 				</div>
-				<div class="fullpop_contlow">
+				<div class="fullpop_contlow type2">
 					<div class="fullpop_contlow_in">
 						<div class="bartab_menu_row">
-							<ul class="bartab_menu_list">
+							<ul class="bartab_menu_list" data-targetGroup="#detail_cont_group">
 								<li class="active"><a href="#bartab_cont01" class="bartab_menu">총 매출</a></li>
 								<li><a href="#bartab_cont02" class="bartab_menu">일 평균 매출</a></li>
 								<li><a href="#bartab_cont03" class="bartab_menu">총 예약</a></li>
@@ -902,7 +2101,7 @@
 								<li><a href="#bartab_cont06" class="bartab_menu">평균 대여기간</a></li>
 							</ul>
 						</div>
-						<div class="bartab_cont_row">
+						<div class="bartab_cont_row" id="detail_cont_group">
 							<div class="bartab_cont active" id="bartab_cont01">
 								<p class="chart_count_row">단위: 백만원</p>
 								<div style="background:#ccc;display:flex;align-items:center;justify-content:center;width:100%;height:190px;font-size:12px;">총 매출 chart</div>
@@ -933,23 +2132,52 @@
 				<button type="button" class="btn_layerclose"><span class="hdtext">닫기</span></button>
 			</div>
 		</div>
-		<div class="custom_dim_layer_zone">
-			<div class="custom_dim_clone_wrap"></div>
-			<div class="custom_dim_layer_wrap">
-				<div class="date_range_input_wrap">
-					<input type="text" class="date_range_input">
-				</div>
+		<div class="dim_layer_wrap">
+			<div class="dim_pos_wrap">
+				<input type="text" class="date_range_input" placeholder="시작일 ~ 종료일">
 			</div>
 		</div>
 		<!-- // 레이어팝업 -->
 	</div>
 	<script src="./js/jquery-3.4.1.min.js"></script>
-	<script src="./js/daterangepicker.js"></script>
 	<script src="./js/moment.min.js"></script>
+	<script src="./js/daterangepicker.js"></script>
 	<script src="./js/dynamicListener.min.js"></script>
 	<script src="./js/ui.js"></script>
 	<script>
 		menuRock("#menu02");
+
+		dynamicTab(); // tab
+
+		$(window).on("load", function() {
+			callDimLayer({
+				hideCallback() {
+					console.log('hide');
+				}
+			}); // 직접 입력 
+		});
+
+
+
+		dataTableFunc.bindEvent(); // data table
+		dataTableFunc.drawCallBack("#tctable_01"); // data table 차량그룹
+		dataTableFunc.drawCallBack("#tctable_02"); // data table 접수일자
+		dataTableFunc.drawCallBack("#tctable_03_01"); // data table 대여일자 - 비교선택 없음
+		dataTableFunc.drawCallBack("#tctable_03_02"); // data table 대여일자 - 전월
+		dataTableFunc.drawCallBack("#tctable_03_03"); // data table 대여일자 - 전년동월
+		dataTableFunc.drawCallBack("#tctable_04"); // data table 고객분류
+
+		// 퍼블확인용 
+		$(".cont_tabmenu , [name='sort_radio']").on("click", function() {
+			setTimeout(() => {
+				dataTableFunc.drawCallBack("#tctable_01"); // data table 차량그룹
+				dataTableFunc.drawCallBack("#tctable_02"); // data table 접수일자
+				dataTableFunc.drawCallBack("#tctable_03_01"); // data table 대여일자 - 비교선택 없음
+				dataTableFunc.drawCallBack("#tctable_03_02"); // data table 대여일자 - 전월
+				dataTableFunc.drawCallBack("#tctable_03_03"); // data table 대여일자 - 전년동월
+				dataTableFunc.drawCallBack("#tctable_04"); // data table 고객분류
+			}, 30);
+		});
 
 		// 퍼블확인용
 		let url = window.location.href.split('?')[1];

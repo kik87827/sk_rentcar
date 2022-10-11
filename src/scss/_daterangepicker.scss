@@ -190,7 +190,7 @@
 }
 
 .daterangepicker td.in-range {
-  background-color: #ebf4f8;
+  background-color: #eff7f7;
   border-color: transparent;
   color: #000;
   border-radius: 0;
@@ -209,7 +209,7 @@
 }
 
 .daterangepicker td.active, .daterangepicker td.active:hover {
-  background-color: #357ebd;
+  background-color: #078E8E;
   border-color: transparent;
   color: #fff;
 }
@@ -233,12 +233,13 @@
 }
 
 .daterangepicker select.monthselect {
-  margin-right: 2%;
-  width: 56%;
+  
+  // width: 56%;
 }
 
 .daterangepicker select.yearselect {
-  width: 40%;
+  // width: 40%;
+  margin-right: 5px;
 }
 
 .daterangepicker select.hourselect, .daterangepicker select.minuteselect, .daterangepicker select.secondselect, .daterangepicker select.ampmselect {
@@ -280,10 +281,17 @@
 }
 
 .daterangepicker .drp-buttons .btn {
-  margin-left: 8px;
+  margin-left: 4px;
   font-size: 12px;
-  font-weight: bold;
-  padding: 4px 8px;
+  font-weight: 500;
+  padding: 6px 10px;
+  background:#ddd;
+  border-radius:3px;
+  color:#000;
+  &.btn-primary{
+    background:#078E8E;
+    color:#fff;
+  }
 }
 
 .daterangepicker.show-ranges.single.rtl .drp-calendar.left {

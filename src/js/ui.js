@@ -1,3 +1,4 @@
+commonLayout();
 
 
 function menuRock(item){
@@ -6,6 +7,176 @@ function menuRock(item){
         itemObj.classList.add("active");
     } 
 }
+
+function commonLayout(){
+    let bodyDOM = document.querySelector("body");
+    bodyDOM.style.minWidth = (1920 - getScrollBarWidth()) + "px";
+}
+var dataTableFunc = {
+    bindEvent(){
+        addDynamicEventListener(document.body, 'click', '.fold_item', function(e) {
+            e.preventDefault();
+            
+            let thisObj = e.target;
+            let thisObjParent = thisObj.closest(".depth_one");
+            let thisObjParentTarget = thisObjParent.nextElementSibling;
+
+            if(thisObj.classList.contains(".fold_item")){
+                thisObj.classList.toggle("active");
+            }else{
+                thisObj.closest(".fold_item").classList.toggle("active");
+            }
+            thisObjParentTarget.classList.toggle("active");
+
+        },false);
+        addDynamicEventListener(document.body, 'click', '[name="total_check"]', function(e) {
+            let etarget = e.target;
+            let etargetParent = etarget.closest(".data_table_wrap");
+            let etargetBody = etargetParent.querySelector(".tbody_table_wrap");
+            let etargetBodycheck = etargetBody.querySelectorAll(".design_check");
+            etargetBodycheck.forEach((element)=>{
+                element.checked = etarget.checked;
+            })
+        },false);
+    },
+    drawCallBack(target){
+        var targetObj = document.querySelector(target);
+        var thisHeadwrap = targetObj.querySelector(".thead_table_wrap");
+        var thisBodywrap = targetObj.querySelector(".tbody_table_wrap");
+        var thisFootwrap = targetObj.querySelector(".tfoot_table_wrap");
+        var optionRow = parseInt(targetObj.getAttribute("data-row"));
+        var getPosDom = thisBodywrap.querySelectorAll("tr:not(.depth_two)")[optionRow];
+        if(getPosDom !== undefined){
+            thisBodywrap.style.maxHeight = getPosDom.offsetTop + "px";
+            thisHeadwrap.style.paddingRight = getScrollBarWidth() + "px";
+            thisFootwrap.style.paddingRight = getScrollBarWidth() + "px";
+        }
+        // console.log(target);
+    }
+}
+// function dataTableFunc(){
+//     let data_table_wrap = document.querySelectorAll(".data_table_wrap");
+//     addDynamicEventListener(document.body, 'click', '.fold_item', function(e) {
+//         e.preventDefault();
+        
+//         let thisObj = e.target;
+//         let thisObjParent = thisObj.closest(".depth_one");
+//         let thisObjParentTarget = thisObjParent.nextElementSibling;
+
+//         if(thisObj.classList.contains(".fold_item")){
+//             thisObj.classList.toggle("active");
+//         }else{
+//             thisObj.closest(".fold_item").classList.toggle("active");
+//         }
+//         thisObjParentTarget.classList.toggle("active");
+
+//     },false);
+//     data_table_wrap.forEach((element) => {
+//         let thisTbwrap = element;
+//         let thisHeadwrap = thisTbwrap.querySelector(".thead_table_wrap");
+//         let thisBodywrap = thisTbwrap.querySelector(".tbody_table_wrap");
+//         let thisFootwrap = thisTbwrap.querySelector(".tfoot_table_wrap");
+//         let thisTotalCheck = thisHeadwrap.querySelector("[name='total_check']");
+//         let thisBodyCheck = thisTbwrap.querySelectorAll(".design_check");
+//         let optionRow = parseInt(thisTbwrap.getAttribute("data-row"));
+//         let getPosDom = thisBodywrap.querySelectorAll("tr:not(.depth_two)")[optionRow];
+//         if(getPosDom !== undefined){
+//             thisBodywrap.style.maxHeight = getPosDom.offsetTop + "px";
+//             thisHeadwrap.style.paddingRight = getScrollBarWidth() + "px";
+//             thisFootwrap.style.paddingRight = getScrollBarWidth() + "px";
+//         }
+        
+//         thisTotalCheck.addEventListener("click",(e)=>{
+//             thisBodyCheck.forEach((element)=>{
+//                 element.checked = thisTotalCheck.checked;
+//             })
+//         });
+//     });
+// }
+
+
+function dynamicTab(){
+    addDynamicEventListener(document.body, 'click', '[data-formTarget]', function(e) {
+        tabRadioAction(e.target);
+    });
+
+    addDynamicEventListener(document.body, 'click', '.bartab_menu , .cont_tabmenu', function(e) {
+        e.preventDefault();
+        tabAction(e.target);
+    });
+    
+    function tabAction(target){
+        let thisTab = target;
+        let thisTabLi = thisTab.closest("li");
+        let thisTabTarget = thisTab.getAttribute("href");
+        let thisTabTargetDom = document.querySelector(thisTabTarget);
+        let thisTabParent = thisTab.closest("[data-targetGroup]");
+        let thisTabParentNot = siblings(thisTabLi);
+        let thisTargetGroup = thisTabParent.getAttribute("data-targetGroup");
+        let thisTargetGroupDom = document.querySelector(thisTargetGroup);
+        let thisTargetGroupCont = [].slice.call(thisTargetGroupDom.children);
+        thisTargetGroupCont.forEach((element)=>{
+            element.classList.remove("active");
+        });
+        thisTabTargetDom.classList.add("active");
+        
+        
+        thisTabParentNot.forEach((element)=>{
+            element.classList.remove("active");
+        });
+        thisTabLi.classList.add("active");
+    }
+
+    function tabRadioAction(target){
+        let thisTab = target;
+        let thisTabLi = thisTab.closest("li");
+        let thisTabTarget = thisTab.getAttribute("data-formTarget");
+        let thisTabTargetDom = document.querySelector(thisTabTarget);
+        let thisTabParent = thisTab.closest("[data-formGroup]");
+        let thisTabParentNot = siblings(thisTabLi);
+        let thisTargetGroup = thisTabParent.getAttribute("data-formGroup");
+        let thisTargetGroupDom = document.querySelector(thisTargetGroup);
+        let thisTargetGroupCont = thisTargetGroupDom !== undefined ? [].slice.call(thisTargetGroupDom.children) : null;
+
+        if(thisTab.disabled){return;}
+        thisTargetGroupCont.forEach((element)=>{
+            element.classList.remove("active");
+        });
+        thisTabTargetDom.classList.add("active");
+        
+        
+        thisTabParentNot.forEach((element)=>{
+            element.classList.remove("active");
+        });
+        thisTabLi.classList.add("active");
+    }
+}
+
+function siblings(t) {
+    var children = t.parentElement.children;
+    var tempArr = [];
+
+    for (var i = 0; i < children.length; i++) {
+        tempArr.push(children[i]);
+    }
+
+    return tempArr.filter(function(e){
+        return e != t;
+    });
+}
+
+function getScrollBarWidth() {
+  let outerDivitem = document.createElement('div');
+  let innerDivitem = document.createElement('div');
+  let getWidth = 0;
+  outerDivitem.setAttribute("style",`width: 100px; overflow:scroll; height:100px;outline:1px solid red`)
+  document.body.append(outerDivitem);
+  outerDivitem.append(innerDivitem);
+  innerDivitem.setAttribute("style",`width: 100%;height:110%;`)
+  getWidth = innerDivitem.getBoundingClientRect().width;
+  outerDivitem.remove();
+  return 100 - getWidth;
+};
 
 let layerPopup = {
     show(option){
@@ -199,4 +370,48 @@ DesignModal.prototype.bindEvent = function (option) {
             }
         }, false);
     }
+}
+
+function callDimLayer(option){
+    const d_layer_call = document.querySelectorAll(".d_layer_call");
+    const appwrap = document.querySelector("#app");
+    let dim_layer_wrap = document.querySelector(".dim_layer_wrap");
+    d_layer_call.forEach((element) => {
+        // action(element);
+        element.addEventListener("click",(e)=>{
+            let thisObj = e.currentTarget;
+            action(thisObj);
+        });
+    });
+
+    function action(target){
+        let d_parent = target.closest(".d_parent");
+        let dim_pos_wrap = dim_layer_wrap.querySelector(".dim_pos_wrap");
+        d_parent.classList.add("call_open");
+        dim_layer_wrap.classList.add("active");
+        dim_pos_wrap.setAttribute("style",`top:${d_parent.getBoundingClientRect().top + d_parent.getBoundingClientRect().height + 10}px;left:${d_parent.getBoundingClientRect().left}px`)
+        $('input.date_range_input').trigger("focus");
+    }
+    // 달력
+    $('input.date_range_input').daterangepicker({
+        autoUpdateInput : false, 
+        showDropdowns: true,
+        locale : {
+            format : 'YYYY-MM-DD',
+            "daysOfWeek": ["일","월","화","수","목","금","토"],
+            "monthNames": ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"],
+            cancelLabel: '취소',
+            applyLabel: '적용'
+        }
+    });
+    $("input.date_range_input").on('apply.daterangepicker', function(ev, picker) {
+        $(this).val(picker.startDate.format('YYYY-MM-DD') + ' ~ ' + picker.endDate.format('YYYY-MM-DD'));
+    });
+    $("input.date_range_input").on('hide.daterangepicker', function(ev, picker) {
+        $(".choice_date_box").text(picker.startDate.format('YYYY-MM-DD') + ' ~ ' + picker.endDate.format('YYYY-MM-DD'));
+        $(".dim_layer_wrap").removeClass("active").css({top : '', left : ''});
+        if("hideCallback" in option){
+            option.hideCallback();
+        }
+    });
 }

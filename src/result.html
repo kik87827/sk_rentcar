@@ -5,7 +5,646 @@
 	<div id="app">
 		@@include('./include/header.html')
 		<section class="middle_wrap">
-			내용이 들어갑니다.
+			<div class="cont_vitem_wrap">
+				<div class="cont_vitem define_sort">
+					<div class="sort_main">
+						<dl class="sort_hor_item">
+							<dt><span class="sort_hor_label">지점</span></dt>
+							<dd>
+								<div class="choice_box_list">
+									<input type="radio" class="boxform_obj" name="cate01" id="cate01_01">
+									<label for="cate01_01" class="boxform_label">전체</label>
+									<input type="radio" class="boxform_obj" name="cate01" id="cate01_02">
+									<label for="cate01_02" class="boxform_label">SKR</label>
+									<input type="radio" class="boxform_obj" name="cate01" id="cate01_03">
+									<label for="cate01_03" class="boxform_label">빌리카</label>
+								</div>
+							</dd>
+						</dl>
+						<dl class="sort_hor_item">
+							<dt><span class="sort_hor_label">실적 집계 기준</span></dt>
+							<dd>
+								<div class="choice_box_list">
+									<input type="radio" class="boxform_obj" name="cate02" id="cate02_01">
+									<label for="cate02_01" class="boxform_label">출발일자</label>
+									<input type="radio" class="boxform_obj" name="cate02" id="cate02_02">
+									<label for="cate02_02" class="boxform_label">도착일자</label>
+								</div>
+							</dd>
+						</dl>
+						<dl class="sort_hor_item">
+							<dt><span class="sort_hor_label">조회 기간</span></dt>
+							<dd>
+								<div class="choice_box_list">
+									<input type="radio" class="boxform_obj" name="cate03" id="cate03_01">
+									<label for="cate03_01" class="boxform_label">어제</label>
+									<input type="radio" class="boxform_obj" name="cate03" id="cate03_02">
+									<label for="cate03_02" class="boxform_label">전월</label>
+									<input type="radio" class="boxform_obj" name="cate03" id="cate03_03">
+									<label for="cate03_03" class="boxform_label">당월</label>
+									<input type="radio" class="boxform_obj" name="cate03" id="cate03_04">
+									<label for="cate03_04" class="boxform_label">직접 입력</label>
+								</div>
+								<div class="choice_date_box">2022.00.00</div>
+							</dd>
+						</dl>
+					</div>
+					<div class="sort_sub">
+						<p class="sort_guide_text">최종 업데이트 : 2021년 06월 15일</p>
+					</div>
+				</div>
+				<div class="cont_vitem define_sum">
+					<div class="sumbox_group">
+						<div class="sumbox_long">
+							<div class="sumbox_title_row">
+								<div class="sumbox_main_title_fxwrap">
+									<p class="sbmain_title">이 달의 목표 / 매출</p>
+									<p class="sbmain_unit">(백만원)</p>
+								</div>
+								<div class="sumbox_util_wrap">
+									<a href="#" class="btn_moreitem"><span class="moreitem_text">자세히 보기</span></a>
+								</div>
+							</div>
+							<div class="sumbox_total_row">
+								<div class="sumbox_total_main">
+									<p class="submox_total_number">4,800</p>
+								</div>
+								<div class="sumbox_total_sub">
+									<div class="sb_total_vitem">
+										<div class="sb_total_label_row">
+											<p class="sb_total_label_text">올해 목표대비 달성률</p>
+											<div class="sb_total_sum_obj">
+												<p class="sb_total_sum_number">66.7</p>
+												<p class="sb_total_sum_unit">%</p>
+											</div>
+										</div>
+										<div class="sb_total_grape_row">
+											<div class="sb_total_grape_wrap"><span class="sb_total_grape_current" style="width:66.7%"></span></div>
+										</div>
+									</div>
+									<div class="sb_total_vitem">
+										<div class="sb_total_label_row">
+											<p class="sb_total_label_text">전년 동월 목표대비 달성률</p>
+											<div class="sb_total_sum_obj">
+												<p class="sb_total_sum_number">88</p>
+												<p class="sb_total_sum_unit">%</p>
+											</div>
+										</div>
+										<div class="sb_total_grape_row">
+											<div class="sb_total_grape_wrap"><span class="sb_total_grape_current" style="width:88%"></span></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="sumbox_short">
+							<div class="sumbox_title_fxwrap">
+								<p class="sb_title">총 매출</p>
+								<p class="sb_unit">(백만원)</p>
+							</div>
+							<div class="sumbox_current_row">
+								<p class="sumbox_current">200</p>
+							</div>
+							<div class="sumbox_chart_row">
+								<div class="sumchart_wrap">
+									<div style="background:#ccc;display:flex;align-items:center;justify-content:center;width:100%;height:49px;font-size:12px;">chart</div>
+								</div>
+								<div class="sumchart_guide_wrap">
+									<p class="sumchart_guide">09.11 대비 <strong class="sumchart_guide_up">+5%</strong></p>
+								</div>
+							</div>
+						</div>
+						<div class="sumbox_short">
+							<div class="sumbox_title_fxwrap">
+								<p class="sb_title">일 평균 매출</p>
+								<p class="sb_unit">(백만원)</p>
+							</div>
+							<div class="sumbox_current_row">
+								<p class="sumbox_current">200</p>
+							</div>
+							<div class="sumbox_chart_row">
+								<div class="sumchart_wrap">
+									<div style="background:#ccc;display:flex;align-items:center;justify-content:center;width:100%;height:49px;font-size:12px;">chart</div>
+								</div>
+								<div class="sumchart_guide_wrap">
+									<p class="sumchart_guide">09.11 대비 <strong class="sumchart_guide_up">+5%</strong></p>
+								</div>
+							</div>
+						</div>
+						<div class="sumbox_short">
+							<div class="sumbox_title_fxwrap">
+								<p class="sb_title">총 예약</p>
+								<p class="sb_unit">(건)</p>
+							</div>
+							<div class="sumbox_current_row">
+								<p class="sumbox_current">250</p>
+							</div>
+							<div class="sumbox_chart_row">
+								<div class="sumchart_wrap">
+									<div style="background:#ccc;display:flex;align-items:center;justify-content:center;width:100%;height:49px;font-size:12px;">chart</div>
+								</div>
+								<div class="sumchart_guide_wrap">
+									<p class="sumchart_guide">09.11 대비 <strong class="sumchart_guide_up">+5%</strong></p>
+								</div>
+							</div>
+						</div>
+						<div class="sumbox_short">
+							<div class="sumbox_title_global_wrap">
+								<div class="sumbox_title_fxwrap">
+									<p class="sb_title">총 취소</p>
+									<p class="sb_unit">(건)</p>
+								</div>
+								<div class="sumbox_title_util_wrap">
+									<p class="sbtitle_util">재 계약 <strong>5건</strong></p>
+								</div>
+							</div>
+							<div class="sumbox_current_row">
+								<p class="sumbox_current">250</p>
+							</div>
+							<div class="sumbox_chart_row">
+								<div class="sumchart_wrap">
+									<div style="background:#ccc;display:flex;align-items:center;justify-content:center;width:100%;height:49px;font-size:12px;">chart</div>
+								</div>
+								<div class="sumchart_guide_wrap">
+									<p class="sumchart_guide">09.11 대비 <strong class="sumchart_guide_up">+5%</strong></p>
+								</div>
+							</div>
+						</div>
+						<div class="sumbox_short">
+							<div class="sumbox_title_global_wrap type2">
+								<div class="sumbox_title_fxwrap">
+									<p class="sb_title">평균 가동률</p>
+									<p class="sb_unit">(%, 총 2,000대)</p>
+								</div>
+								<div class="sumbox_title_util_wrap">
+									<a href="#" class="btn_info_obj"><span class="hdtext">도움말</span></a>
+								</div>
+							</div>
+							<div class="sumbox_current_row">
+								<p class="sumbox_current">72</p>
+							</div>
+							<div class="sumbox_chart_row">
+								<div class="sumchart_wrap">
+									<div style="background:#ccc;display:flex;align-items:center;justify-content:center;width:100%;height:49px;font-size:12px;">chart</div>
+								</div>
+								<div class="sumchart_guide_wrap">
+									<p class="sumchart_guide">09.11 대비 <strong class="sumchart_guide_down">-3%</strong></p>
+								</div>
+							</div>
+						</div>
+						<div class="sumbox_short">
+							<div class="sumbox_title_fxwrap">
+								<p class="sb_title">평균 대여기간</p>
+								<p class="sb_unit">(건)</p>
+							</div>
+							<div class="sumbox_current_row">
+								<p class="sumbox_current">2.5</p>
+							</div>
+							<div class="sumbox_chart_row">
+								<div class="sumchart_wrap">
+									<div style="background:#ccc;display:flex;align-items:center;justify-content:center;width:100%;height:49px;font-size:12px;">chart</div>
+								</div>
+								<div class="sumchart_guide_wrap">
+									<p class="sumchart_guide">09.11 대비 <strong class="sumchart_guide_normal">0%</strong></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="cont_vitem define_data">
+					<div class="cont_tabmenu_row">
+						<div class="cont_tabmenu_main">
+							<ul class="cont_tabmenu_list">
+								<li class="active"><a href="#tabcont_01" class="cont_tabmenu">차량그룹</a></li>
+								<li><a href="#tabcont_02" class="cont_tabmenu">접수일자</a></li>
+								<li><a href="#tabcont_03" class="cont_tabmenu">대여일자</a></li>
+								<li><a href="#tabcont_04" class="cont_tabmenu">고객분류</a></li>
+							</ul>
+						</div>
+						<div class="cont_tabmenu_sub">
+							<ul class="cont_btn_list">
+								<li><a href="#" class="btn_icobox ico_excel"><span class="icobox_text">엑셀 다운로드</span></a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="cont_tabcont_row">
+						<div class="tabcont active" id="tabcont_01">
+							<div class="tbcount_row"><p class="tbcount_para">총 234건</p></div>
+							<div class="data_table_wrap">
+								<style>
+									#tctable_01 .colwid_01{}
+									#tctable_01 .colwid_02{width:4%;}
+									#tctable_01 .colwid_03{padding:0 30px;}
+									#tctable_01 .colwid_04{width:9%;}
+									#tctable_01 .colwid_05{width:8%;}
+									#tctable_01 .colwid_06{width:7%;}
+									#tctable_01 .colwid_07{width:7%;}
+									#tctable_01 .colwid_08{width:7%;}
+									#tctable_01 .colwid_09{width:6%;}
+									#tctable_01 .colwid_10{width:7%;}
+									#tctable_01 .colwid_11{width:7%;}
+									#tctable_01 .colwid_12{width:7%;}
+									#tctable_01 .colwid_13{width:7%;}
+									#tctable_01 .colwid_14{width:7%;padding-right:40px;}
+								</style>
+								<table class="data_table" id="tctable_01">
+									<thead>
+										<tr>
+											<th class="has_check colwid_01"><input type="checkbox" class="design_check"></th>
+											<th class="colwid_02"><a href="javascript:;" class="data_th define_sort">차형</a></th>
+											<th class="colwid_03"><span class="data_th">차정</span></th>
+											<th class="align_type3 colwid_04"><a href="javascript:;" class="data_th define_sort">매출(백만원)</a></th>
+											<th class="align_type3 colwid_05"><a href="javascript:;" class="data_th define_sort">대당매출(원)</a></th>
+											<th class="align_type3 colwid_06"><a href="javascript:;" class="data_th define_sort">예약(건)</a></th>
+											<th class="align_type3 colwid_07"><a href="javascript:;" class="data_th define_sort">가동률(%)</a></th>
+											<th class="align_type3 colwid_08"><a href="javascript:;" class="data_th define_sort">운행률(%)</a></th>
+											<th class="align_type3 colwid_09"><a href="javascript:;" class="data_th define_sort">취소(건)</a></th>
+											<th class="align_type3 colwid_10"><a href="javascript:;" class="data_th define_sort">대여기간(일)</a></th>
+											<th class="align_type3 colwid_11"><a href="javascript:;" class="data_th define_sort">객단가(원)</a></th>
+											<th class="align_type3 colwid_12"><a href="javascript:;" class="data_th define_sort">회전율(%)</a></th>
+											<th class="align_type3 colwid_13"><a href="javascript:;" class="data_th define_sort">회수율(%)</a></th>
+											<th class="align_type3 colwid_14"><a href="javascript:;" class="data_th define_sort">운영대수</a></th>
+										</tr>
+									</thead>
+									<tfoot>
+										<tr>
+											<td class="has_check colwid_01"></td>
+											<td class="colwid_02"><p class="tf_total_text">합계</p></td>
+											<td class="align_type2 colwid_03"></td>
+											<td class="align_type3 colwid_04"><p class="tf_total_text">81,000,0000</p></td>
+											<td class="align_type3 colwid_05"><p class="tf_total_text">81,000,0000</p></td>
+											<td class="align_type3 colwid_06"><p class="tf_total_text">30</p></td>
+											<td class="align_type3 colwid_07"><p class="tf_total_text">30</p></td>
+											<td class="align_type3 colwid_08"><p class="tf_total_text">000</p></td>
+											<td class="align_type3 colwid_09"><p class="tf_total_text">000</p></td>
+											<td class="align_type3 colwid_10"><p class="tf_total_text">000</p></td>
+											<td class="align_type3 colwid_11"><p class="tf_total_text">000</p></td>
+											<td class="align_type3 colwid_12"><p class="tf_total_text">000</p></td>
+											<td class="align_type3 colwid_13"><p class="tf_total_text">000</p></td>
+											<td class="align_type3 colwid_14"><p class="tf_total_text">000</p></td>
+										</tr>
+									</tfoot>
+									<tbody>
+										<tr class="depth_one">
+											<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+											<td class="colwid_02"><a href="javascript:;" class="fold_item"><span class="fold_item_text">경차</span></a></td>
+											<td class="align_type2 colwid_03"><span class="data_text">-</span></td>
+											<td class="align_type3 colwid_04"><span class="data_text number">15,000,000</span></td>
+											<td class="align_type3 colwid_05"><span class="data_text number">90,000</span></td>
+											<td class="align_type3 colwid_06"><span class="data_text number">13</span></td>
+											<td class="align_type3 colwid_07"><span class="data_text number">13</span></td>
+											<td class="align_type3 colwid_08"><span class="data_text number">-</span></td>
+											<td class="align_type3 colwid_09"><span class="data_text number">1</span></td>
+											<td class="align_type3 colwid_10"><span class="data_text number">3</span></td>
+											<td class="align_type3 colwid_11"><span class="data_text number">90,000</span></td>
+											<td class="align_type3 colwid_12"><span class="data_text number">1</span></td>
+											<td class="align_type3 colwid_13"><span class="data_text number">1</span></td>
+											<td class="align_type3 colwid_14"><span class="data_text number">13</span></td>
+										</tr>
+										<tr class="depth_two">
+											<td colspan="14">
+												<div class="depth_table_wrap">
+													<div class="depth_table">
+														<div class="depth_tr">
+															<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
+															<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type2 colwid_03"><span class="data_text">K3 1.6(가솔린)</span></div>
+															<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
+															<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
+															<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
+															<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
+															<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
+															<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
+															<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
+														</div>
+														<div class="depth_tr">
+															<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
+															<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type2 colwid_03"><span class="data_text">올뉴아반떼 1.6(가솔린)</span></div>
+															<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
+															<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
+															<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
+															<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
+															<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
+															<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
+															<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
+														</div>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr class="depth_one">
+											<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+											<td class="colwid_02"><a href="javascript:;" class="fold_item active"><span class="fold_item_text">소형</span></a></td>
+											<td class="align_type2 colwid_03"><span class="data_text">-</span></td>
+											<td class="align_type3 colwid_04"><span class="data_text number">15,000,000</span></td>
+											<td class="align_type3 colwid_05"><span class="data_text number">90,000</span></td>
+											<td class="align_type3 colwid_06"><span class="data_text number">13</span></td>
+											<td class="align_type3 colwid_07"><span class="data_text number">13</span></td>
+											<td class="align_type3 colwid_08"><span class="data_text number">-</span></td>
+											<td class="align_type3 colwid_09"><span class="data_text number">1</span></td>
+											<td class="align_type3 colwid_10"><span class="data_text number">3</span></td>
+											<td class="align_type3 colwid_11"><span class="data_text number">90,000</span></td>
+											<td class="align_type3 colwid_12"><span class="data_text number">1</span></td>
+											<td class="align_type3 colwid_13"><span class="data_text number">1</span></td>
+											<td class="align_type3 colwid_14"><span class="data_text number">13</span></td>
+										</tr>
+										<tr class="depth_two active">
+											<td colspan="14">
+												<div class="depth_table_wrap">
+													<div class="depth_table">
+														<div class="depth_tr">
+															<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
+															<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type2 colwid_03"><span class="data_text">K3 1.6(가솔린)</span></div>
+															<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
+															<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
+															<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
+															<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
+															<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
+															<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
+															<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
+														</div>
+														<div class="depth_tr">
+															<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
+															<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type2 colwid_03"><span class="data_text">올뉴아반떼 1.6(가솔린)</span></div>
+															<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
+															<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
+															<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
+															<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
+															<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
+															<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
+															<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
+														</div>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr class="depth_one">
+											<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+											<td class="colwid_02"><a href="javascript:;" class="fold_item"><span class="fold_item_text">중형</span></a></td>
+											<td class="align_type2 colwid_03"><span class="data_text">-</span></td>
+											<td class="align_type3 colwid_04"><span class="data_text number">15,000,000</span></td>
+											<td class="align_type3 colwid_05"><span class="data_text number">90,000</span></td>
+											<td class="align_type3 colwid_06"><span class="data_text number">13</span></td>
+											<td class="align_type3 colwid_07"><span class="data_text number">13</span></td>
+											<td class="align_type3 colwid_08"><span class="data_text number">-</span></td>
+											<td class="align_type3 colwid_09"><span class="data_text number">1</span></td>
+											<td class="align_type3 colwid_10"><span class="data_text number">3</span></td>
+											<td class="align_type3 colwid_11"><span class="data_text number">90,000</span></td>
+											<td class="align_type3 colwid_12"><span class="data_text number">1</span></td>
+											<td class="align_type3 colwid_13"><span class="data_text number">1</span></td>
+											<td class="align_type3 colwid_14"><span class="data_text number">13</span></td>
+										</tr>
+										<tr class="depth_two">
+											<td colspan="14">
+												<div class="depth_table_wrap">
+													<div class="depth_table">
+														<div class="depth_tr">
+															<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
+															<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type2 colwid_03"><span class="data_text">K3 1.6(가솔린)</span></div>
+															<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
+															<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
+															<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
+															<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
+															<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
+															<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
+															<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
+														</div>
+														<div class="depth_tr">
+															<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
+															<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type2 colwid_03"><span class="data_text">올뉴아반떼 1.6(가솔린)</span></div>
+															<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
+															<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
+															<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
+															<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
+															<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
+															<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
+															<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
+														</div>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr class="depth_one">
+											<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+											<td class="colwid_02"><a href="javascript:;" class="fold_item"><span class="fold_item_text">대형</span></a></td>
+											<td class="align_type2 colwid_03"><span class="data_text">-</span></td>
+											<td class="align_type3 colwid_04"><span class="data_text number">15,000,000</span></td>
+											<td class="align_type3 colwid_05"><span class="data_text number">90,000</span></td>
+											<td class="align_type3 colwid_06"><span class="data_text number">13</span></td>
+											<td class="align_type3 colwid_07"><span class="data_text number">13</span></td>
+											<td class="align_type3 colwid_08"><span class="data_text number">-</span></td>
+											<td class="align_type3 colwid_09"><span class="data_text number">1</span></td>
+											<td class="align_type3 colwid_10"><span class="data_text number">3</span></td>
+											<td class="align_type3 colwid_11"><span class="data_text number">90,000</span></td>
+											<td class="align_type3 colwid_12"><span class="data_text number">1</span></td>
+											<td class="align_type3 colwid_13"><span class="data_text number">1</span></td>
+											<td class="align_type3 colwid_14"><span class="data_text number">13</span></td>
+										</tr>
+										<tr class="depth_two">
+											<td colspan="14">
+												<div class="depth_table_wrap">
+													<div class="depth_table">
+														<div class="depth_tr">
+															<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
+															<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type2 colwid_03"><span class="data_text">K3 1.6(가솔린)</span></div>
+															<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
+															<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
+															<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
+															<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
+															<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
+															<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
+															<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
+														</div>
+														<div class="depth_tr">
+															<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
+															<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type2 colwid_03"><span class="data_text">올뉴아반떼 1.6(가솔린)</span></div>
+															<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
+															<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
+															<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
+															<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
+															<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
+															<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
+															<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
+														</div>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr class="depth_one">
+											<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+											<td class="colwid_02"><a href="javascript:;" class="fold_item"><span class="fold_item_text">SUV</span></a></td>
+											<td class="align_type2 colwid_03"><span class="data_text">-</span></td>
+											<td class="align_type3 colwid_04"><span class="data_text number">15,000,000</span></td>
+											<td class="align_type3 colwid_05"><span class="data_text number">90,000</span></td>
+											<td class="align_type3 colwid_06"><span class="data_text number">13</span></td>
+											<td class="align_type3 colwid_07"><span class="data_text number">13</span></td>
+											<td class="align_type3 colwid_08"><span class="data_text number">-</span></td>
+											<td class="align_type3 colwid_09"><span class="data_text number">1</span></td>
+											<td class="align_type3 colwid_10"><span class="data_text number">3</span></td>
+											<td class="align_type3 colwid_11"><span class="data_text number">90,000</span></td>
+											<td class="align_type3 colwid_12"><span class="data_text number">1</span></td>
+											<td class="align_type3 colwid_13"><span class="data_text number">1</span></td>
+											<td class="align_type3 colwid_14"><span class="data_text number">13</span></td>
+										</tr>
+										<tr class="depth_two">
+											<td colspan="14">
+												<div class="depth_table_wrap">
+													<div class="depth_table">
+														<div class="depth_tr">
+															<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
+															<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type2 colwid_03"><span class="data_text">K3 1.6(가솔린)</span></div>
+															<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
+															<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
+															<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
+															<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
+															<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
+															<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
+															<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
+														</div>
+														<div class="depth_tr">
+															<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
+															<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type2 colwid_03"><span class="data_text">올뉴아반떼 1.6(가솔린)</span></div>
+															<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
+															<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
+															<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
+															<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
+															<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
+															<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
+															<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
+														</div>
+													</div>
+												</div>
+											</td>
+										</tr>
+										<tr class="depth_one">
+											<td class="has_check colwid_01"><input type="checkbox" class="design_check"></td>
+											<td class="colwid_02"><a href="javascript:;" class="fold_item"><span class="fold_item_text">승합</span></a></td>
+											<td class="align_type2 colwid_03"><span class="data_text">-</span></td>
+											<td class="align_type3 colwid_04"><span class="data_text number">15,000,000</span></td>
+											<td class="align_type3 colwid_05"><span class="data_text number">90,000</span></td>
+											<td class="align_type3 colwid_06"><span class="data_text number">13</span></td>
+											<td class="align_type3 colwid_07"><span class="data_text number">13</span></td>
+											<td class="align_type3 colwid_08"><span class="data_text number">-</span></td>
+											<td class="align_type3 colwid_09"><span class="data_text number">1</span></td>
+											<td class="align_type3 colwid_10"><span class="data_text number">3</span></td>
+											<td class="align_type3 colwid_11"><span class="data_text number">90,000</span></td>
+											<td class="align_type3 colwid_12"><span class="data_text number">1</span></td>
+											<td class="align_type3 colwid_13"><span class="data_text number">1</span></td>
+											<td class="align_type3 colwid_14"><span class="data_text number">13</span></td>
+										</tr>
+										<tr class="depth_two">
+											<td colspan="14">
+												<div class="depth_table_wrap">
+													<div class="depth_table">
+														<div class="depth_tr">
+															<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
+															<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type2 colwid_03"><span class="data_text">K3 1.6(가솔린)</span></div>
+															<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
+															<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
+															<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
+															<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
+															<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
+															<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
+															<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
+														</div>
+														<div class="depth_tr">
+															<div class="depth_cell has_check colwid_01"><input type="checkbox" class="design_check"></div>
+															<div class="depth_cell colwid_02"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type2 colwid_03"><span class="data_text">올뉴아반떼 1.6(가솔린)</span></div>
+															<div class="depth_cell align_type3 colwid_04"><span class="data_text">1,800,000</span></div>
+															<div class="depth_cell align_type3 colwid_05"><span class="data_text">800,000</span></div>
+															<div class="depth_cell align_type3 colwid_06"><span class="data_text">55</span></div>
+															<div class="depth_cell align_type3 colwid_07"><span class="data_text">55</span></div>
+															<div class="depth_cell align_type3 colwid_08"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_09"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_10"><span class="data_text">4</span></div>
+															<div class="depth_cell align_type3 colwid_11"><span class="data_text">82,000</span></div>
+															<div class="depth_cell align_type3 colwid_12"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_13"><span class="data_text">-</span></div>
+															<div class="depth_cell align_type3 colwid_14"><span class="data_text">22</span></div>
+														</div>
+													</div>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							<p class="data_table_paging">
+								<span class="data_paging_current">1</span>
+								<span class="data_paging_part">/</span>
+								<span class="data_paging_length">20</span>
+							</p>
+						</div>
+						<div class="tabcont" id="tabcont_02">
+							<div class="tbcount_row"><p class="tbcount_para">총 234건</p></div>
+							접수일자
+						</div>
+						<div class="tabcont" id="tabcont_03">
+							<div class="tbcount_row"><p class="tbcount_para">총 234건</p></div>
+							대여일자
+						</div>
+						<div class="tabcont" id="tabcont_04">
+							<div class="tbcount_row"><p class="tbcount_para">총 234건</p></div>
+							고객분류
+						</div>
+					</div>
+				</div>
+			</div>
 		</section>
 		<!-- 레이어팝업 -->
 		<div class="dimlayer_z fulltype" id="main_popup">
@@ -16,43 +655,113 @@
 				</div>
 				<div class="fullpop_contlow">
 					<div class="fullpop_contlow_in">
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.
+						<div class="sumbox_fxgroup">
+							<div class="sumbox_sig">
+								<div class="sb_cont_total">
+									<div class="sb_cont_title_wrap">
+										<span class="sb_cont_title_main">이 달의 목표 / 매출</span>
+										<span class="sb_cont_title_unit">단위: 백만원</span>
+									</div>
+									<div class="sb_cont_big_count">4,800</div>
+								</div>
+								<div class="sb_cont_sub">
+									<div class="sb_total_vitem">
+										<div class="sb_total_label_row">
+											<p class="sb_total_label_text">올해 목표대비 달성률</p>
+											<div class="sb_total_sum_obj">
+												<p class="sb_total_sum_number">66.7</p>
+												<p class="sb_total_sum_unit">%</p>
+											</div>
+										</div>
+										<div class="sb_total_grape_row">
+											<div class="sb_total_grape_wrap"><span class="sb_total_grape_current" style="width:66.7%"></span></div>
+										</div>
+									</div>
+									<div class="sb_total_vitem">
+										<div class="sb_total_label_row">
+											<p class="sb_total_label_text">전년 동월 목표대비 달성률</p>
+											<div class="sb_total_sum_obj">
+												<p class="sb_total_sum_number">88</p>
+												<p class="sb_total_sum_unit">%</p>
+											</div>
+										</div>
+										<div class="sb_total_grape_row">
+											<div class="sb_total_grape_wrap"><span class="sb_total_grape_current" style="width:88%"></span></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="sumbox_sub">
+								<div class="sb_title_fxwrap">
+									<div class="sbtitle_fxmain">
+										<div class="sbtitle_inwrap">
+											<p class="sbtitle_main">매출</p>
+											<p class="sbtitle_unit">단위: 백만원</p>
+										</div>
+									</div>
+									<div class="sbtitle_fxsub">
+										<ul class="chart_dotguide_list">
+											<li><div class="chart_dot_item"><span class="chart_dot_box" style="background-color:#054755;"></span><span class="chart_dot_text">전년도 매출</span></div></li>
+											<li><div class="chart_dot_item"><span class="chart_dot_box" style="background-color:#009A93;"></span><span class="chart_dot_text">현재 매출</span></div></li>
+											<li><div class="chart_dot_item"><span class="chart_dot_box" style="background-color:#B7D8D6;"></span><span class="chart_dot_text">목표 매출</span></div></li>
+										</ul>
+									</div>
+								</div>
+								<div class="sb_content">
+									<div style="background:#ccc;display:flex;align-items:center;justify-content:center;width:100%;height:190px;font-size:12px;">
+										chart
+										<div class="chart_tooltip_box">
+											<table class="chart_tooltip_tb">
+												<tr>
+													<th><span class="chart_tooltip_label">실제 매출</span></th>
+													<td><p class="chart_tooltip_value">730.5</p></td>
+												</tr>
+												<tr>
+													<th><span class="chart_tooltip_label">목표 매출</span></th>
+													<td><p class="chart_tooltip_value">780</p></td>
+												</tr>
+												<tr>
+													<th><span class="chart_tooltip_label">전년도 매출</span></th>
+													<td><p class="chart_tooltip_value">780</p></td>
+												</tr>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="sumbox_sub">
+								<div class="sb_title_fxwrap">
+									<div class="sbtitle_fxmain">
+										<div class="sbtitle_inwrap">
+											<p class="sbtitle_main">객단가</p>
+											<p class="sbtitle_unit">단위: 원</p>
+										</div>
+									</div>
+								</div>
+								<div class="sb_content">
+									<div style="background:#ccc;display:flex;align-items:center;justify-content:center;width:100%;height:190px;font-size:12px;">chart</div>
+								</div>
+							</div>
+							<div class="sumbox_sub">
+								<div class="sb_title_fxwrap">
+									<div class="sbtitle_fxmain">
+										<div class="sbtitle_inwrap">
+											<p class="sbtitle_main">예약</p>
+											<p class="sbtitle_unit">단위: 건</p>
+										</div>
+									</div>
+									<div class="sbtitle_fxsub">
+										<ul class="chart_dotguide_list">
+											<li><div class="chart_dot_item"><span class="chart_dot_box" style="background-color:#258CF4;"></span><span class="chart_dot_text">예약건수</span></div></li>
+											<li><div class="chart_dot_item"><span class="chart_dot_box" style="background-color:#009A93;"></span><span class="chart_dot_text">입도객수</span></div></li>
+										</ul>
+									</div>
+								</div>
+								<div class="sb_content">
+									<div style="background:#ccc;display:flex;align-items:center;justify-content:center;width:100%;height:190px;font-size:12px;">chart</div>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 				<button type="button" class="btn_layerclose"><span class="hdtext">닫기</span></button>
@@ -66,46 +775,53 @@
 				</div>
 				<div class="fullpop_contlow">
 					<div class="fullpop_contlow_in">
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.<br>
-						내용이 들어갑니다.
+						<div class="bartab_menu_row">
+							<ul class="bartab_menu_list">
+								<li class="active"><a href="#bartab_cont01" class="bartab_menu">총 매출</a></li>
+								<li><a href="#bartab_cont02" class="bartab_menu">일 평균 매출</a></li>
+								<li><a href="#bartab_cont03" class="bartab_menu">총 예약</a></li>
+								<li><a href="#bartab_cont04" class="bartab_menu">총 취소</a></li>
+								<li><a href="#bartab_cont05" class="bartab_menu">평균 가동률</a></li>
+								<li><a href="#bartab_cont06" class="bartab_menu">평균 대여기간</a></li>
+							</ul>
+						</div>
+						<div class="bartab_cont_row">
+							<div class="bartab_cont active" id="bartab_cont01">
+								<p class="chart_count_row">단위: 백만원</p>
+								<div style="background:#ccc;display:flex;align-items:center;justify-content:center;width:100%;height:190px;font-size:12px;">총 매출 chart</div>
+							</div>
+							<div class="bartab_cont" id="bartab_cont02">
+								<p class="chart_count_row">단위: 백만원</p>
+								<div style="background:#ccc;display:flex;align-items:center;justify-content:center;width:100%;height:190px;font-size:12px;">일 평균 매출 chart</div>
+							</div>
+							<div class="bartab_cont" id="bartab_cont03">
+								<p class="chart_count_row">단위: 백만원</p>
+								<div style="background:#ccc;display:flex;align-items:center;justify-content:center;width:100%;height:190px;font-size:12px;">총 예약 chart</div>
+							</div>
+							<div class="bartab_cont" id="bartab_cont04">
+								<p class="chart_count_row">단위: 백만원</p>
+								<div style="background:#ccc;display:flex;align-items:center;justify-content:center;width:100%;height:190px;font-size:12px;">총 취소 chart</div>
+							</div>
+							<div class="bartab_cont" id="bartab_cont05">
+								<p class="chart_count_row">단위: 백만원</p>
+								<div style="background:#ccc;display:flex;align-items:center;justify-content:center;width:100%;height:190px;font-size:12px;">평균 가동률 chart</div>
+							</div>
+							<div class="bartab_cont" id="bartab_cont06">
+								<p class="chart_count_row">단위: 백만원</p>
+								<div style="background:#ccc;display:flex;align-items:center;justify-content:center;width:100%;height:190px;font-size:12px;">평균 대여기간 chart</div>
+							</div>
+						</div>
 					</div>
 				</div>
 				<button type="button" class="btn_layerclose"><span class="hdtext">닫기</span></button>
+			</div>
+		</div>
+		<div class="custom_dim_layer_zone">
+			<div class="custom_dim_clone_wrap"></div>
+			<div class="custom_dim_layer_wrap">
+				<div class="date_range_input_wrap">
+					<input type="text" class="date_range_input">
+				</div>
 			</div>
 		</div>
 		<!-- // 레이어팝업 -->

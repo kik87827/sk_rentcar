@@ -415,3 +415,27 @@ function callDimLayer(option){
         }
     });
 }
+
+
+function singleCalendar(option){
+    $(option.target).daterangepicker({
+        autoUpdateInput : true, 
+        showDropdowns: true,
+        singleDatePicker: true,
+        locale : {
+            format : 'YYYY년 MM월 DD일',
+            "daysOfWeek": ["일","월","화","수","목","금","토"],
+            "monthNames": ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"],
+            cancelLabel: '취소',
+            applyLabel: '적용'
+        }
+    });
+    $(option.target).on('apply.daterangepicker', function(ev, picker) {
+        
+    });
+    $(option.target).on('hide.daterangepicker', function(ev, picker) {
+        if("hideCallback" in option){
+            option.hideCallback();
+        }
+    });
+}

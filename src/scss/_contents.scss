@@ -10,6 +10,9 @@
     &.define_data{
         padding:30px 40px;background:#fff;border-radius: 5px;
     }
+    &.define_schedule{
+        background:#fff;border-radius: 5px;
+    }
     &:last-of-type{margin-bottom:0;}
 }
 .sumbox_group{display:flex;
@@ -26,7 +29,9 @@
     display:flex;align-items:center;margin-right:28px;
     &:last-of-type{margin-right:0;}
     dt,dd{}
-    dt{margin-right:13px;flex:0;}
+    dt{margin-right:13px;flex:0;display:flex;align-items: center;
+        .btn_info_obj{margin-left:5px;}
+    }
     dd{flex:1;display:flex;align-items: center;
         > *{margin-right:10px;
             &:last-of-type{margin-right:0;}
@@ -43,7 +48,7 @@
 .sort_guide_text{font-size:12px;color:#677272;display:block;line-height:1;}
 input.boxform_obj{appearance: none;-webkit-appearance: none;-moz-appearance: none;overflow:hidden;width:0;height:0;opacity:0;vertical-align: top;}
 input.boxform_obj:checked + .boxform_label{position:relative;z-index:2;color:#fff;font-weight:700;background-color:#009A93;border-color:#009A93;}
-.boxform_label{display:inline-block;cursor:pointer;text-align:center;min-width:42px;position:relative;overflow:hidden;margin:-1px;background:#fff;border:1px solid #B0BABA;font-weight: 500;font-size: 14px;color:#677272;line-height:1;padding:10px 15px}
+.boxform_label{display:inline-block;cursor:pointer;text-align:center;min-width:42px;position:relative;overflow:hidden;margin:-1px;background:#fff;border:1px solid #B0BABA;font-weight: 500;font-size: 14px;color:#677272;line-height:1;padding:12px 15px}
 
 .cont_tabmenu_row{display:flex;justify-content: space-between;align-items: center;margin-bottom:30px;}
 .cont_tabmenu_main{}
@@ -360,3 +365,140 @@ input.boxform_obj:checked + .boxform_label{position:relative;z-index:2;color:#ff
     .design_radio{flex:0 0 14px;}
 }
 .form_choice_label{margin-left:5px;display:inline-block;font-size:14px;cursor: pointer;}
+
+input.input_calendar{display:inline-block;line-height:1;border: 1px solid #B0BABA;border-radius: 5px;font-size:14px;color:#000;padding:0 42px 0 12px;background:#fff url("../images/input_calendar1.png") no-repeat 100% 50%;height:38px;width:115px;}
+
+
+select.form_select{
+    border:1px solid #B0BABA;font-size:14px;height: 40px;padding: 0 35px 0 12px;box-sizing:border-box;font-family:'Pretendard';border-radius: 5px;box-sizing: border-box;
+    background: #fff url("../images/input_select.png") no-repeat 100% 50%/27px auto;line-height: 36px;-webkit-appearance:none;-moz-appearance:none;appearance:none; cursor: pointer;
+    &::-ms-value {background: none; color:#000;}
+    &::-ms-expand {display: none;}
+    &::-ms-value {
+        background: none; 
+        color:#000;
+    }
+    &:disabled{background-color:#f7f7f7;color:#999999;;opacity:1;}
+}
+
+
+.sch_top_wrap{display:flex;align-items: center;justify-content: space-between;}
+.sch_top_main{}
+.sch_main_range_text{font-weight: 700;font-size: 21px;line-height:1;color:#434C4C;}
+.design_dot_group{}
+.design_dot{
+    &.active{}
+}
+.sch_top_sub{
+    .cont_btn_list{}
+}
+.sch_middle_wrap{}
+.sch_grape_zone{}
+.sch_chart_guide_fxwrap{}
+.sch_chart_guide_main{
+    .onlytext_tab_list{}
+}
+.onlytext_tab_list{
+    > li{
+        &.active{
+            .onlytext_tab{}
+        }
+        &:after{}
+        &:last-of-type{
+            &:after{}
+        }
+    }
+}
+.onlytext_tab{}
+.sch_chart_guide_sub{
+    .chart_dotguide_list{}
+}
+.chart_slider_wrap{}
+.btn_slide_control{
+    &.disabled{}
+    &.prev{}
+    &.next{}
+}
+.chart_slide_target{}
+.sch_calendar_zone{}
+.sch_calendar_title_row{}
+.sch_calendar_content_row{}
+.sch_midtitle{}
+.chart_util_list{
+    &:after{}
+    &:last-of-type{
+        &:after{}
+    }
+    .chart_dot_item{}
+}
+.chart_dot_item{}
+.chart_guide_allow_group{}
+.chart_guide_allow{
+    &.up{}
+    &.down{}
+}
+.chart_dot_text{}
+
+.sch_calendar_content_row{}
+.full_calendar_tb_wrap{}
+.full_calendar_tb{
+    thead{
+        th{
+            &:last-of-type{}
+        }
+    }
+    tbody{
+        td{
+            &:last-of-type{}
+        }
+        tr:last-of-type{
+            td{}
+        }
+    }
+    .sat{
+        .fcal_thtext{}
+        .fcal_td_date{}
+    }
+    .sun{
+        .fcal_thtext{}
+        .fcal_td_date{}
+    }
+}
+
+.fcal_td_date{
+    &.other_date{}
+}
+
+.fcal_td_cont{}
+
+.data_sum_list{
+    > li{
+        &.current{}
+        &:last-of-type{
+        }
+    }
+}
+
+.data_sum_hitem{}
+.data_dotbox{}
+.data_sumtext_group{}
+.data_sumtext_cell{
+    &:last-of-type{}
+}
+.data_sumtext{
+    &.com{}
+    &.price{}
+}
+.data_updown_item{
+    &.type_up{
+        .data_updown_ico{}
+        .data_updown_label{}
+    }
+    &.type_down{
+        .data_updown_ico{}
+        .data_updown_label{}
+    }
+}
+.data_updown_ico{}
+.data_updown_label{}
+.data_count_current{}

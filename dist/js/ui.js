@@ -41,6 +41,7 @@ var dataTableFunc = {
   },
   drawCallBack(target) {
     var targetObj = document.querySelector(target);
+    if(targetObj === null){return;}
     var thisHeadwrap = targetObj.querySelector(".thead_table_wrap");
     var thisBodywrap = targetObj.querySelector(".tbody_table_wrap");
     var thisFootwrap = targetObj.querySelector(".tfoot_table_wrap");

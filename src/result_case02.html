@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="ko">
+@@include('./include/head.html')
+<body>
+	<div id="app">
+		@@include('./include/header.html')
+		<section class="middle_wrap">
+			<div class="cont_vitem_wrap">
+				<div class="cont_vitem define_sum">
+					<div class="sumbox_group">
+						<div class="sumbox_long">
+							<div class="sumbox_title_row">
+								<div class="sumbox_main_title_fxwrap">
+									<p class="sbmain_title">이 달의 목표 / 매출</p>
+									<p class="sbmain_unit">(백만원)</p>
+								</div>
+								<div class="sumbox_util_wrap">
+									<a href="#" class="btn_moreitem"><span class="moreitem_text">자세히 보기</span></a>
+								</div>
+							</div>
+							<div class="sumbox_total_row">
+								<div class="sumbox_total_main">
+									<p class="submox_total_number">4,800</p>
+								</div>
+								<div class="sumbox_total_sub">
+									<div class="sb_total_vitem">
+										<div class="sb_total_label_row">
+											<p class="sb_total_label_text">올해 목표대비 달성률</p>
+											<div class="sb_total_sum_obj">
+												<p class="sb_total_sum_number">66.7</p>
+												<p class="sb_total_sum_unit">%</p>
+											</div>
+										</div>
+										<div class="sb_total_grape_row">
+											<div class="sb_total_grape_wrap"><span class="sb_total_grape_current" style="width:66.7%"></span></div>
+										</div>
+									</div>
+									<div class="sb_total_vitem">
+										<div class="sb_total_label_row">
+											<p class="sb_total_label_text">전년 동월 목표대비 달성률</p>
+											<div class="sb_total_sum_obj">
+												<p class="sb_total_sum_number">88</p>
+												<p class="sb_total_sum_unit">%</p>
+											</div>
+										</div>
+										<div class="sb_total_grape_row">
+											<div class="sb_total_grape_wrap"><span class="sb_total_grape_current" style="width:88%"></span></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="sumbox_else_row">
+								<a href="javascript:;" class="btn_textallow">다음 달 목표 매출 입력하러 가기</a>
+							</div>
+						</div>
+						<div class="sumbox_short">
+							<div class="sumbox_title_fxwrap">
+								<p class="sb_title">총 매출</p>
+								<p class="sb_unit">(백만원)</p>
+							</div>
+							<div class="sumbox_current_row">
+								<p class="sumbox_current">200</p>
+							</div>
+							<div class="sumbox_chart_row">
+								<div class="sumchart_wrap">
+									<div style="background:#ccc;display:flex;align-items:center;justify-content:center;width:100%;height:49px;font-size:12px;">chart</div>
+								</div>
+								<div class="sumchart_guide_wrap">
+									<p class="sumchart_guide">09.11 대비 <strong class="sumchart_guide_up">+5%</strong></p>
+								</div>
+							</div>
+						</div>
+						<div class="sumbox_short">
+							<div class="sumbox_title_fxwrap">
+								<p class="sb_title">일 평균 매출</p>
+								<p class="sb_unit">(백만원)</p>
+							</div>
+							<div class="sumbox_current_row">
+								<p class="sumbox_current">200</p>
+							</div>
+							<div class="sumbox_chart_row">
+								<div class="sumchart_wrap">
+									<div style="background:#ccc;display:flex;align-items:center;justify-content:center;width:100%;height:49px;font-size:12px;">chart</div>
+								</div>
+								<div class="sumchart_guide_wrap">
+									<p class="sumchart_guide">09.11 대비 <strong class="sumchart_guide_up">+5%</strong></p>
+								</div>
+							</div>
+						</div>
+						<div class="sumbox_short">
+							<div class="sumbox_title_fxwrap">
+								<p class="sb_title">총 예약</p>
+								<p class="sb_unit">(건)</p>
+							</div>
+							<div class="sumbox_current_row">
+								<p class="sumbox_current">250</p>
+							</div>
+							<div class="sumbox_chart_row">
+								<div class="sumchart_wrap">
+									<div style="background:#ccc;display:flex;align-items:center;justify-content:center;width:100%;height:49px;font-size:12px;">chart</div>
+								</div>
+								<div class="sumchart_guide_wrap">
+									<p class="sumchart_guide">09.11 대비 <strong class="sumchart_guide_up">+5%</strong></p>
+								</div>
+							</div>
+						</div>
+						<div class="sumbox_short">
+							<div class="sumbox_title_global_wrap">
+								<div class="sumbox_title_fxwrap">
+									<p class="sb_title">총 취소</p>
+									<p class="sb_unit">(건)</p>
+								</div>
+								<div class="sumbox_title_util_wrap">
+									<p class="sbtitle_util">재 계약 <strong>5건</strong></p>
+								</div>
+							</div>
+							<div class="sumbox_current_row">
+								<p class="sumbox_current">250</p>
+							</div>
+							<div class="sumbox_chart_row">
+								<div class="sumchart_wrap">
+									<div style="background:#ccc;display:flex;align-items:center;justify-content:center;width:100%;height:49px;font-size:12px;">chart</div>
+								</div>
+								<div class="sumchart_guide_wrap">
+									<p class="sumchart_guide">09.11 대비 <strong class="sumchart_guide_up">+5%</strong></p>
+								</div>
+							</div>
+						</div>
+						<div class="sumbox_short">
+							<div class="sumbox_title_global_wrap type2">
+								<div class="sumbox_title_fxwrap">
+									<p class="sb_title">평균 가동률</p>
+									<p class="sb_unit">(%, 총 2,000대)</p>
+								</div>
+								<div class="sumbox_title_util_wrap">
+									<a href="#" class="btn_info_obj"><span class="hdtext">도움말</span></a>
+								</div>
+							</div>
+							<div class="sumbox_current_row">
+								<p class="sumbox_current">72</p>
+							</div>
+							<div class="sumbox_chart_row">
+								<div class="sumchart_wrap">
+									<div style="background:#ccc;display:flex;align-items:center;justify-content:center;width:100%;height:49px;font-size:12px;">chart</div>
+								</div>
+								<div class="sumchart_guide_wrap">
+									<p class="sumchart_guide">09.11 대비 <strong class="sumchart_guide_down">-3%</strong></p>
+								</div>
+							</div>
+						</div>
+						<div class="sumbox_short">
+							<div class="sumbox_title_fxwrap">
+								<p class="sb_title">평균 대여기간</p>
+								<p class="sb_unit">(건)</p>
+							</div>
+							<div class="sumbox_current_row">
+								<p class="sumbox_current">2.5</p>
+							</div>
+							<div class="sumbox_chart_row">
+								<div class="sumchart_wrap">
+									<div style="background:#ccc;display:flex;align-items:center;justify-content:center;width:100%;height:49px;font-size:12px;">chart</div>
+								</div>
+								<div class="sumchart_guide_wrap">
+									<p class="sumchart_guide">09.11 대비 <strong class="sumchart_guide_normal">0%</strong></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="cont_vitem define_sum">
+					<div class="sumbox_group">
+						<div class="sumbox_long">
+							<div class="sumbox_title_row">
+								<div class="sumbox_main_title_fxwrap">
+									<p class="sbmain_title">이 달의 목표 / 매출</p>
+									<p class="sbmain_unit">(백만원)</p>
+								</div>
+								<div class="sumbox_util_wrap">
+									<a href="#" class="btn_moreitem"><span class="moreitem_text">자세히 보기</span></a>
+								</div>
+							</div>
+							<div class="sumbox_total_row">
+								<div class="sumbox_total_main">
+									<p class="submox_total_number">0</p>
+								</div>
+								<div class="sumbox_total_sub">
+									<div class="sb_total_vitem">
+										<div class="sb_total_label_row">
+											<p class="sb_total_label_text">올해 목표대비 달성률</p>
+											<div class="sb_total_sum_obj">
+												<p class="sb_total_sum_number">66.7</p>
+												<p class="sb_total_sum_unit">%</p>
+											</div>
+										</div>
+										<div class="sb_total_grape_row">
+											<div class="sb_total_grape_wrap"><span class="sb_total_grape_current" style="width:66.7%"></span></div>
+										</div>
+									</div>
+									<div class="sb_total_vitem">
+										<div class="sb_total_label_row">
+											<p class="sb_total_label_text">전년 동월 목표대비 달성률</p>
+											<div class="sb_total_sum_obj">
+												<p class="sb_total_sum_number">88</p>
+												<p class="sb_total_sum_unit">%</p>
+											</div>
+										</div>
+										<div class="sb_total_grape_row">
+											<div class="sb_total_grape_wrap"><span class="sb_total_grape_current" style="width:88%"></span></div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="sumbox_else_row">
+								<a href="javascript:;" class="btn_textallow">목표 매출 입력하러 가기</a>
+							</div>
+						</div>
+						<div class="sumbox_short">
+							<div class="sumbox_title_fxwrap">
+								<p class="sb_title">총 매출</p>
+								<p class="sb_unit">(백만원)</p>
+							</div>
+							<div class="sumbox_current_row">
+								<p class="sumbox_current">200</p>
+							</div>
+							<div class="sumbox_chart_row">
+								<div class="sumchart_wrap">
+									<div style="background:#ccc;display:flex;align-items:center;justify-content:center;width:100%;height:49px;font-size:12px;">chart</div>
+								</div>
+								<div class="sumchart_guide_wrap">
+									<p class="sumchart_guide">09.11 대비 <strong class="sumchart_guide_up">+5%</strong></p>
+								</div>
+							</div>
+						</div>
+						<div class="sumbox_short">
+							<div class="sumbox_title_fxwrap">
+								<p class="sb_title">일 평균 매출</p>
+								<p class="sb_unit">(백만원)</p>
+							</div>
+							<div class="sumbox_current_row">
+								<p class="sumbox_current">200</p>
+							</div>
+							<div class="sumbox_chart_row">
+								<div class="sumchart_wrap">
+									<div style="background:#ccc;display:flex;align-items:center;justify-content:center;width:100%;height:49px;font-size:12px;">chart</div>
+								</div>
+								<div class="sumchart_guide_wrap">
+									<p class="sumchart_guide">09.11 대비 <strong class="sumchart_guide_up">+5%</strong></p>
+								</div>
+							</div>
+						</div>
+						<div class="sumbox_short">
+							<div class="sumbox_title_fxwrap">
+								<p class="sb_title">총 예약</p>
+								<p class="sb_unit">(건)</p>
+							</div>
+							<div class="sumbox_current_row">
+								<p class="sumbox_current">250</p>
+							</div>
+							<div class="sumbox_chart_row">
+								<div class="sumchart_wrap">
+									<div style="background:#ccc;display:flex;align-items:center;justify-content:center;width:100%;height:49px;font-size:12px;">chart</div>
+								</div>
+								<div class="sumchart_guide_wrap">
+									<p class="sumchart_guide">09.11 대비 <strong class="sumchart_guide_up">+5%</strong></p>
+								</div>
+							</div>
+						</div>
+						<div class="sumbox_short">
+							<div class="sumbox_title_global_wrap">
+								<div class="sumbox_title_fxwrap">
+									<p class="sb_title">총 취소</p>
+									<p class="sb_unit">(건)</p>
+								</div>
+								<div class="sumbox_title_util_wrap">
+									<p class="sbtitle_util">재 계약 <strong>5건</strong></p>
+								</div>
+							</div>
+							<div class="sumbox_current_row">
+								<p class="sumbox_current">250</p>
+							</div>
+							<div class="sumbox_chart_row">
+								<div class="sumchart_wrap">
+									<div style="background:#ccc;display:flex;align-items:center;justify-content:center;width:100%;height:49px;font-size:12px;">chart</div>
+								</div>
+								<div class="sumchart_guide_wrap">
+									<p class="sumchart_guide">09.11 대비 <strong class="sumchart_guide_up">+5%</strong></p>
+								</div>
+							</div>
+						</div>
+						<div class="sumbox_short">
+							<div class="sumbox_title_global_wrap type2">
+								<div class="sumbox_title_fxwrap">
+									<p class="sb_title">평균 가동률</p>
+									<p class="sb_unit">(%, 총 2,000대)</p>
+								</div>
+								<div class="sumbox_title_util_wrap">
+									<a href="#" class="btn_info_obj"><span class="hdtext">도움말</span></a>
+								</div>
+							</div>
+							<div class="sumbox_current_row">
+								<p class="sumbox_current">72</p>
+							</div>
+							<div class="sumbox_chart_row">
+								<div class="sumchart_wrap">
+									<div style="background:#ccc;display:flex;align-items:center;justify-content:center;width:100%;height:49px;font-size:12px;">chart</div>
+								</div>
+								<div class="sumchart_guide_wrap">
+									<p class="sumchart_guide">09.11 대비 <strong class="sumchart_guide_down">-3%</strong></p>
+								</div>
+							</div>
+						</div>
+						<div class="sumbox_short">
+							<div class="sumbox_title_fxwrap">
+								<p class="sb_title">평균 대여기간</p>
+								<p class="sb_unit">(건)</p>
+							</div>
+							<div class="sumbox_current_row">
+								<p class="sumbox_current">2.5</p>
+							</div>
+							<div class="sumbox_chart_row">
+								<div class="sumchart_wrap">
+									<div style="background:#ccc;display:flex;align-items:center;justify-content:center;width:100%;height:49px;font-size:12px;">chart</div>
+								</div>
+								<div class="sumchart_guide_wrap">
+									<p class="sumchart_guide">09.11 대비 <strong class="sumchart_guide_normal">0%</strong></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	@@include('./include/script.html')
+	<script>
+		menuRock("#menu02");
+
+		dynamicTab(); // tab
+
+		$(window).on("load",function(){
+			callDimLayer({
+				hideCallback(){
+					console.log('hide');
+				}
+			}); // 직접 입력 
+		});
+		
+		
+
+		dataTableFunc.bindEvent(); // data table
+		dataTableFunc.drawCallBack("#tctable_01"); // data table 차량그룹
+		dataTableFunc.drawCallBack("#tctable_02"); // data table 접수일자
+		dataTableFunc.drawCallBack("#tctable_03_01"); // data table 대여일자 - 비교선택 없음
+		dataTableFunc.drawCallBack("#tctable_03_02"); // data table 대여일자 - 전월
+		dataTableFunc.drawCallBack("#tctable_03_03"); // data table 대여일자 - 전년동월
+		dataTableFunc.drawCallBack("#tctable_04"); // data table 고객분류
+
+		// 퍼블확인용 
+		$(".cont_tabmenu , [name='sort_radio']").on("click",function(){
+			setTimeout(()=>{
+				dataTableFunc.drawCallBack("#tctable_01"); // data table 차량그룹
+				dataTableFunc.drawCallBack("#tctable_02"); // data table 접수일자
+				dataTableFunc.drawCallBack("#tctable_03_01"); // data table 대여일자 - 비교선택 없음
+				dataTableFunc.drawCallBack("#tctable_03_02"); // data table 대여일자 - 전월
+				dataTableFunc.drawCallBack("#tctable_03_03"); // data table 대여일자 - 전년동월
+				dataTableFunc.drawCallBack("#tctable_04"); // data table 고객분류
+			},30);
+		});
+
+		// 퍼블확인용
+		let url = window.location.href.split('?')[1];
+		let url_2 = url !== undefined ? url.split('#')[0] : null;
+		document.addEventListener("DOMContentLoaded", function() {
+			if(url_2 === "main_modal"){
+				layerPopup.show({
+					target : "#main_popup",
+					openCallback(){
+						console.log('callback')
+					}
+				})
+			}else if(url_2 === "sub_modal"){
+				layerPopup.show({
+					target : "#sub_popup",
+					openCallback(){
+						console.log('callback2')
+					}
+				})
+			}
+		});
+	</script>
+</body>
+</html>

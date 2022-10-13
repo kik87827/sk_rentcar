@@ -41,6 +41,7 @@ var dataTableFunc = {
     },
     drawCallBack(target){
         var targetObj = document.querySelector(target);
+        if(targetObj ===null){return;}
         var thisHeadwrap = targetObj.querySelector(".thead_table_wrap");
         var thisBodywrap = targetObj.querySelector(".tbody_table_wrap");
         var thisFootwrap = targetObj.querySelector(".tfoot_table_wrap");
@@ -193,9 +194,10 @@ let layerPopup = {
         var domHtml = document.querySelector("html");
         var domBody = document.querySelector("body");
        
-        if(target_obj !== null){
-            target_dom = document.querySelector(option.target);
+        if(target_obj === null){
+            return;
         }
+        target_dom = document.querySelector(option.target);
         
         modal.forEach((element)=>{
             element.classList.remove("active");
@@ -210,7 +212,7 @@ let layerPopup = {
             }
         },530);
         
-        
+        target_dom.style.minWidth = (1920 - getScrollBarWidth()) + "px";
         app_wrap.style.zIndex = "0";
         app_wrap.appendChild(target_dom);
         heightcheck();

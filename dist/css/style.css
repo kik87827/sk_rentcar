@@ -2090,6 +2090,9 @@ input.boxform_obj:checked + .boxform_label {
 .sb_cont_sub > *:last-child {
   margin-bottom: 0 !important;
 }
+.sb_cont_sub .sumbox_else_row.type2 {
+  margin-bottom: -20px !important;
+}
 
 .sb_cont_title_wrap {
   line-height: 1;

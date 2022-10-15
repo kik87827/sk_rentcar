@@ -316,8 +316,8 @@ input.boxform_obj:checked + .boxform_label{position:relative;z-index:2;color:#ff
     > *{margin-bottom:15px;
         &:last-child{margin-bottom:0 !important;}
     }
+    .sumbox_else_row.type2{margin-bottom:-20px !important;}
 }
-
 .sb_cont_total{}
 .sb_cont_title_wrap{line-height:1;display:flex;align-items:center;color:#fff;}
 .sb_cont_title_main,

@@ -12,7 +12,7 @@ body{}
 .header_menu_list{display:flex;}
 .header_menu_list > li{}
 .header_menu_list > li.active{}
-li.active .header_menu{background:#fff;}
+li.active .header_menu{background:#F1F3F5;}
 li.active .header_menu_text{color:#4C5353;font-weight:700;}
 .header_menu_list > li:last-of-type{}
 .header_menu{display:flex;padding:0 25px;align-items: center;height:100%;}

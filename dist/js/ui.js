@@ -449,3 +449,103 @@ function singleCalendar(option) {
     }
   });
 }
+
+
+
+function scrollTableFunc() {
+  const data_scroll_head_inwrap = document.querySelector(".data_scroll_head_inwrap");
+  const data_scroll_main_cell = document.querySelector(".data_scroll_main_cell");
+  let table_scroll_zone = [data_scroll_head_inwrap, data_scroll_main_cell];
+  const data_fixed_label_group = document.querySelectorAll(".data_fixed_label_group");
+  const data_indata_scroll_tr = document.querySelectorAll(".data_indata_scroll_tr");
+  let heightObjMax = [...data_fixed_label_group, ...data_indata_scroll_tr];
+
+  data_fixed_label_group.forEach((element, index) => {
+    let maxHeight = Math.max(element.getBoundingClientRect().height, data_indata_scroll_tr[index].getBoundingClientRect().height);
+    element.style.minHeight = `${maxHeight}px`;
+    data_indata_scroll_tr[index].style.minHeight = `${maxHeight}px`;
+  });
+
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  table_scroll_zone.forEach((element) => {
+    let thisScroll = element;
+
+    // thisScroll.addEventListener("wheel", (e) => {
+    //     let thisObj = e.currentTarget;
+    //     let scrollLeftValue = thisObj.scrollLeft;
+    //     e.preventDefault();
+    //     thisScroll.scrollLeft = scrollLeftValue + e.deltaY;
+    // },false);
+    thisScroll.addEventListener('mousedown', (e) => {
+      isDown = true;
+      thisScroll.classList.add('active');
+      startX = e.pageX - thisScroll.offsetLeft;
+      scrollLeft = thisScroll.scrollLeft;
+    });
+    thisScroll.addEventListener('mouseleave', () => {
+      isDown = false;
+      thisScroll.classList.remove('active');
+    });
+    thisScroll.addEventListener('mouseup', () => {
+      isDown = false;
+      thisScroll.classList.remove('active');
+    });
+    thisScroll.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - thisScroll.offsetLeft;
+      const walk = (x - startX) * 2; //scroll-fast
+      thisScroll.scrollLeft = scrollLeft - walk;
+    });
+    thisScroll.addEventListener("scroll", (e) => {
+      //  console.log(e.currentTarget.scrollLeft);
+      table_scroll_zone.forEach((element, index) => {
+        table_scroll_zone[index].scrollLeft = e.currentTarget.scrollLeft;
+      })
+      //thisScroll.scrollLeft = e.currentTarget.scrollLeft;
+    })
+  });
+
+
+
+  // table_scroll_zone.forEach((element)=>{
+  //     let isDown = false;
+  //     let startX;
+  //     let scrollLeft;
+
+  //     let thisScroll = element;
+
+  //     element.addEventListener("wheel", (e) => {
+  //         let thisObj = e.currentTarget;
+  //         let scrollLeftValue = thisObj.scrollLeft;
+  //         e.preventDefault();
+  //         thisObj.scrollLeft = scrollLeftValue + e.deltaY;
+  //     },false);
+  //     element.addEventListener('mousedown', (e) => {
+  //         isDown = true;
+  //         thisScroll.classList.add('active');
+  //         startX = e.pageX - thisScroll.offsetLeft;
+  //         scrollLeft = thisScroll.scrollLeft;
+  //     });
+  //     element.addEventListener('mouseleave', () => {
+  //         isDown = false;
+  //         thisScroll.classList.remove('active');
+  //     });
+  //     element.addEventListener('mouseup', () => {
+  //         isDown = false;
+  //         thisScroll.classList.remove('active');
+  //     });
+  //     element.addEventListener('mousemove', (e) => {
+  //         if(!isDown) return;
+  //         e.preventDefault();
+  //         const x = e.pageX - thisScroll.offsetLeft;
+  //         const walk = (x - startX) * 2; //scroll-fast
+  //         thisScroll.scrollLeft = scrollLeft - walk;
+  //     });
+  // });
+
+
+}

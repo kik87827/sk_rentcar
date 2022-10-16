@@ -448,18 +448,39 @@ function callCalendar(option){
 
 
 function scrollTableFunc(){
+    const data_scroll_middle_wrap = document.querySelector(".data_scroll_middle_wrap");
     const data_scroll_head_inwrap = document.querySelector(".data_scroll_head_inwrap");
     const data_scroll_main_cell = document.querySelector(".data_scroll_main_cell");
     let table_scroll_zone = [data_scroll_head_inwrap,data_scroll_main_cell];
     const data_fixed_label_group = document.querySelectorAll(".data_fixed_label_group");
     const data_indata_scroll_tr = document.querySelectorAll(".data_indata_scroll_tr");
-    let heightObjMax = [...data_fixed_label_group,...data_indata_scroll_tr];
+    const data_label_toggle = document.querySelectorAll(".data_label_toggle");
+    const data_scroll_depth_group = document.querySelectorAll(".data_scroll_depth_group");
+    const data_fixed_depth_group = document.querySelectorAll(".data_fixed_depth_group");
 
     data_fixed_label_group.forEach((element,index)=>{
-        let maxHeight = Math.max(element.getBoundingClientRect().height,data_indata_scroll_tr[index].getBoundingClientRect().height);
-        element.style.minHeight = `${maxHeight}px`;
-        data_indata_scroll_tr[index].style.minHeight = `${maxHeight}px`;
+        if(data_indata_scroll_tr[index] !== undefined){
+            let maxHeight = Math.max(element.getBoundingClientRect().height,data_indata_scroll_tr[index].getBoundingClientRect().height);
+            element.style.minHeight = `${maxHeight}px`;
+            data_indata_scroll_tr[index].style.minHeight = `${maxHeight}px`;
+        }
     });
+
+    data_label_toggle.forEach((element,index)=>{
+        element.addEventListener("click",(e)=>{
+            e.preventDefault();
+            if(data_scroll_depth_group[index] !== undefined || data_fixed_depth_group[index] !== undefined){
+                let fixed_dep_group = data_fixed_depth_group[index];
+                let scroll_dep_group = data_scroll_depth_group[index];
+                element.classList.toggle("active");
+                fixed_dep_group.classList.toggle("active");
+                scroll_dep_group.classList.toggle("active");
+                console.log(scroll_dep_group)
+            }
+        });
+    });
+    data_scroll_middle_wrap.classList.add("ready");
+    
     
     let isDown = false;
     let startX;
@@ -492,7 +513,7 @@ function scrollTableFunc(){
             if(!isDown) return;
             e.preventDefault();
             const x = e.pageX - thisScroll.offsetLeft;
-            const walk = (x - startX) * 2; //scroll-fast
+            const walk = (x - startX) * 3; //scroll-fast
             thisScroll.scrollLeft = scrollLeft - walk;
         });
         thisScroll.addEventListener("scroll",(e)=>{

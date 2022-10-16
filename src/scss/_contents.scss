@@ -681,8 +681,8 @@ select.form_select{
 .data_scroll_head_parent{position:relative;z-index:3;position:sticky;top:0;left:0;width:100%;}
 .data_scroll_head_wrap{border-bottom:1px solid #677272;background:#fff;display:flex;justify-content: flex-end;
 }
-.data_scroll_head_inwrap{flex:0 0 calc(100% - 165px);padding:10px 0 0;background:#ddd;position:relative;overflow-x: auto}
-.data_scrhead_tb{width:100%;
+.data_scroll_head_inwrap{flex:0 0 calc(100% - 165px);padding:10px 0 0;position:relative;overflow-x: auto}
+.data_scrhead_tb{
     tr.kind_tr{
         th{padding:5px;}
         .kind_cell01{background:#DDF1F0;}
@@ -693,6 +693,8 @@ select.form_select{
 }
 
 .data_scroll_head_inwrap::-webkit-scrollbar {display:none;}
+
+.data_label_toggle{}
 
 .kind_cell_text{display:inline-block;font-size:12px;color:#07857F;line-height:1;}
 .data_scrhead_tb th{width:75px;text-align: center;}
@@ -706,12 +708,21 @@ select.form_select{
 .blue_text{color:#047AFF !important;}
 .red_text{color:#FF3B30 !important;}
 
-.data_scroll_middle_wrap{display:flex;position:relative;overflow:hidden;}
+.data_scroll_middle_wrap{display:flex;position:relative;overflow:hidden;
+    &.ready{
+        .data_fixed_depth_group{
+            position:relative;overflow:hidden;height:0;opacity:1;
+        }
+        .data_scroll_depth_group{
+            position:relative;overflow:hidden;height:0;opacity:1;
+        }
+    }
+}
 .data_scroll_fixed_cell{flex:0 0 165px;background:#f8f9fa;}
 .data_scroll_main_cell{flex:1;min-width:0;overflow:hidden;overflow-x:auto;overflow-y: overlay;padding-bottom:1px;}
 
 .data_fixed_label_list{
-    padding:0 15px; position:relative;
+    padding:10px 15px; position:relative;
     &:after{display:block;content:'';width:100vw;background: #677272;height:1px;position:absolute;bottom:-1px;left:0;}
     > li{
         &:last-of-type{}
@@ -720,6 +731,12 @@ select.form_select{
 
 .data_fixed_label_group{
     display:flex;flex-wrap:wrap;align-items: center;min-height:50px;box-sizing: border-box;padding:15px 0;
+    &.type2{
+        display:block;
+        .data_fixed_label_main,
+        .data_fixed_label_sub{display:block;}
+        .data_fixed_label_sub{margin-top:10px;}
+    }
 }
 .data_fixed_label_main,
 .data_fixed_label_sub{display:inline-block;line-height:1;}
@@ -728,6 +745,7 @@ select.form_select{
 
 .data_indata_scroll_tb{
     // &:last-of-type{border-bottom:0;}
+    padding:10px 0;
 }
 .data_indata_scroll_tr{
     display:flex;
@@ -738,13 +756,49 @@ select.form_select{
     }
     > li{flex:0 0 75px;display:flex;align-items: center;justify-content: center;min-height:50px;padding:15px 0;box-sizing: border-box;position:relative;}
 }
-.data_tr_value{display:inline-block;font-size:16px;color:#4C5353;line-height:1;font-weight:500;}
+.data_tr_value{display:inline-block;font-size:16px;color:#4C5353;line-height:1;font-weight:500;width:75px;word-break: break-all;text-align: center;}
 
 .data_scroll_main_cell::-webkit-scrollbar {height:10px;background-color:#F5F7F7;}
 .data_scroll_main_cell::-webkit-scrollbar-thumb {background-color: #D9D9D9;}
 
+.data_tr_value_group{
+
+}
+
+
+.data_label_toggle{
+    display:inline-flex;align-items:center;
+    &:before{display:block;content:'';width:14px;height:14px;background:url("../images/icon_fold.png") no-repeat 0 0/100% auto;border-radius:100%;flex:0 0 14px;margin-right:5px;}
+    &.active:before{background-position:0 100%;}
+}
+.label_toggle_text{font-weight: 700;line-height:1;font-size: 14px;color: #363E3E;}
+
+.data_fixed_depth_group{
+    margin-left:19px;position:absolute;opacity:0;top:0;
+    &.active{height:auto !important;}
+    .data_fixed_label_group{padding:5px 0;min-height:40px;
+        .data_fixed_label_main{
+            font-weight:500;
+            &:before{display:inline-block;content:'-';margin-right:5px;}
+        }
+    }
+}
+
+.data_tr_img{text-align: center;display:flex;justify-content: center;margin-bottom:7px;}
+.data_tr_value_sub,
+.data_tr_value_main{color: #4C5353;text-align: center;}
+.data_tr_value_sub{font-size: 12px;}
+.data_tr_value_main{font-size: 16px;margin-top:4px;}
+
 .local_layer{position:absolute;z-index:5;display:none;
     &.active{display:block;}
+}
+.data_scroll_depth_group{
+    position:absolute;opacity:0;top:0;
+    &.active{height:auto !important;}
+    .data_indata_scroll_tr{
+        > li {padding:5px 0;min-height:40px;}
+    }
 }
 
 .tip_guide_table{

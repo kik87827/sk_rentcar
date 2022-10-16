@@ -367,16 +367,23 @@ input.boxform_obj:checked + .boxform_label{position:relative;z-index:2;color:#ff
     .chart_dotguide_list{position:relative;top:1.5px}
 }
 .chart_dotguide_list{
-    display:flex;flex-wrap:wrap;
+    display:flex;flex-wrap:wrap;align-items:center;line-height:0;
+    &.type2{
+        > li {margin-right:34px;
+            &:last-of-type{margin-right:0}
+        }
+    }
     > li{
         margin-right:16px;
         &:last-of-type{margin-right:0;}
     }
 }
 .chart_dot_item{display:inline-flex;line-height:1;align-items: center;}
-.chart_dot_box{display:block;width:10px;height:10px;border-radius:100%;flex:0 0 10px;}
+.chart_dot_box{display:block;width:10px;height:10px;border-radius:4px;flex:0 0 10px;}
+.chart_dash_box{height:0;width:28px;flex:0 0 28px;border-bottom:1px dashed #ddd}
+.chart_solid_box{height:0;width:18px;flex:0 0 18px;border-bottom:1px solid #ddd}
 .chart_dot_text{display:inline-block;font-size:11px;color:#363E3E;line-height:1;margin-left:4px;}
-
+.btn_inline_obj{display:inline-block;font-size:14px;line-height:1;background:#DCE3E3;padding: 7px 15px;border: 1px solid #DCE3E3;border-radius: 2px;}
 .sb_content{margin-top:25px;}
 
 .chart_tooltip_box{position:absolute;background: rgba(23, 24, 24, 0.8);border-radius:5px;padding:10px;}
@@ -394,7 +401,9 @@ input.boxform_obj:checked + .boxform_label{position:relative;z-index:2;color:#ff
 .chart_tooltip_value{display:inline-block;font-weight: 700;font-size: 12px;line-height:1;white-space: nowrap;}
 
 .chart_tooltip_box_layer{position:absolute;backdrop-filter: blur(2.5px);background: rgba(23, 24, 24, 0.8);border-radius:5px;overflow:hidden;width:184px;z-index:5;}
-.chart_tooltip_title{background: rgba(0, 0, 0, 0.3);display:flex;align-items:center;padding:12px 15px;justify-content: space-between;}
+.chart_tooltip_title{background: rgba(0, 0, 0, 0.3);display:flex;align-items:center;padding:12px 15px;justify-content: space-between;
+    &.type2{justify-content: flex-start;align-items: flex-end;}
+}
 .chart_tooltip_cont{padding:20px 15px;}
 .chart_tooltip_title_main{display:inline-block;font-weight: 700;font-size: 12px;color:#fff;line-height:1;display:inline-block;}
 .chart_tooltip_title_sub{display:inline-block;font-size: 9px;color: #ADB5BD;line-height:1;transform: scale(.8);position:relative;top:-1px;}
@@ -435,7 +444,9 @@ input.boxform_obj:checked + .boxform_label{position:relative;z-index:2;color:#ff
 }
 .form_choice_label{margin-left:5px;display:inline-block;font-size:14px;cursor: pointer;}
 
-input.input_calendar{display:inline-block;line-height:1;border: 1px solid #B0BABA;border-radius: 5px;font-size:14px;color:#000;padding:0 42px 0 12px;background:#fff url("../images/input_calendar1.png") no-repeat 100% 50%;height:38px;width:115px;}
+input.input_calendar{display:inline-block;line-height:1;border: 1px solid #B0BABA;border-radius: 5px;font-size:14px;color:#000;padding:0 42px 0 12px;background:#fff url("../images/input_calendar1.png") no-repeat 100% 50%;height:38px;width:115px;
+    &.type2{width:230px;}
+}
 
 
 select.form_select{
@@ -489,19 +500,26 @@ select.form_select{
 .sch_top_sub{
     .cont_btn_list{}
 }
-.sch_middle_wrap{padding:20px 30px 30px;}
+.sch_middle_wrap{padding:20px 30px 30px;
+    
+}
 .sch_grape_zone{position:relative;z-index:5;}
 .sch_chart_guide_fxwrap{display:flex;align-items: center;justify-content: space-between;}
 .sch_chart_guide_main{
     .onlytext_tab_list{}
 }
-.sch_chart_vitem_group{}
+.sch_chart_vitem_group{
+    &.type2{
+        .sch_chart_vitem{padding-bottom:0;}
+    }
+}
 .sch_chart_vitem{
-    margin-bottom:15px;/*background:#F1F3F5;*/ padding:10px 30px 29px;
+    margin-bottom:15px;/*background:#F1F3F5;*/ padding:10px 0 29px;
+    &.type2{padding-top:0;}
     &:last-of-type{margin-bottom:0;}
 }
 .sch_chart_top_row{
-    display:flex;align-items: center;min-height:32px;justify-content: space-between;margin-bottom:12px;
+    display:flex;align-items: center;min-height:32px;justify-content: space-between;margin-bottom:12px;padding:0 30px;
 }
 .sch_chart_top_main{display:flex;align-items: center;}
 .sch_chart_top_title{font-weight: 700;line-height:1;font-size: 16px;}
@@ -724,4 +742,55 @@ select.form_select{
 
 .data_scroll_main_cell::-webkit-scrollbar {height:10px;background-color:#F5F7F7;}
 .data_scroll_main_cell::-webkit-scrollbar-thumb {background-color: #D9D9D9;}
-.data_scroll_main_cell::-webkit-scrollbar-track {}
+
+.local_layer{position:absolute;z-index:5;display:none;
+    &.active{display:block;}
+}
+
+.tip_guide_table{
+    width:100%;table-layout:fixed;
+    thead{
+        th{
+            &:last-of-type{}
+            border-bottom: 0.5px solid #B0BABA;font-size: 10px; line-height:1;color: #DCE3E3;padding: 0 10px 10px;
+        }
+    }
+    tbody{
+        td{
+            &:last-of-type{}
+            &.type2{border-right: 0.5px solid #B0BABA;padding:0 5px;}
+            text-align: center;padding:5px 10px;
+        }
+    }
+}
+.tip_guide_label,
+.tip_guide_data{}
+.tip_guide_label{font-size: 12px;display:inline-block;color:#DCE3E3;}
+.tip_guide_data{font-weight: 700;font-size: 12px;display:inline-block;color:#fff;}
+input.input_tipform{font-weight: 700;background-color:transparent;width:100%;font-size:12px;text-align: center;color:#fff;background: #4C5353;border-radius: 2px;line-height:1;height:18px;padding:0 2px;}
+
+input.input_tipform::-webkit-input-placeholder{color:#fff !important;font-size:10px;font-weight: 350;}
+input.input_tipform::-moz-input-placeholder{color:#fff !important;font-size:10px;font-weight: 350;}
+input.input_tipform:-ms-input-placeholder{color:#fff !important;font-size:10px;font-weight: 350;}
+input.input_tipform::-ms-input-placeholder{color:#fff !important;font-size:10px;font-weight: 350;}
+input.input_tipform::input-placeholder{color:#fff !important;font-size:10px;font-weight: 350;}
+
+.slider_group{padding:13px 30px 50px;}
+.slider_tb_row{}
+.slider_tb_row .data_scrhead_tb{table-layout: fixed;}
+.slider_tb_row .data_scrhead_tb th{width:auto;}
+.slider_tb_row .data_date_group{width:auto;}
+.multi_range_z { position: relative; width: 100%; } 
+.multi_range_z .slider { position: relative; z-index: 1; height: 35px;} 
+.multi_range_z .slider > .track { position: absolute; z-index: 1; left: 0; right: 0; top: 0; bottom: 0; background-color: #F1F3F5; } 
+.multi_range_z .slider > .range { position: absolute; z-index: 2; left: 0%; right: 0%; top: 0; bottom: 0; background-color: #a5d8d7; } 
+.multi_range_z .slider > .thumb { position: absolute; z-index: 3; width: 1px; height: 35px;   box-sizing:border-box;} 
+.multi_range_z .slider > .thumb.left:before{left:-15px;}
+.multi_range_z .slider > .thumb.right:before{right:-15px;}
+
+.multi_range_z .slider > .thumb:after{display:block;content:'';width:1px;height:35px;position:absolute;top:0;left:0;background-color: #07857f;}
+.multi_range_z .slider > .thumb svg{fill:none;position:absolute;bottom:-20px;left:-7px}
+.multi_range_z .slider > .thumb.left { left: 0%;  } 
+.multi_range_z .slider > .thumb.right { right: 0%; } 
+input[type="range"] { position: absolute; /* opacity로 가린 것을 이벤트도 비활성화하기 위해 */ pointer-events: none; -webkit-appearance: none; z-index: 2; height: 35px; width: 100%; opacity: 0; } 
+.multi_range_z input[type="range"]::-webkit-slider-thumb { /* 겹쳐진 두 thumb를 모두 활성화 */ pointer-events: all; width: 30px; height: 68px; border-radius: 0; border: 0 none; cursor: pointer; /* appearance를 해야 위의 스타일들을 볼 수 있음 */ -webkit-appearance: none; }

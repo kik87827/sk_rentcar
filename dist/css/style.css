@@ -2250,6 +2250,14 @@ input.boxform_obj:checked + .boxform_label {
 .chart_dotguide_list {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  line-height: 0;
+}
+.chart_dotguide_list.type2 > li {
+  margin-right: 34px;
+}
+.chart_dotguide_list.type2 > li:last-of-type {
+  margin-right: 0;
 }
 .chart_dotguide_list > li {
   margin-right: 16px;
@@ -2268,8 +2276,22 @@ input.boxform_obj:checked + .boxform_label {
   display: block;
   width: 10px;
   height: 10px;
-  border-radius: 100%;
+  border-radius: 4px;
   flex: 0 0 10px;
+}
+
+.chart_dash_box {
+  height: 0;
+  width: 28px;
+  flex: 0 0 28px;
+  border-bottom: 1px dashed #ddd;
+}
+
+.chart_solid_box {
+  height: 0;
+  width: 18px;
+  flex: 0 0 18px;
+  border-bottom: 1px solid #ddd;
 }
 
 .chart_dot_text {
@@ -2278,6 +2300,16 @@ input.boxform_obj:checked + .boxform_label {
   color: #363E3E;
   line-height: 1;
   margin-left: 4px;
+}
+
+.btn_inline_obj {
+  display: inline-block;
+  font-size: 14px;
+  line-height: 1;
+  background: #DCE3E3;
+  padding: 7px 15px;
+  border: 1px solid #DCE3E3;
+  border-radius: 2px;
 }
 
 .sb_content {
@@ -2343,6 +2375,10 @@ input.boxform_obj:checked + .boxform_label {
   align-items: center;
   padding: 12px 15px;
   justify-content: space-between;
+}
+.chart_tooltip_title.type2 {
+  justify-content: flex-start;
+  align-items: flex-end;
 }
 
 .chart_tooltip_cont {
@@ -2469,6 +2505,9 @@ input.input_calendar {
   background: #fff url("../images/input_calendar1.png") no-repeat 100% 50%;
   height: 38px;
   width: 115px;
+}
+input.input_calendar.type2 {
+  width: 230px;
 }
 
 select.form_select {
@@ -2601,9 +2640,16 @@ select.form_select:disabled {
   justify-content: space-between;
 }
 
+.sch_chart_vitem_group.type2 .sch_chart_vitem {
+  padding-bottom: 0;
+}
+
 .sch_chart_vitem {
   margin-bottom: 15px; /*background:#F1F3F5;*/
-  padding: 10px 30px 29px;
+  padding: 10px 0 29px;
+}
+.sch_chart_vitem.type2 {
+  padding-top: 0;
 }
 .sch_chart_vitem:last-of-type {
   margin-bottom: 0;
@@ -2615,6 +2661,7 @@ select.form_select:disabled {
   min-height: 32px;
   justify-content: space-between;
   margin-bottom: 12px;
+  padding: 0 30px;
 }
 
 .sch_chart_top_main {
@@ -3139,5 +3186,200 @@ select.form_select:disabled {
 
 .data_scroll_main_cell::-webkit-scrollbar-thumb {
   background-color: #D9D9D9;
+}
+
+.local_layer {
+  position: absolute;
+  z-index: 5;
+  display: none;
+}
+.local_layer.active {
+  display: block;
+}
+
+.tip_guide_table {
+  width: 100%;
+  table-layout: fixed;
+}
+.tip_guide_table thead th {
+  border-bottom: 0.5px solid #B0BABA;
+  font-size: 10px;
+  line-height: 1;
+  color: #DCE3E3;
+  padding: 0 10px 10px;
+}
+.tip_guide_table tbody td {
+  text-align: center;
+  padding: 5px 10px;
+}
+.tip_guide_table tbody td.type2 {
+  border-right: 0.5px solid #B0BABA;
+  padding: 0 5px;
+}
+
+.tip_guide_label {
+  font-size: 12px;
+  display: inline-block;
+  color: #DCE3E3;
+}
+
+.tip_guide_data {
+  font-weight: 700;
+  font-size: 12px;
+  display: inline-block;
+  color: #fff;
+}
+
+input.input_tipform {
+  font-weight: 700;
+  background-color: transparent;
+  width: 100%;
+  font-size: 12px;
+  text-align: center;
+  color: #fff;
+  background: #4C5353;
+  border-radius: 2px;
+  line-height: 1;
+  height: 18px;
+  padding: 0 2px;
+}
+
+input.input_tipform::-webkit-input-placeholder {
+  color: #fff !important;
+  font-size: 10px;
+  font-weight: 350;
+}
+
+input.input_tipform::-moz-input-placeholder {
+  color: #fff !important;
+  font-size: 10px;
+  font-weight: 350;
+}
+
+input.input_tipform:-ms-input-placeholder {
+  color: #fff !important;
+  font-size: 10px;
+  font-weight: 350;
+}
+
+input.input_tipform::-ms-input-placeholder {
+  color: #fff !important;
+  font-size: 10px;
+  font-weight: 350;
+}
+
+input.input_tipform::input-placeholder {
+  color: #fff !important;
+  font-size: 10px;
+  font-weight: 350;
+}
+
+.slider_group {
+  padding: 13px 30px 50px;
+}
+
+.slider_tb_row .data_scrhead_tb {
+  table-layout: fixed;
+}
+
+.slider_tb_row .data_scrhead_tb th {
+  width: auto;
+}
+
+.slider_tb_row .data_date_group {
+  width: auto;
+}
+
+.multi_range_z {
+  position: relative;
+  width: 100%;
+}
+
+.multi_range_z .slider {
+  position: relative;
+  z-index: 1;
+  height: 35px;
+}
+
+.multi_range_z .slider > .track {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #F1F3F5;
+}
+
+.multi_range_z .slider > .range {
+  position: absolute;
+  z-index: 2;
+  left: 0%;
+  right: 0%;
+  top: 0;
+  bottom: 0;
+  background-color: #a5d8d7;
+}
+
+.multi_range_z .slider > .thumb {
+  position: absolute;
+  z-index: 3;
+  width: 1px;
+  height: 35px;
+  box-sizing: border-box;
+}
+
+.multi_range_z .slider > .thumb.left:before {
+  left: -15px;
+}
+
+.multi_range_z .slider > .thumb.right:before {
+  right: -15px;
+}
+
+.multi_range_z .slider > .thumb:after {
+  display: block;
+  content: "";
+  width: 1px;
+  height: 35px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #07857f;
+}
+
+.multi_range_z .slider > .thumb svg {
+  fill: none;
+  position: absolute;
+  bottom: -20px;
+  left: -7px;
+}
+
+.multi_range_z .slider > .thumb.left {
+  left: 0%;
+}
+
+.multi_range_z .slider > .thumb.right {
+  right: 0%;
+}
+
+input[type=range] {
+  position: absolute; /* opacity로 가린 것을 이벤트도 비활성화하기 위해 */
+  pointer-events: none;
+  -webkit-appearance: none;
+  z-index: 2;
+  height: 35px;
+  width: 100%;
+  opacity: 0;
+}
+
+.multi_range_z input[type=range]::-webkit-slider-thumb { /* 겹쳐진 두 thumb를 모두 활성화 */
+  pointer-events: all;
+  width: 30px;
+  height: 68px;
+  border-radius: 0;
+  border: 0 none;
+  cursor: pointer; /* appearance를 해야 위의 스타일들을 볼 수 있음 */
+  -webkit-appearance: none;
 }
 /*# sourceMappingURL=style.css.map */

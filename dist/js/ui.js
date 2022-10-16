@@ -1,5 +1,7 @@
 commonLayout();
-
+window.addEventListener("load", () => {
+  localLayer();
+})
 
 function menuRock(item) {
   let itemObj = document.querySelector(item);
@@ -427,11 +429,11 @@ function callDimLayer(option) {
 }
 
 
-function singleCalendar(option) {
+function callCalendar(option) {
   $(option.target).daterangepicker({
     autoUpdateInput: true,
     showDropdowns: true,
-    singleDatePicker: true,
+    singleDatePicker: option.singleDatePicker,
     locale: {
       format: 'YYYY년 MM월 DD일',
       "daysOfWeek": ["일", "월", "화", "수", "목", "금", "토"],
@@ -440,6 +442,7 @@ function singleCalendar(option) {
       applyLabel: '적용'
     }
   });
+  console.log(option.singleDatePicker)
   $(option.target).on('apply.daterangepicker', function(ev, picker) {
 
   });
@@ -548,4 +551,81 @@ function scrollTableFunc() {
   // });
 
 
+}
+
+function localLayer() {
+  addDynamicEventListener(document.body, 'click', '[data-popuptarget]', function(e) {
+    let thisObj = e.target;
+    let thisObj2 = thisObj.closest("[data-popuptarget]");
+    let thisObjTarget = thisObj2.dataset.popuptarget;
+    let thisObjTargetDom = null;
+    if (thisObj2 !== undefined || thisObjTarget !== undefined) {
+      e.preventDefault();
+      thisObjTargetDom = document.querySelector(thisObjTarget);
+      thisObjTargetDom.style.top = `${thisObj2.getBoundingClientRect().top + thisObj2.getBoundingClientRect().height + window.scrollY+12}px`;
+
+      thisObjTargetDom.classList.toggle("active");
+      if (window.innerWidth > thisObj2.getBoundingClientRect().left + thisObjTargetDom.getBoundingClientRect().width) {
+        thisObjTargetDom.style.left = `${thisObj2.getBoundingClientRect().left}px`;
+      } else {
+        thisObjTargetDom.style.left = `${(thisObj2.getBoundingClientRect().left - thisObjTargetDom.getBoundingClientRect().width)+thisObj2.getBoundingClientRect().width}px`;
+      }
+    }
+  });
+
+
+
+  let localLayer = document.querySelectorAll(".local_layer");
+  document.body.addEventListener('click', (e) => {
+    if (e.target.closest("[data-popuptarget") !== null || e.target.closest(".local_layer") !== null) {
+      return;
+    }
+    if (localLayer.length) {
+      localLayer.forEach((element) => {
+        if (element.classList.contains("active")) {
+          element.classList.remove("active");
+        }
+      });
+    }
+  })
+}
+
+
+function multiRange() {
+  let multi_range_z = document.querySelectorAll(".multi_range_z");
+  multi_range_z.forEach(function(elem, index) {
+    let this_elem = elem;
+    let inputLeft = this_elem.querySelector(".input-left");
+    let inputRight = this_elem.querySelector(".input-right");
+    let thumbLeft = this_elem.querySelector(".slider > .thumb.left");
+    let thumbRight = this_elem.querySelector(".slider > .thumb.right");
+    let range = this_elem.querySelector(".slider > .range");
+    let setLeftValue = () => {
+      const _this = inputLeft;
+      const [min, max] = [parseInt(_this.min), parseInt(_this.max)];
+
+      // 교차되지 않게, 1을 빼준 건 완전히 겹치기보다는 어느 정도 간격을 남겨두기 위해. 
+      _this.value = Math.min(parseInt(_this.value), parseInt(inputRight.value) - 1);
+
+      // input, thumb 같이 움직이도록 
+      const percent = ((_this.value - min) / (max - min)) * 100;
+      thumbLeft.style.left = percent + "%";
+      range.style.left = percent + "%";
+    };
+    let setRightValue = () => {
+      const _this = inputRight;
+      const [min, max] = [parseInt(_this.min), parseInt(_this.max)];
+
+      // 교차되지 않게, 1을 더해준 건 완전히 겹치기보다는 어느 정도 간격을 남겨두기 위해. 
+      _this.value = Math.max(parseInt(_this.value), parseInt(inputLeft.value) + 1);
+
+      // input, thumb 같이 움직이도록 
+      const percent = ((_this.value - min) / (max - min)) * 100;
+      thumbRight.style.right = 100 - percent + "%";
+      range.style.right = 100 - percent + "%";
+    };
+
+    inputLeft.addEventListener("input", setLeftValue);
+    inputRight.addEventListener("input", setRightValue);
+  });
 }

@@ -637,7 +637,7 @@ textarea {
   background: #078E8E;
   display: flex;
   justify-content: space-between;
-  padding: 0 30px;
+  padding: 0 0 0 30px;
 }
 
 .header_logo_title {
@@ -701,20 +701,41 @@ li.active .header_menu_text {
 
 .header_util_list {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   margin-left: 30px;
+  height: 70px;
+  font-size: 0;
+  line-height: 0;
+}
+
+.header_util_list > li.active .header_util {
+  background: #F1F3F5;
+}
+.header_util_list > li.active .header_util:after {
+  background-position: 0 100%;
 }
 
 .header_util {
   display: inline-block;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: 100% auto;
+  width: 82px;
+  height: 70px;
+  position: relative;
 }
-
-.header_util.ico_setting {
+.header_util:after {
+  display: block;
+  content: "";
   width: 26px;
   height: 26px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: 26px auto;
+}
+
+.header_util.ico_setting:after {
   background-image: url("../images/ico_util_setting.png");
 }
 

@@ -10,7 +10,15 @@
 	</div>
 	@@include('./include/script.html')
 	<script>
-		menuRock("#menu02");
+		// menuRock("#menu02");
+		// 퍼블확인용
+		let url = window.location.href.split('?')[1];
+		let url_2 = url !== undefined ? url.split('#')[0] : null;
+		if(url_2 === "menuicon_01"){
+			menuRock("#menuicon_01");
+		}else{
+			menuRock("#menu02");
+		}
 	</script>
 </body>
 </html>

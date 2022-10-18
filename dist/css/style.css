@@ -3408,6 +3408,7 @@ input.input_tipform::input-placeholder {
 
 .slider_tb_row .data_scrhead_tb {
   table-layout: fixed;
+  width: 100%;
 }
 
 .slider_tb_row .data_scrhead_tb th {

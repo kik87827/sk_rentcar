@@ -37,6 +37,11 @@
 			내용이 들어갑니다.
 		</section>
 	</div>
+	<!-- loading -->
+	<div class="loading_w">
+		<div class="loader"></div>
+	</div>
+	<!-- // loading -->
 	<script src="./js/jquery-3.4.1.min.js"></script>
 	<script src="./js/moment.min.js"></script>
 	<script src="./js/daterangepicker.js"></script>
@@ -49,6 +54,8 @@
 		let url_2 = url !== undefined ? url.split('#')[0] : null;
 		if (url_2 === "menuicon_01") {
 			menuRock("#menuicon_01");
+		} else if (url_2 === "loading") {
+			document.querySelector(".loading_w").classList.add("active");
 		} else {
 			menuRock("#menu02");
 		}

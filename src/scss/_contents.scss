@@ -848,3 +848,34 @@ input.input_tipform::input-placeholder{color:#fff !important;font-size:10px;font
 .multi_range_z .slider > .thumb.right { right: 0%; } 
 input[type="range"] { position: absolute; /* opacity로 가린 것을 이벤트도 비활성화하기 위해 */ pointer-events: none; -webkit-appearance: none; z-index: 2; height: 35px; width: 100%; opacity: 0; } 
 .multi_range_z input[type="range"]::-webkit-slider-thumb { /* 겹쳐진 두 thumb를 모두 활성화 */ pointer-events: all; width: 30px; height: 68px; border-radius: 0; border: 0 none; cursor: pointer; /* appearance를 해야 위의 스타일들을 볼 수 있음 */ -webkit-appearance: none; }
+
+
+
+/* [loading] layout.css이나 reset.css 둘중 아무 파일 하단에 추가  */
+.loading_w{z-index:100000;position:fixed;top:0;left:0;width:100%;height:100%;display:none;align-items: center;justify-content: center;
+    &.active{display:flex;}
+}
+.loader {
+  border: 2px solid #fff;
+  border-radius: 50%;
+  border-top: 2px solid #009a93;
+  width: 40px;
+  height: 40px;
+  
+  margin:0 auto;
+  -webkit-animation: spin 1.1s linear infinite; /* Safari */
+  animation: spin 1.1s linear infinite;
+}
+.loader.type2{
+  border-width: 2px;
+  width: 40px;
+  height: 40px;
+}
+@-webkit-keyframes spin {
+0% { -webkit-transform: rotate(0deg); }
+100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}

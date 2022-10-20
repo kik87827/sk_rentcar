@@ -2620,6 +2620,11 @@
 											</ul>
 										</div>
 									</div>
+									<!-- loading  -->
+									<div class="data_loader_wrap">
+										<div class="loader"></div>
+									</div>
+									<!-- // loading -->
 								</div>
 							</div>
 						</div>
@@ -3066,6 +3071,9 @@
 			var eventObj = document.createEvent('Event');
 			eventObj.initEvent('click', false, true);
 			document.querySelector("#btn_call_global").dispatchEvent(eventObj);
+		}else if(url_2 === "loading"){
+		
+			document.querySelector(".data_loader_wrap").style.display = "block";
 		}
 		
 	</script>

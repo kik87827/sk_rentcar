@@ -434,7 +434,6 @@ function callCalendar(option){
             applyLabel: '적용'
         }
     });
-    console.log(option.singleDatePicker)
     $(option.target).on('apply.daterangepicker', function(ev, picker) {
         
     });
@@ -641,4 +640,26 @@ function multiRange(){
         inputLeft.addEventListener("input", setLeftValue); 
         inputRight.addEventListener("input", setRightValue);
     });
+}
+
+function textSelectFunc(){
+    const text_select_group = document.querySelectorAll(".text_select_group");
+    const newSpan = document.createElement("span");
+    if(text_select_group.length === 0){return;}
+    newSpan.classList.add("textrender");
+    text_select_group.forEach((element,index)=>{
+        let thisElement = element;
+        thisElement.appendChild(newSpan.cloneNode())
+
+        const thistext = thisElement.querySelector(".textrender");
+        const thisSelect = thisElement.querySelector(".text_select");
+
+        thisSelect.addEventListener("change",()=>{
+            thistext.textContent = thisSelect.options[thisSelect.selectedIndex].innerHTML;
+            thisSelect.style.width = thistext.getBoundingClientRect().width+"px";
+        });
+
+        let triggerEvent = new Event("change");
+        thisSelect.dispatchEvent(triggerEvent);
+    }); 
 }

@@ -2295,10 +2295,10 @@ input.boxform_obj:checked + .boxform_label {
 
 .chart_dot_box {
   display: block;
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   border-radius: 4px;
-  flex: 0 0 10px;
+  flex: 0 0 12px;
 }
 
 .chart_dash_box {
@@ -2313,6 +2313,11 @@ input.boxform_obj:checked + .boxform_label {
   width: 18px;
   flex: 0 0 18px;
   border-bottom: 1px solid #ddd;
+}
+
+.chart_wid {
+  width: 12px !important;
+  flex-basis: 12px !important;
 }
 
 .chart_dot_text {
@@ -2620,6 +2625,70 @@ select.form_select:disabled {
   top: 0;
 }
 
+.sch_guide_else {
+  display: inline-block;
+  color: #434C4C;
+  font-size: 21px;
+  line-height: 1;
+  margin: 0 20px 0 0;
+  font-weight: 700;
+}
+
+select.text_select {
+  color: #434C4C;
+  cursor: pointer;
+  border: 0;
+  font-size: 21px;
+  height: 23px;
+  padding: 0 30px 0 0;
+  box-sizing: content-box;
+  font-family: "Pretendard";
+  background: transparent url("../images/icon_select.png") no-repeat 100% 50%/17.5px auto;
+  line-height: 21px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+select.text_select::-ms-value {
+  background: none;
+  color: #434C4C;
+}
+
+select.text_select::-ms-expand {
+  display: none;
+}
+
+select.text_select::-ms-value {
+  background: none;
+  color: #434C4C;
+}
+
+select.text_select:disabled {
+  color: #999999;
+  opacity: 1;
+}
+
+.text_select_group {
+  position: relative;
+}
+.text_select_group .text_select {
+  position: relative;
+  z-index: 1;
+}
+
+.textrender {
+  display: inline-block;
+  font-size: 21px;
+  color: #434C4C;
+  line-height: 1;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
 .design_dot_group {
   display: flex;
   align-items: center;
@@ -2715,6 +2784,9 @@ select.form_select:disabled {
 .onlytext_tab_list {
   display: flex;
   align-items: center;
+}
+.onlytext_tab_list.type2 > li.active .onlytext_tab {
+  color: #434C4C;
 }
 .onlytext_tab_list > li {
   padding: 0 40px 0 0;

@@ -379,9 +379,10 @@ input.boxform_obj:checked + .boxform_label{position:relative;z-index:2;color:#ff
     }
 }
 .chart_dot_item{display:inline-flex;line-height:1;align-items: center;}
-.chart_dot_box{display:block;width:10px;height:10px;border-radius:4px;flex:0 0 10px;}
+.chart_dot_box{display:block;width:12px;height:12px;border-radius:4px;flex:0 0 12px;}
 .chart_dash_box{height:0;width:28px;flex:0 0 28px;border-bottom:1px dashed #ddd}
 .chart_solid_box{height:0;width:18px;flex:0 0 18px;border-bottom:1px solid #ddd}
+.chart_wid{width:12px !important;flex-basis: 12px !important;}
 .chart_dot_text{display:inline-block;font-size:11px;color:#363E3E;line-height:1;margin-left:4px;}
 .btn_inline_obj{display:inline-block;font-size:14px;line-height:1;background:#DCE3E3;padding: 7px 15px;border: 1px solid #DCE3E3;border-radius: 2px;}
 .sb_content{margin-top:25px;}
@@ -487,6 +488,26 @@ select.form_select{
 .sch_main_range_text{font-weight: 700;font-size: 21px;line-height:1;color:#434C4C;position:relative;top:2px;
     &.type2{top:0}
 }
+.sch_guide_else{display:inline-block;color:#434C4C;font-size:21px;line-height:1;margin:0 20px 0 0;font-weight: 700;}
+select.text_select{}
+
+
+select.text_select{color:#434C4C;cursor:pointer;border:0;font-size:21px;height: 23px;padding: 0 30px 0 0;box-sizing:content-box;font-family: 'Pretendard';
+background: transparent url("../images/icon_select.png") no-repeat 100% 50%/17.5px auto;line-height:21px;-webkit-appearance:none;-moz-appearance:none;appearance:none;}
+select.text_select::-ms-value {background: none; color:#434C4C;}
+select.text_select::-ms-expand {display: none;}
+select.text_select::-ms-value {
+    background: none; 
+    color:#434C4C;
+}
+select.text_select:disabled{color:#999999;opacity:1;}
+.text_select_group{position:relative;
+    .text_select{position:relative;z-index:1;}
+}
+.textrender{display:inline-block;font-size:21px;color:#434C4C;line-height:1;opacity:0;position:absolute;top:0;left:0;z-index:0;}
+
+
+
 .design_dot_group{display:flex;align-items:center;position:relative;top:2px;
     &.disabled{
         .design_dot{opacity:.11;cursor:default;}
@@ -532,6 +553,13 @@ select.form_select{
 }
 .onlytext_tab_list{
     display:flex;align-items:center;
+    &.type2{
+        > li{
+            &.active{
+                .onlytext_tab{color: #434C4C;}
+            }
+        }
+    }
     > li{
         padding:0 40px 0 0;position:relative;
         &.active{

@@ -868,6 +868,10 @@ li.active .header_menu_text {
   width: 495px;
 }
 
+.fullpop_item.wtype3 {
+  width: 970px;
+}
+
 .fullpop_item.widfull {
   max-width: 100%;
   margin: 30px;
@@ -914,6 +918,11 @@ li.active .header_menu_text {
 
 .fullpop_contlow.type2 .fullpop_contlow_in {
   padding: 0;
+  background: #fff;
+}
+
+.fullpop_contlow.type3 .fullpop_contlow_in {
+  padding: 20px;
   background: #fff;
 }
 
@@ -1455,6 +1464,33 @@ input.date_range_input {
   line-height: 1;
 }
 
+.form_inguide_item {
+  margin-left: 10px;
+}
+.form_inguide_item > .btn_info_obj {
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.form_inguide {
+  display: inline-block;
+  font-size: 14px;
+  color: #434C4C;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.form_inline_group {
+  display: flex;
+  align-items: center;
+}
+.form_inline_group > * {
+  margin-right: 10px;
+}
+.form_inline_group > *:last-of-type {
+  margin-right: 0;
+}
+
 .choice_box_list {
   font-size: 0;
   line-height: 0;
@@ -1491,7 +1527,6 @@ input.boxform_obj {
 
 input.boxform_obj:checked + .boxform_label {
   position: relative;
-  z-index: 2;
   color: #fff;
   font-weight: 700;
   background-color: #009A93;
@@ -2533,6 +2568,9 @@ input.input_calendar {
   width: 115px;
 }
 input.input_calendar.type2 {
+  width: 230px;
+}
+input.input_calendar.range_date {
   width: 230px;
 }
 

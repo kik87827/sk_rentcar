@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="format-detection" content="telephone=no" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=1920" />
+	<link rel="stylesheet" href="./css/style.css" />
+	<title></title>
+</head>
+
+<body>
+	<div id="app">
+
+		<header class="header_wrap">
+			<h1 class="header_logo_title">
+				<a href="#" class="header_logo_item">
+					<img src="./images/toplogo.png" alt="SK렌터카">
+					<span class="header_logo_text">수요대응 PRICING</span>
+				</a>
+			</h1>
+			<div class="header_menu_group">
+				<ul class="header_menu_list">
+					<li id="menu03"><a href="#" class="header_menu"><span class="header_menu_text">경쟁사 분석</span></a></li>
+					<li id="menu04"><a href="#" class="header_menu"><span class="header_menu_text">예약현황</span></a></li>
+					<li id="menu01"><a href="#" class="header_menu"><span class="header_menu_text">최적가격 추천</span></a></li>
+					<li id="menu05"><a href="#" class="header_menu"><span class="header_menu_text">수요분석</span></a></li>
+					<li id="menu02"><a href="#" class="header_menu"><span class="header_menu_text">성과조회</span></a></li>
+				</ul>
+				<ul class="header_util_list">
+					<li id="menuicon_01"><a href="#" class="header_util ico_setting"><span class="hdtext">설정</span></a></li>
+				</ul>
+			</div>
+		</header>
+		<section class="middle_wrap">
+			<div class="cont_vitem_wrap">
+				<div class="cont_vitem define_title">
+					<div class="cont_title_main">
+						<h2 class="cont_title">최적가격 추천</h2>
+						<p class="cont_title_sub">출발일자에 따른 최적가격을 추천하고, 적용 가격에 따른 누적매출/운행률 시뮬레이션 결과 제공합니다.</p>
+					</div>
+				</div>
+				<div class="cont_vitem define_sort">
+					<div class="sort_main">
+						<dl class="sort_hor_item">
+							<dt><span class="sort_hor_label">지점</span></dt>
+							<dd>
+								<div class="choice_box_list">
+									<input type="radio" class="boxform_obj" name="cate01" id="cate01_01" checked>
+									<label for="cate01_01" class="boxform_label">SKR</label>
+									<input type="radio" class="boxform_obj" name="cate01" id="cate01_02">
+									<label for="cate01_02" class="boxform_label">빌리카</label>
+								</div>
+							</dd>
+						</dl>
+						<dl class="sort_hor_item">
+							<dt><span class="sort_hor_label">차형/차정</span></dt>
+							<dd>
+								<div class="form_inline_group">
+									<select class="form_select" style="width:160px">
+										<option>전체</option>
+									</select>
+									<select class="form_select" style="width:160px">
+										<option>전체</option>
+									</select>
+								</div>
+								<div class="form_inguide_item"><span class="form_inguide">스파크-수요그룹</span><a href="javascript:;" class="btn_info_obj"><span class="hdtext">도움말</span></a></div>
+							</dd>
+						</dl>
+					</div>
+					<div class="sort_sub">
+						<p class="sort_guide_text">업데이트 : 2022년 10월 14일</p>
+					</div>
+				</div>
+				<div class="cont_vitem define_schedule">
+					<div class="sch_top_wrap">
+						타이틀
+					</div>
+					<div class="sch_middle_wrap">
+						내용
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<script src="./js/jquery-3.4.1.min.js"></script>
+	<script src="./js/moment.min.js"></script>
+	<script src="./js/daterangepicker.js"></script>
+	<script src="./js/dynamicListener.min.js"></script>
+	<script src="./js/ui.js"></script>
+	<script>
+		// menuRock("#menu02");
+		// 퍼블확인용
+		let url = window.location.href.split('?')[1];
+		let url_2 = url !== undefined ? url.split('#')[0] : null;
+		menuRock("#menu01");
+	</script>
+</body>
+
+</html>

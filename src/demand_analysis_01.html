@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+@@include('./include/head.html')
+<body>
+	<div id="app">
+		@@include('./include/header.html')
+		<section class="middle_wrap">
+			<div class="cont_vitem_wrap">
+				<div class="cont_vitem define_title">
+					<div class="cont_title_main">
+						<h2 class="cont_title">수요분석</h2>
+						<ul class="cont_tab_list">
+							<li class="active"><a href="#" class="cont_tab">가격분석</a></li>
+							<li><a href="#" class="cont_tab">수요지표</a></li>
+						</ul>
+					</div>
+					<div class="cont_title_sub">
+						<p class="cont_title_copy">과거 출발일자 별 실제/예측 운행률을 비교하고 최적가격 이행률을 분석하여, 최적가격 적용의 효과성 파악할 수 있습니다.</p>
+					</div>
+				</div>
+				<div class="cont_vitem define_sort">
+					<div class="sort_main">
+						<dl class="sort_hor_item">
+							<dt><span class="sort_hor_label">지점</span></dt>
+							<dd>
+								<div class="choice_box_list">
+									<input type="radio" class="boxform_obj" name="cate01" id="cate01_01" checked="">
+									<label for="cate01_01" class="boxform_label">SKR</label>
+									<input type="radio" class="boxform_obj" name="cate01" id="cate01_02">
+									<label for="cate01_02" class="boxform_label">빌리카</label>
+								</div>
+							</dd>
+						</dl>
+						<dl class="sort_hor_item">
+							<dt><span class="sort_hor_label">조회 기간</span></dt>
+							<dd>
+								<input type="text" class="input_calendar range_date" id="input_calendar">
+							</dd>
+						</dl>
+						<dl class="sort_hor_item">
+							<dt><span class="sort_hor_label">차형/차정</span></dt>
+							<dd>
+								<select class="form_select" style="width:160px">
+									<option>전체</option>
+								</select>
+								<select class="form_select" style="width:160px">
+									<option>전체</option>
+								</select>
+							</dd>
+						</dl>
+					</div>
+					<div class="sort_sub">
+						<p class="sort_guide_text">최종 업데이트 : 2021년 06월 15일</p>
+					</div>
+				</div>
+				<div class="cont_vitem define_data">
+					내용
+				</div>
+			</div>
+		</section>
+	</div>
+	@@include('./include/script.html')
+	<script>
+		// menuRock("#menu02");
+		// 퍼블확인용
+		let url = window.location.href.split('?')[1];
+		let url_2 = url !== undefined ? url.split('#')[0] : null;
+		menuRock("#menu05");
+
+		callCalendar({
+			target : "#input_calendar",
+			singleDatePicker : false,
+			hideCallback(){
+				console.log('hide callback');
+			}
+		})
+	</script>
+</body>
+</html>

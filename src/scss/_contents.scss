@@ -63,6 +63,17 @@
     }
     .sort_hor_label{display:inline-block;white-space: nowrap;font-weight: 600;font-size: 14px;line-height:1;}
 }
+.form_inguide_item{
+    margin-left:10px;
+    > .btn_info_obj{margin-left:6px;vertical-align: middle;}
+}
+.form_inguide{display:inline-block;font-size:14px;color:#434C4C;line-height:1;vertical-align: middle;}
+.form_inline_group{
+    display:flex;align-items:center;
+    > *{margin-right:10px;
+        &:last-of-type{margin-right:0;}
+    }
+}
 .choice_box_list{
     font-size:0;line-height:0;display:flex;
     > .boxform_label:first-of-type{border-radius: 5px 0 0 5px;}
@@ -71,7 +82,7 @@
 }
 .sort_guide_text{font-size:12px;color:#677272;display:block;line-height:1;}
 input.boxform_obj{appearance: none;-webkit-appearance: none;-moz-appearance: none;overflow:hidden;width:0;height:0;opacity:0;vertical-align: top;}
-input.boxform_obj:checked + .boxform_label{position:relative;z-index:2;color:#fff;font-weight:700;background-color:#009A93;border-color:#009A93;}
+input.boxform_obj:checked + .boxform_label{position:relative;color:#fff;font-weight:700;background-color:#009A93;border-color:#009A93;}
 .boxform_label{display:inline-block;cursor:pointer;text-align:center;min-width:42px;position:relative;overflow:hidden;margin:-1px;background:#fff;border:1px solid #B0BABA;font-weight: 500;font-size: 14px;color:#677272;line-height:1;padding:12px 15px}
 
 .cont_tabmenu_row{display:flex;justify-content: space-between;align-items: center;margin-bottom:30px;}
@@ -447,6 +458,7 @@ input.boxform_obj:checked + .boxform_label{position:relative;z-index:2;color:#ff
 
 input.input_calendar{display:inline-block;line-height:1;border: 1px solid #B0BABA;border-radius: 5px;font-size:14px;color:#000;padding:0 42px 0 12px;background:#fff url("../images/input_calendar1.png") no-repeat 100% 50%;height:38px;width:115px;
     &.type2{width:230px;}
+    &.range_date{width:230px;}
 }
 
 

@@ -7,6 +7,9 @@
     &.define_sum{
         
     }
+    &.define_text_list{
+        
+    }
     &.chart_grid_wrap{}
     &.define_title{
         display:flex;align-items: center;line-height:1;padding:15px 0 0 20px; justify-content: space-between;
@@ -16,6 +19,9 @@
     }
     &.define_schedule{
         background:#fff;border-radius: 5px;
+    }
+    &.define_card_group{
+        
     }
     &:last-of-type{margin-bottom:0;}
 }
@@ -187,7 +193,7 @@ input.boxform_obj:checked + .boxform_label{position:relative;color:#fff;font-wei
     }
 }
 
-.tbcount_row{padding-left:10px;margin-bottom:15px;display:flex;align-items: center;
+.tbcount_row{margin-bottom:15px;display:flex;align-items: center;
     > *{margin-right:15px;
         &:last-of-type{margin-right:0;}
     }
@@ -233,6 +239,12 @@ input.boxform_obj:checked + .boxform_label{position:relative;color:#fff;font-wei
         td.align_type3{
             
         }
+        &.define_toggle_target{
+
+        }
+        &.define_toggle_cont{
+            &.active{display:table-row !important;}
+        }
     }
     &.type2{
         tr { 
@@ -272,12 +284,25 @@ input.boxform_obj:checked + .boxform_label{position:relative;color:#fff;font-wei
     }
     tfoot td{position:relative;z-index:1;padding:15px 0;}
     .has_check{text-align: center;font-size:0;line-height:0;padding:15px;width:16px;}
+    .has_toggle{text-align: center;font-size:0;line-height:0;padding:15px;width:16px;}
     tr.depth_two{display:none;
         &:hover td{background:#fff !important;}
         td{padding:0;}
         &.active{display:table-row;}
     }
 }
+
+.btn_tbtoggle{
+    &:after{}
+    &.active{
+        &:after{}
+    }
+}
+
+.tb_inner_ctop_row{
+    .chart_dotguide_list{}
+}
+.tb_inner_chart_row{}
 
 .design_check{
     display:inline-block;vertical-align:middle;cursor:pointer;box-sizing:content-box;width:14px;height:14px;background:url("../images/ico_checkbox.png") no-repeat 0 0/100% auto;border:1px solid #939d9c;border-radius:2px;appearance: none;-webkit-appearance: none;-moz-appearance: none;-ms-appearance: none;
@@ -397,6 +422,8 @@ input.boxform_obj:checked + .boxform_label{position:relative;color:#fff;font-wei
 .chart_dot_box{display:block;width:12px;height:12px;border-radius:4px;flex:0 0 12px;}
 .chart_dash_box{height:0;width:28px;flex:0 0 28px;border-bottom:1px dashed #ddd}
 .chart_solid_box{height:0;width:18px;flex:0 0 18px;border-bottom:1px solid #ddd}
+.chart_quad_box{height:10px;width:10px;flex:0 0 10px;}
+.chart_solid_box2{display:block;width:7px;height:10px;flex:0 0 7px;border-top:1px solid #ddd;background:#ccc;border-bottom:1px solid #ddd;}
 .chart_wid{width:12px !important;flex-basis: 12px !important;}
 .chart_dot_text{display:inline-block;font-size:11px;color:#363E3E;line-height:1;margin-left:4px;}
 .btn_inline_obj{display:inline-block;font-size:14px;line-height:1;background:#DCE3E3;padding: 7px 15px;border: 1px solid #DCE3E3;border-radius: 2px;}
@@ -428,6 +455,7 @@ input.boxform_obj:checked + .boxform_label{position:relative;color:#fff;font-wei
 .chart_tip_table{
     width:100%; color:#fff;display:table;
 }
+.chart_tip_hr{height:1px;background:#677272;margin:12px 0;}
 .chart_tip_tr{display:table-row;
     &:last-of-type{
         .chart_tip_th,
@@ -1117,3 +1145,50 @@ input.input_box::input-placeholder{color:#869393 !important;font-weight: 350;tex
 .text_data_util{font-size: 12px;color:#B0BABA;}
 
 .emp_redtext{color:#ff473d !important;}
+
+
+.tbtop_fxwrap{
+    display:flex;align-items: flex-end;justify-content: space-between;margin-bottom:15px;
+    .tbcount_row{margin-bottom:0;}
+}
+.tbtop_main{}
+.tbtop_sub{}
+
+.card_box_fxwrap{}
+.card_box_cell{}
+.card_box{}
+.card_title_row{}
+.card_content_row{}
+.card_title{}
+.cart_title_else_group{}
+.btn_ico_util{
+    &:after{}
+    &.ico_list{}
+    &.ico_list:after{}
+}
+.btn_ico_util_text{}
+.summary_count_item_wrap{}
+.summary_count_item{}
+.summary_count_label_row{}
+.summary_count_label{}
+.summary_count_data_row{}
+.summary_count_value{}
+.summary_count_unit{}
+
+.summary_count_item_wrap{}
+.summary_count_item{
+    &:last-of-type{}
+}
+.summary_count_label_row{
+    .btn_info_obj{}
+}
+.summary_count_label{}
+.summary_count_data_row{}
+.summary_count_value{}
+.summary_count_unit{}
+
+.text_box_fxwrap{}
+.text_box_cell{}
+.text_box{
+    .ibullet_list{}
+}

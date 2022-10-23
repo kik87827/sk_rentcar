@@ -577,13 +577,13 @@ function localLayer() {
   addDynamicEventListener(document.body, 'click', '[data-popuptarget]', function(e) {
     let thisObj = e.target;
     let thisObj2 = thisObj.closest("[data-popuptarget]");
+    let thisObj2_option = thisObj2.dataset.popupmargin !== undefined ? parseInt(thisObj2.dataset.popupmargin) : 12;
     let thisObjTarget = thisObj2.dataset.popuptarget;
     let thisObjTargetDom = null;
     if (thisObj2 !== undefined || thisObjTarget !== undefined) {
       e.preventDefault();
       thisObjTargetDom = document.querySelector(thisObjTarget);
-      thisObjTargetDom.style.top = `${thisObj2.getBoundingClientRect().top + thisObj2.getBoundingClientRect().height + window.scrollY+12}px`;
-
+      thisObjTargetDom.style.top = `${thisObj2.getBoundingClientRect().top + thisObj2.getBoundingClientRect().height + window.scrollY + thisObj2_option}px`;
       thisObjTargetDom.classList.toggle("active");
       if (window.innerWidth > thisObj2.getBoundingClientRect().left + thisObjTargetDom.getBoundingClientRect().width) {
         thisObjTargetDom.style.left = `${thisObj2.getBoundingClientRect().left}px`;
@@ -672,4 +672,58 @@ function textSelectFunc() {
     let triggerEvent = new Event("change");
     thisSelect.dispatchEvent(triggerEvent);
   });
+}
+
+
+function dataTableSetting() {
+  const data_table_global_zone = document.querySelectorAll(".data_table_global_zone");
+  const data_body_table = document.querySelector(".data_tbody");
+  const data_body_local_call = data_body_table.querySelectorAll(".local_call");
+  const head_local_call = document.querySelector(".data_thead .local_call");
+  const data_local_layer = document.querySelector(".data_local_layer");
+  const btn_local_close = document.querySelector(".btn_local_close");
+  data_body_local_call.forEach((element, index) => {
+    const thisObj = element;
+    const thisIndex = index;
+    thisObj.addEventListener("click", (e) => {
+      const thisEventObj = e.currentTarget;
+      const thisObj_tr = thisEventObj.closest("tr");
+      const thisObj_zone = thisEventObj.closest(".data_table_global_zone");
+      if (head_local_call.checked) {
+        return;
+      }
+      data_body_local_call.forEach((element, index) => {
+        if (thisIndex === index) {
+          return;
+        }
+        element.checked = false;
+      });
+      if (thisEventObj.checked) {
+        data_local_layer.classList.add("active");
+        data_local_layer.style.top = `${window.scrollY + thisObj_tr.getBoundingClientRect().top}px`;
+        data_local_layer.style.left = `${thisObj_zone.getBoundingClientRect().left + thisObj_zone.getBoundingClientRect().width - data_local_layer.getBoundingClientRect().width}px`;
+      } else {
+        data_local_layer.classList.remove("active");
+      }
+    });
+  });
+  head_local_call.addEventListener("click", (e) => {
+    const thisEventObj = e.currentTarget;
+    data_local_layer.classList.remove("active");
+
+    data_body_local_call.forEach((element) => {
+      element.checked = thisEventObj.checked;
+    });
+  });
+  btn_local_close.addEventListener("click", (e) => {
+    const thisEventObj = e.currentTarget;
+    const thisObj_layer = thisEventObj.closest(".data_local_layer");
+    thisObj_layer.classList.remove("active");
+  });
+  data_table_global_zone.forEach((element) => {
+    const thisObj = element;
+    const thisHead = thisObj.querySelector(".data_thead");
+    const thisBody = thisObj.querySelector(".data_tbody");
+    thisBody.querySelector("colgroup").innerHTML = thisHead.querySelector("colgroup").innerHTML
+  })
 }

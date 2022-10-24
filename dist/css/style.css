@@ -2052,7 +2052,6 @@ input.boxform_obj:checked + .boxform_label {
 .data_table tr.depth_two.active {
   display: table-row;
 }
-
 .design_check {
   display: inline-block;
   vertical-align: middle;

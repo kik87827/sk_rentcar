@@ -52,9 +52,11 @@ var dataTableFunc = {
         if(getPosDom !== undefined){
             thisBodywrap.style.maxHeight = getPosDom.offsetTop + "px";
             thisHeadwrap.style.paddingRight = getScrollBarWidth() + "px";
-            thisFootwrap.style.paddingRight = getScrollBarWidth() + "px";
+            if(thisFootwrap !== null){
+                thisFootwrap.style.paddingRight = getScrollBarWidth() + "px";
+            }
         }
-        // console.log(target);
+        console.log(target);
     }
 }
 // function dataTableFunc(){
@@ -205,6 +207,9 @@ let layerPopup = {
             element.classList.remove("active");
         })
         target_dom.classList.add("active");
+        if("beforeCallback" in option){
+            option.beforeCallback();
+        }
         setTimeout(()=>{
             target_dom.classList.add("motion");
         },30);

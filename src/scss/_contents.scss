@@ -290,6 +290,7 @@ input.boxform_obj:checked + .boxform_label{position:relative;color:#fff;font-wei
         td{padding:0;}
         &.active{display:table-row;}
     }
+    .emp_cell{}
 }
 
 .btn_tbtoggle{
@@ -320,6 +321,8 @@ input.boxform_obj:checked + .boxform_label{position:relative;color:#fff;font-wei
         padding : 0 15px; background:url("../images/filter.png") no-repeat 100% 50%/auto 14px;
     }
 }
+.data_thmain{}
+.data_cell_unit{}
 .tf_total_text{display:inline-block;font-size:14px;color:#4C5353;line-height:1;font-weight:700;word-break: break-all;}
 
 .data_text{
@@ -1192,3 +1195,13 @@ input.input_box::input-placeholder{color:#869393 !important;font-weight: 350;tex
 .text_box{
     .ibullet_list{}
 }
+
+
+.data_total_item_group{}
+.data_total_item{
+    &:last-of-type{}
+}
+.data_total_label{}
+.data_total_value_group{}
+.data_total_value_main{}
+.data_total_value_unit{}

@@ -732,3 +732,57 @@ function dataTableSetting() {
     thisBody.querySelector("colgroup").innerHTML = thisHead.querySelector("colgroup").innerHTML
   })
 }
+
+
+function tableToggle() {
+  const btn_tbtoggle = document.querySelectorAll(".btn_tbtoggle");
+  const define_toggle_cont = document.querySelectorAll(".define_toggle_cont");
+  if (btn_tbtoggle.length) {
+    btn_tbtoggle.forEach((element, index) => {
+      let forIndex = index;
+      element.addEventListener("click", (e) => {
+        const thisObjEvent = e.currentTarget;
+        const thisObjEventParent = thisObjEvent.closest(".define_toggle_target");
+        const thisTarget = thisObjEventParent.nextElementSibling;
+
+
+        btn_tbtoggle.forEach((element, index) => {
+          if (forIndex === index) {
+            return;
+          }
+          if (element.classList.contains("active")) {
+            element.classList.remove("active");
+            element.closest(".define_toggle_target").nextElementSibling.classList.remove("active");
+          }
+        });
+
+        thisObjEvent.classList.toggle("active");
+        thisTarget.classList.toggle("active");
+      });
+    });
+  }
+  // addDynamicEventListener(document.body, 'click', '.btn_tbtoggle', function (e) {
+  //     let thisObj = e.target;
+  //     let thisObjParent = thisObj.closest(".define_toggle_target");
+  //     let thisTarget = thisObjParent.nextElementSibling;
+  //     e.preventDefault();
+
+
+  //     btn_tbtoggle.forEach((element,index)=>{
+  //         if(thisObj)
+  //         if(element.classList.contains("active")){
+  //             element.classList.remove("active");
+  //         }
+  //     });
+
+
+  //     define_toggle_cont.forEach((element,index)=>{
+  //         if(element.classList.contains("active")){
+  //             element.classList.remove("active");
+  //         }
+  //     });
+
+  //     thisObj.classList.toggle("active");
+  //     thisTarget.classList.toggle("active");
+  // });
+}

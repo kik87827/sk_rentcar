@@ -243,6 +243,9 @@ input.boxform_obj:checked + .boxform_label{position:relative;color:#fff;font-wei
 
         }
         &.define_toggle_cont{
+            display:none;
+            td{background:#F8F9FA;padding:50px;}
+            &:hover td{background-color:#F8F9FA;}
             &.active{display:table-row !important;}
         }
     }
@@ -284,7 +287,7 @@ input.boxform_obj:checked + .boxform_label{position:relative;color:#fff;font-wei
     }
     tfoot td{position:relative;z-index:1;padding:15px 0;}
     .has_check{text-align: center;font-size:0;line-height:0;padding:15px;width:16px;}
-    .has_toggle{text-align: center;font-size:0;line-height:0;padding:15px;width:16px;}
+    .has_toggle{text-align: center;font-size:0;line-height:0;padding:0;width:60px;}
     tr.depth_two{display:none;
         &:hover td{background:#fff !important;}
         td{padding:0;}
@@ -294,13 +297,18 @@ input.boxform_obj:checked + .boxform_label{position:relative;color:#fff;font-wei
 }
 
 .btn_tbtoggle{
-    &:after{}
+    display:inline-block;width:30px;height:30px;position:relative;
+    &:after{
+        display:block;content:'';width:10px;height:10px;border-right:1px solid #343A40;border-bottom:1px solid #343A40;position:absolute;top:13px;left:10px;
+        transform: translateY(0) rotate(225deg);
+    }
     &.active{
-        &:after{}
+        &:after{transform: translateY(0) rotate(45deg);top:5px;}
     }
 }
 
 .tb_inner_ctop_row{
+    margin-bottom:20px;display:flex;justify-content:flex-end;
     .chart_dotguide_list{}
 }
 .tb_inner_chart_row{}
@@ -1157,42 +1165,42 @@ input.input_box::input-placeholder{color:#869393 !important;font-weight: 350;tex
 .tbtop_main{}
 .tbtop_sub{}
 
-.card_box_fxwrap{}
-.card_box_cell{}
-.card_box{}
-.card_title_row{}
-.card_content_row{}
-.card_title{}
-.cart_title_else_group{}
+.card_box_fxwrap{display:flex;flex-wrap:wrap;margin:-15px;}
+.card_box_cell{flex:0 0 50%;box-sizing: border-box;width:50%;padding:15px;}
+.card_box{background: #FFFFFF;border-radius: 12px;display:flex;flex-direction: column;height:100%;}
+.card_title_row{display:flex;align-items: center;justify-content: space-between;border-bottom:1px solid #c9cfcf;flex:0;padding:15px 20px;}
+.card_content_row{flex:1;}
+.card_title{font-size:18px;color:#434C4C;line-height:1;font-weight:500;}
+.cart_title_else_group{
+    > *{margin-right:10px;
+        &:last-child{margin-right:0;}
+    }
+}
 .btn_ico_util{
-    &:after{}
+    display:inline-flex;align-items:center;
+    &:before{display:block;content:'';background-repeat:no-repeat;background-size:100% auto;background-position:0 0;margin-right:7px;}
     &.ico_list{}
-    &.ico_list:after{}
+    &.ico_list:before{background-image:url("../images/icon_list.png");width:12px;height:8px;}
 }
-.btn_ico_util_text{}
-.summary_count_item_wrap{}
-.summary_count_item{}
-.summary_count_label_row{}
-.summary_count_label{}
-.summary_count_data_row{}
-.summary_count_value{}
-.summary_count_unit{}
+.btn_ico_util_text{display:inline-block;font-size:14px;color:#4C5353;line-height:1;}
+.summary_count_item_wrap{display:flex;flex-wrap:wrap;margin-top:-5px;padding:0 30px 25px;}
+.summary_count_item{margin:30px 100px 0 0;}
+.summary_count_label_row{display:flex;align-items: center;line-height:0;}
+.summary_count_label{font-size: 16px;display:inline-block;line-height:1;color:#677272;}
+.summary_count_data_row{display:flex;align-items: flex-end;line-height:0;margin-top:5px;}
+.summary_count_value,
+.summary_count_unit{display:inline-block;line-height:1;}
+.summary_count_value{font-size: 36px;color:#4C5353;font-weight:600;letter-spacing: -.5px;}
+.summary_count_unit{font-size:14px;color:#8C9695;position:relative;top:-5px;margin-left:3px;}
 
-.summary_count_item_wrap{}
-.summary_count_item{
-    &:last-of-type{}
-}
 .summary_count_label_row{
-    .btn_info_obj{}
+    .btn_info_obj{margin-left:4px;}
 }
-.summary_count_label{}
-.summary_count_data_row{}
-.summary_count_value{}
-.summary_count_unit{}
 
-.text_box_fxwrap{}
-.text_box_cell{}
+.text_box_fxwrap{display:flex;flex-wrap:wrap;margin:-15px;}
+.text_box_cell{flex:0 0 50%;padding:15px;box-sizing: border-box;}
 .text_box{
+    background: #E9ECEF;border-radius: 5px; padding:10px 20px;
     .ibullet_list{}
 }
 

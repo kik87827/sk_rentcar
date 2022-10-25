@@ -21,15 +21,17 @@ var dataTableFunc = {
 
       let thisObj = e.target;
       let thisObjParent = thisObj.closest(".depth_one");
+      let thisObjParent2 = thisObj.closest(".fk_tb_tr_group");
       let thisObjParentTarget = thisObjParent.nextElementSibling;
-
       if (thisObj.classList.contains(".fold_item")) {
         thisObj.classList.toggle("active");
       } else {
         thisObj.closest(".fold_item").classList.toggle("active");
       }
       thisObjParentTarget.classList.toggle("active");
-
+      if (thisObjParent2 !== null) {
+        thisObjParent2.classList.toggle("active");
+      }
     }, false);
     addDynamicEventListener(document.body, 'click', '[name="total_check"]', function(e) {
       let etarget = e.target;
@@ -58,7 +60,6 @@ var dataTableFunc = {
         thisFootwrap.style.paddingRight = getScrollBarWidth() + "px";
       }
     }
-    console.log(target);
   }
 }
 // function dataTableFunc(){
@@ -618,6 +619,7 @@ function localLayer() {
 
 function multiRange() {
   let multi_range_z = document.querySelectorAll(".multi_range_z");
+
   multi_range_z.forEach(function(elem, index) {
     let this_elem = elem;
     let inputLeft = this_elem.querySelector(".input-left");
@@ -649,7 +651,8 @@ function multiRange() {
       thumbRight.style.right = 100 - percent + "%";
       range.style.right = 100 - percent + "%";
     };
-
+    console.log(inputLeft);
+    console.log(inputRight);
     inputLeft.addEventListener("input", setLeftValue);
     inputRight.addEventListener("input", setRightValue);
   });

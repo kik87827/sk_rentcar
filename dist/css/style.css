@@ -1985,6 +1985,7 @@ input.boxform_obj:checked + .boxform_label {
 
 .tbody_table_wrap {
   position: relative;
+  overflow: hidden;
   overflow-y: auto;
 }
 .tbody_table_wrap tr td.bgtype2 {
@@ -2963,6 +2964,10 @@ select.text_select:disabled {
   margin-bottom: 0;
 }
 
+.depth_chart_wrap {
+  padding: 10px 45px;
+}
+
 .sch_chart_top_row {
   display: flex;
   align-items: center;
@@ -2970,6 +2975,9 @@ select.text_select:disabled {
   justify-content: space-between;
   margin-bottom: 12px;
   padding: 0 30px;
+}
+.sch_chart_top_row.type2 {
+  padding: 0;
 }
 
 .sch_chart_top_main {
@@ -3717,6 +3725,15 @@ input.input_tipform::input-placeholder {
 .multi_range_z {
   position: relative;
   width: 100%;
+}
+.multi_range_z.type2 .slider {
+  height: 11px;
+}
+.multi_range_z.type2 .slider > .thumb {
+  height: 11px;
+}
+.multi_range_z.type2 .slider > .thumb:after {
+  height: 11px;
 }
 
 .multi_range_z .slider {
@@ -4551,5 +4568,43 @@ input.input_box::input-placeholder {
   color: #8C9695;
   position: relative;
   top: -1px;
+}
+
+.fk_tb_tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-bottom: 1px solid #f1f3f5;
+}
+.fk_tb_tr:hover .fk_tb_cell {
+  background-color: #F0FCFB;
+}
+.fk_tb_cell {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.fk_tb_cell.has_check {
+  text-align: center;
+  font-size: 0;
+  line-height: 0;
+  padding: 15px;
+  width: 16px;
+}
+
+.fk_tb_toggle_cont {
+  display: none;
+  background: #F8F9FA;
+  border-bottom: 1px solid #f1f3f5;
+}
+.fk_tb_toggle_cont .slider_range_row {
+  height: 35px;
+  position: relative;
+  overflow: hidden;
+  padding: 0 45px;
+  margin: 5px -45px 0;
+}
+.fk_tb_toggle_cont.active {
+  display: block;
 }
 /*# sourceMappingURL=style.css.map */

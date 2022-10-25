@@ -239,7 +239,7 @@ input.boxform_obj:checked + .boxform_label{position:relative;color:#fff;font-wei
     }
 }
 .tbody_table_wrap{
-    position:relative;overflow-y:auto;
+    position:relative;overflow:hidden;overflow-y:auto;
     tr{
         td.bgtype2{background:#F8F9FA;}
         td.align_type3{
@@ -638,8 +638,12 @@ select.text_select:disabled{color:#999999;opacity:1;}
     &.type2{padding-top:0;}
     &:last-of-type{margin-bottom:0;}
 }
+.depth_chart_wrap{padding:10px 45px;}
 .sch_chart_top_row{
     display:flex;align-items: center;min-height:32px;justify-content: space-between;margin-bottom:12px;padding:0 30px;
+    &.type2{
+        padding:0;
+    }
 }
 .sch_chart_top_main{display:flex;align-items: center;}
 .sch_chart_top_title{font-weight: 700;line-height:1;font-size: 16px;}
@@ -964,7 +968,15 @@ input.input_tipform::input-placeholder{color:#fff !important;font-size:10px;font
 .slider_tb_row .data_scrhead_tb{table-layout: fixed;width:100%;}
 .slider_tb_row .data_scrhead_tb th{width:auto;}
 .slider_tb_row .data_date_group{width:auto;}
-.multi_range_z { position: relative; width: 100%; } 
+.multi_range_z { position: relative; width: 100%; 
+    &.type2{
+        .slider{height:11px;
+            > .thumb{height:11px;
+                &:after{height:11px}
+            }
+        }
+    }
+} 
 .multi_range_z .slider { position: relative; z-index: 1; height: 35px;} 
 .multi_range_z .slider > .track { position: absolute; z-index: 1; left: 0; right: 0; top: 0; bottom: 0; background-color: #F1F3F5; } 
 .multi_range_z .slider > .range { position: absolute; z-index: 2; left: 0%; right: 0%; top: 0; bottom: 0; background-color: #a5d8d7; } 
@@ -978,7 +990,6 @@ input.input_tipform::input-placeholder{color:#fff !important;font-size:10px;font
 .multi_range_z .slider > .thumb.right { right: 0%; } 
 input[type="range"] { position: absolute; /* opacity로 가린 것을 이벤트도 비활성화하기 위해 */ pointer-events: none; -webkit-appearance: none; z-index: 2; height: 35px; width: 100%; opacity: 0; } 
 .multi_range_z input[type="range"]::-webkit-slider-thumb { /* 겹쳐진 두 thumb를 모두 활성화 */ pointer-events: all; width: 30px; height: 68px; border-radius: 0; border: 0 none; cursor: pointer; /* appearance를 해야 위의 스타일들을 볼 수 있음 */ -webkit-appearance: none; }
-
 
 
 /* [loading] layout.css이나 reset.css 둘중 아무 파일 하단에 추가  */
@@ -1251,3 +1262,35 @@ input.input_box::input-placeholder{color:#869393 !important;font-weight: 350;tex
 .data_total_value_unit{display:inline-block;line-height:1;}
 .data_total_value_main{font-size:20px;color:#4C5353;font-weight:600;letter-spacing: -0.5px;}
 .data_total_value_unit{font-size:14px;color:#8C9695;position:relative;top:-1px;}
+
+
+.fk_tb_group{}
+.fk_tb_tr_wrap{
+        
+}
+.fk_tb_tr{
+    display:table;width:100%;table-layout:fixed;border-bottom:1px solid #f1f3f5;
+    &:hover .fk_tb_cell{background-color:#F0FCFB;}
+    &.depth_one{}
+}
+.fk_tb_cell{
+    display:table-cell;vertical-align:middle;text-align:center;
+    &.has_check{
+        text-align: center;
+        font-size: 0;
+        line-height: 0;
+        padding: 15px;
+        width: 16px;
+    }
+}
+.fk_tb_toggle_cont{
+    display:none;
+    background:#F8F9FA;border-bottom:1px solid #f1f3f5;
+    .slider_range_row{height:35px;position:relative;overflow:hidden;padding:0 45px;margin:5px -45px 0;}
+    &.active{display:block;}
+}
+.fk_tb_group{}
+.fk_tb_group{}
+.fk_tb_group{}
+.fk_tb_group{}
+.fk_tb_group{}

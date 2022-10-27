@@ -3,7 +3,7 @@
 ::-webkit-scrollbar-track {background-color: transparent;border-radius: 10px;box-shadow: inset 0px 0px 5px transparent;}
 body{}
 #app{background:#F1F3F5;min-height:100vh;}
-.header_wrap{height:70px;background:#078E8E;display:flex;justify-content: space-between;padding:0 0 0 30px;}
+.header_wrap{z-index:20;height:70px;background:#078E8E;display:flex;justify-content: space-between;padding:0 0 0 30px;}
 .header_logo_title{display:flex;height:100%;align-items: center;}
 .header_logo_item{display:flex;align-items: flex-end;}
 .header_logo_item > img{width:87px;vertical-align: top;}
@@ -31,7 +31,32 @@ li.active .header_menu_text{color:#4C5353;font-weight:700;}
     &:after{display:block;content:'';width:26px;height:26px;position:absolute;top:50%;left:50%;transform: translate(-50%,-50%);background-position: 0 0 ;background-repeat:no-repeat;background-size:26px auto;}
 }
 .header_util.ico_setting:after{background-image:url("../images/ico_util_setting.png");}
-.middle_wrap{}
+.middle_wrap{
+    &.templete_type{display:flex;
+
+        &:before{display:block;content:'';width:172px;z-index:0;background:#fff;height:calc(100% - 70px);position:fixed;top:70px;left:0;}
+    }
+}
+.mid_left_cols,
+.mid_right_cols{position:relative;z-index:1;}
+.mid_left_cols{background:#fff;width:172px; flex:0 0 172px;}
+.mid_right_cols{
+    flex:1;padding:50px 74px;
+    .cont_vitem.define_title{}
+}
+.midmenu_list_wrap{text-align: center;padding:40px 0 80px;}
+.midmenu_list{
+    display:inline-block;text-align:left;
+    > li{
+        margin-bottom:20px;
+        &:last-of-type{margin-bottom:0}
+        &.active{
+            .midmenu{font-weight:700;}
+        }
+    }
+}
+.midmenu{display:inline-block;font-size: 14px;color:#434C4C}
+.mid_right_title_row{display:flex;justify-content: space-between;align-items: center;}
 
 // common
 .hdtext{display:inline-block;width:0;height:0;overflow:hidden;line-height:0;color:transparent;position:absolute;top:0;left:-99999px;}
@@ -155,3 +180,5 @@ li.active .header_menu_text{color:#4C5353;font-weight:700;}
 }
 .dim_pos_wrap{position:absolute;z-index:5;}
 input.date_range_input{border-radius:5px;background:#fff;height:36px;line-height:1;padding:0 15px;color:#677272;width:200px;}
+
+

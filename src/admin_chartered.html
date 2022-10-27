@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+@@include('./include/head.html')
+<body>
+	<div id="app">
+		@@include('./include/header.html')
+		<section class="middle_wrap">
+			내용이 들어갑니다.
+		</section>
+	</div>
+	@@include('./include/script.html')
+	<script>
+		// menuRock("#menu02");
+		// 퍼블확인용
+		let url = window.location.href.split('?')[1];
+		let url_2 = url !== undefined ? url.split('#')[0] : null;
+		
+
+		menuRock("#menuicon_01");
+	</script>
+</body>
+</html>

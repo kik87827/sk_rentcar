@@ -58,7 +58,7 @@
 					</div>
 				</div>
 				<div class="mid_right_content_row">
-					<div class="mid_controlbox_wrap">
+					<div class="mid_controlbox_wrap" id="page_controlbox">
 						<div class="mid_controlbox_long">
 							<div class="cbox_top_row">
 								<ul class="main_ctab_list">
@@ -71,6 +71,34 @@
 								</ul>
 							</div>
 							<div class="cbox_mid_row">
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
 								내용이 들어갑니다.<br>
 								내용이 들어갑니다.<br>
 								내용이 들어갑니다.<br>
@@ -126,6 +154,7 @@
 									<fieldset class="search_field">
 										<legend>검색</legend>
 										<input type="text" placeholder="차정을 검색하세요" class="input_search">
+										<button type="button" class="btn_search_ico"><span class="hdtext">검색</span></button>
 									</fieldset>
 								</div>
 							</div>
@@ -164,11 +193,29 @@
 								내용이 들어갑니다.<br>
 								내용이 들어갑니다.<br>
 								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
+								내용이 들어갑니다.<br>
 								내용이 들어갑니다.
 							</div>
 						</div>
 					</div>
-					<div calss="mid_footer_wrap">
+					<div class="mid_footer_wrap">
 						<div class="mid_footer_main"><a href="javascript:;" class="btn_text_item">대표 차정 설정</a></div>
 						<div class="mid_footer_sub">
 							<a href="#" class="btn_submitobj"><span class="btn_submitobj_in">취소</span></a>
@@ -179,13 +226,9 @@
 			</div>
 		</section>
 	</div>
-	<!-- loading -->
-	<div class="loading_w">
-		<div class="loader"></div>
-	</div>
-	<!-- // loading -->
 	<script src="./js/jquery-3.4.1.min.js"></script>
 	<script src="./js/moment.min.js"></script>
+	<script src="./js/swiper.min.js"></script>
 	<script src="./js/daterangepicker.js"></script>
 	<script src="./js/dynamicListener.min.js"></script>
 	<script src="./js/ui.js"></script>
@@ -197,6 +240,10 @@
 
 
 		menuRock("#menuicon_01");
+
+		window.addEventListener("load", () => {
+			controlBoxFunc("#page_controlbox"); // page layout
+		});
 	</script>
 </body>
 

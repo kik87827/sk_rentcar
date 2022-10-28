@@ -773,3 +773,125 @@ function dataTableSetting(){
     //     thisTarget.classList.toggle("active");
     // });
   }
+
+
+  function controlBoxFunc(target){
+    let targetObj = target;
+    if(targetObj === undefined){return;}
+    const targetDom = document.querySelector(targetObj);
+    const targetDomNext = targetDom.nextElementSibling;
+    let targetDomNextHeight = targetDomNext.getBoundingClientRect().height;
+    const cbox_mid_row = targetDom.querySelectorAll(".cbox_mid_row");
+    const mid_right_cols = targetDom.closest(".mid_right_cols");
+    let mid_right_cols_pd = mid_right_cols !== null ? parseInt(getComputedStyle(mid_right_cols).getPropertyValue("padding-bottom")) : 0;
+    const fullpop_contlow = targetDom.closest(".fullpop_contlow");
+    const fullpop_contlow_in = targetDom.closest(".fullpop_contlow_in");
+    let fullpop_contlow_in_pd = 0;
+    const bodyDom = document.querySelector("body");
+    insertAction();
+    window.addEventListener("resize",()=>{
+        setTimeout(()=>{
+            insertAction();
+            console.log('resize')
+        },30);
+    });
+
+    function insertAction(){
+        targetDomNextHeight = targetDomNext.getBoundingClientRect().height;
+        if(mid_right_cols !==  null){
+            cbox_mid_row.forEach((element)=>{
+                element.style.removeProperty("height");
+                element.style.height = `${window.innerHeight-(element.getBoundingClientRect().top + targetDomNextHeight + mid_right_cols_pd)}px`;
+            });
+            bodyDom.classList.add("scroll_disabled");
+        }else if(fullpop_contlow !== null){
+            fullpop_contlow_in_pd = fullpop_contlow_in !== null ? parseInt(getComputedStyle(fullpop_contlow_in).getPropertyValue("padding-bottom")) : 0;
+            cbox_mid_row.forEach((element)=>{
+                element.style.removeProperty("height");
+                element.style.height = `${fullpop_contlow.getBoundingClientRect().height-(element.offsetTop + targetDomNextHeight + fullpop_contlow_in_pd)}px`;
+            });
+            fullpop_contlow.classList.add("scroll_disabled");
+        }
+    }
+
+    return {
+        "insertAction" : insertAction
+    }
+  }
+
+
+  function scrollTabSwiper(target){
+    let targetObj = target;
+    if(targetObj === undefined){return;}
+    const targetDom = document.querySelector(targetObj);
+    const targetDomWrapper = targetDom.querySelector(".swiper-wrapper");
+    const targetDomSlide = targetDom.querySelectorAll(".swiper-slide");
+    const swiperControl = targetDom.querySelectorAll(".btn_swiper_control");
+    const prevSwiperControl = targetDom.querySelector(".btn_swiper_control.prev");
+    const nextSwiperControl = targetDom.querySelector(".btn_swiper_control.next");
+    nextSwiperControl.classList.add("active");
+    if(targetDomSlide.length){
+        targetDomSlide.forEach((element,index)=>{
+            element.setAttribute("data-index",index);
+        });
+    }
+    let tabSwiper = new Swiper(`#${targetDom.id}`,{
+        slidesPerView: 'auto',
+        mousewheel: true,
+        freeMode: true,
+        on : {
+            init :false
+        }
+    });
+    tabSwiper.on("setTranslate",()=>{
+        swiperControlAction();
+    });
+    tabSwiper.on("slideChange",()=>{
+        swiperControlAction();
+    });
+    var controlClickIs = false;
+    function swiperControlAction(){
+        if(swiperControl.length === 0){return;}
+        if(getTranslateXY(targetDomWrapper).translateX === 0){
+            prevSwiperControl.classList.remove("active");
+            nextSwiperControl.classList.add("active");
+        }else{
+            if(tabSwiper.isEnd){
+                nextSwiperControl.classList.remove("active");
+            }else{
+                nextSwiperControl.classList.add("active");
+                prevSwiperControl.classList.add("active");
+            }
+        }
+    }
+
+    prevSwiperControl.addEventListener("click",(e)=>{
+        e.preventDefault();
+        prevSwiperControl.classList.remove("active");
+        tabSwiper.slideTo(0);
+        setTimeout(()=>{
+            prevSwiperControl.classList.remove("active");
+            controlClickIs = false;
+        },510);
+    });
+    
+    nextSwiperControl.addEventListener("click",(e)=>{
+        controlClickIs = true;
+        e.preventDefault();
+        nextSwiperControl.classList.remove("active");
+        tabSwiper.slideTo(targetDomSlide[targetDomSlide.length-1].dataset.index);
+        setTimeout(()=>{
+            nextSwiperControl.classList.remove("active");
+        },510);
+    });
+  }
+
+  
+  function getTranslateXY(element) {
+    const style = window.getComputedStyle(element)
+    const matrix = new DOMMatrixReadOnly(style.transform)
+    return {
+        translateX: matrix.m41,
+        translateY: matrix.m42
+    }
+}

@@ -4,8 +4,46 @@
 <body>
 	<div id="app">
 		@@include('./include/header.html')
-		<section class="middle_wrap">
-			내용이 들어갑니다.
+		<section class="middle_wrap templete_type">
+			<div class="mid_left_cols">
+				<div class="midmenu_list_wrap">
+					<ul class="midmenu_list">
+						<li><a href="#" class="midmenu">경쟁사 차정 관리</a></li>
+						<li class="active"><a href="#" class="midmenu">월별 목표 관리</a></li>
+						<li><a href="#" class="midmenu">전세버스 입도객</a></li>
+						<li><a href="#" class="midmenu">수요그룹 설정</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="mid_right_cols">
+				<div class="mid_right_title_row">
+					<div class="cont_title_main">
+						<h2 class="cont_title">월별 목표 관리</h2>
+						<p class="cont_title_sub">월 목표에 대한 데이터를 직접 입력하여 연동할 수  있습니다.</p>
+					</div>
+					<div class="cont_title_sub">
+						<a href="javascript:;" class="btn_icobox ico_excel"><span class="icobox_text">엑셀 다운로드</span></a>
+					</div>
+				</div>
+				<div class="mid_right_content_row type2">
+					<div class="mid_rcont_wrap">
+						내용이 들어갑니다.
+					</div>
+					<div class="mid_footer_wrap">
+						<div class="mid_footer_main">
+							<div class="text_box">
+								<ul class="ibullet_list">
+									<li>접속 당월의 확정 매출은 전날까지 누적된 매출의 집계만 확인 가능합니다.</li>
+								</ul>
+							</div>
+						</div>
+						<div class="mid_footer_sub">
+							<a href="#" class="btn_submitobj"><span class="btn_submitobj_in">취소</span></a>
+							<a href="#" class="btn_submitobj primary"><span class="btn_submitobj_in">저장</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
 		</section>
 	</div>
 	@@include('./include/script.html')
@@ -17,6 +55,8 @@
 		
 
 		menuRock("#menuicon_01");
+
+
 	</script>
 </body>
 </html>

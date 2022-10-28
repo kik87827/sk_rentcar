@@ -806,22 +806,28 @@ function controlBoxFunc(target) {
   const fullpop_contlow_in = targetDom.closest(".fullpop_contlow_in");
   let fullpop_contlow_in_pd = 0;
   const bodyDom = document.querySelector("body");
-  insertAction();
+
   window.addEventListener("resize", () => {
     setTimeout(() => {
       insertAction();
       console.log('resize')
     }, 30);
   });
+  insertAction();
 
   function insertAction() {
     targetDomNextHeight = targetDomNext.getBoundingClientRect().height;
     if (mid_right_cols !== null) {
       cbox_mid_row.forEach((element) => {
         element.style.removeProperty("height");
-        element.style.height = `${window.innerHeight-(element.getBoundingClientRect().top + targetDomNextHeight + mid_right_cols_pd)}px`;
+
+        if (window.innerHeight > 500) {
+          element.style.height = `${window.innerHeight-(element.getBoundingClientRect().top + targetDomNextHeight + mid_right_cols_pd)}px`;
+          bodyDom.classList.add("scroll_disabled");
+        } else {
+          element.style.height = `500px`;
+        }
       });
-      bodyDom.classList.add("scroll_disabled");
     } else if (fullpop_contlow !== null) {
       fullpop_contlow_in_pd = fullpop_contlow_in !== null ? parseInt(getComputedStyle(fullpop_contlow_in).getPropertyValue("padding-bottom")) : 0;
       cbox_mid_row.forEach((element) => {

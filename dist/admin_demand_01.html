@@ -88,7 +88,29 @@
 					<div class="mid_controlbox_wrap" id="page_controlbox">
 						<div class="mid_controlbox_long">
 							<div class="cbox_top_row">
-
+								<div class="flex_fth_group">
+									<div class="flex_fth_cell">
+										<ul class="fth_ctab_list">
+											<li><a href="#" class="fth_ctab">승용/승합</a></li>
+											<li><a href="#" class="fth_ctab">차명그룹</a></li>
+											<li><a href="#" class="fth_ctab">인승</a></li>
+											<li><a href="#" class="fth_ctab">RV/nonRV</a></li>
+										</ul>
+									</div>
+									<div class="flex_fth_cell type2">
+										<div class="fth_inblock">
+											<ul class="fth_ctab_list">
+												<li><a href="#" class="fth_ctab">가격레벨</a></li>
+											</ul>
+										</div>
+										<div class="fth_inblock type2">
+											<ul class="fth_ctab_list type2">
+												<li><a href="#" class="fth_ctab">Mass</a></li>
+												<li><a href="#" class="fth_ctab">Premium</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
 							</div>
 							<div class="cbox_mid_row">
 								내용이 들어갑니다.<br>
@@ -160,15 +182,26 @@
 							<a href="javascript:;" class="btn_cbox prev_control"><span class="hdtext">이전</span></a>
 							<a href="javascript:;" class="btn_cbox next_control"><span class="hdtext">다음</span></a>
 						</div>
-						<div class="mid_controlbox_short">
+						<div class="mid_controlbox_short type2">
 							<div class="cbox_top_row">
 								<div class="sub_ctop_row define_tab">
-									<ul class="sub_ctab_list">
-										<li class="active"><a href="javascript:;" class="sub_ctab"><span class="sub_ctab_in">롯데렌터카</span></a></li>
-										<li><a href="javascript:;" class="sub_ctab"><span class="sub_ctab_in">제주렌터카</span></a></li>
-										<li><a href="javascript:;" class="sub_ctab"><span class="sub_ctab_in">카모아</span></a></li>
-										<li><a href="javascript:;" class="sub_ctab"><span class="sub_ctab_in">제주패스</span></a></li>
-									</ul>
+									<div class="swiper-container swiper-tab" id="right_carkind_tab">
+										<a href="javascript:;" class="btn_swiper_control prev"><span class="hdtext">이전</span></a>
+										<div class="swiper-wrapper">
+											<div class="swiper-slide active"><a href="javascript:;" class="sub_ctab"><span class="sub_ctab_in">경형</span></a></div>
+											<div class="swiper-slide"><a href="javascript:;" class="sub_ctab"><span class="sub_ctab_in">소형</span></a></div>
+											<div class="swiper-slide"><a href="javascript:;" class="sub_ctab"><span class="sub_ctab_in">중형</span></a></div>
+											<div class="swiper-slide"><a href="javascript:;" class="sub_ctab"><span class="sub_ctab_in">대형</span></a></div>
+											<div class="swiper-slide"><a href="javascript:;" class="sub_ctab"><span class="sub_ctab_in">특대형</span></a></div>
+											<div class="swiper-slide"><a href="javascript:;" class="sub_ctab"><span class="sub_ctab_in">승합</span></a></div>
+											<div class="swiper-slide"><a href="javascript:;" class="sub_ctab"><span class="sub_ctab_in">SUV</span></a></div>
+											<div class="swiper-slide"><a href="javascript:;" class="sub_ctab"><span class="sub_ctab_in">수입</span></a></div>
+											<div class="swiper-slide"><a href="javascript:;" class="sub_ctab"><span class="sub_ctab_in">EV</span></a></div>
+											<div class="swiper-slide"><a href="javascript:;" class="sub_ctab"><span class="sub_ctab_in">수입EV</span></a></div>
+											<div class="swiper-slide"><a href="javascript:;" class="sub_ctab"><span class="sub_ctab_in">프리미엄</span></a></div>
+										</div>
+										<a href="javascript:;" class="btn_swiper_control next"><span class="hdtext">다음</span></a>
+									</div>
 								</div>
 								<div class="sub_ctop_row define_search">
 									<fieldset class="search_field">
@@ -263,6 +296,8 @@
 
 		window.addEventListener("load", () => {
 			controlBoxFunc("#page_controlbox"); // page layout
+
+			scrollTabSwiper("#right_carkind_tab"); // tab scroll
 		});
 	</script>
 </body>

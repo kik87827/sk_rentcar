@@ -865,6 +865,8 @@ function scrollTabSwiper(target) {
     slidesPerView: 'auto',
     mousewheel: true,
     freeMode: true,
+    allowTouchMove: true,
+    touchRatio: 0,
     on: {
       init: false
     }
@@ -881,6 +883,7 @@ function scrollTabSwiper(target) {
     if (swiperControl.length === 0) {
       return;
     }
+
     if (getTranslateXY(targetDomWrapper).translateX === 0) {
       prevSwiperControl.classList.remove("active");
       nextSwiperControl.classList.add("active");

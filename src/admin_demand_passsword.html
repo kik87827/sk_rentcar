@@ -16,7 +16,20 @@
 				</div>
 			</div>
 			<div class="mid_right_cols type2">
-				내용이 들어갑니다.
+				<div class="mid_right_check_form">
+					<div class="mid_right_tit_row">
+						<p class="field_tit_main">비밀번호 입력</p>
+						<p class="field_tit_sub">수요그룹 설정 화면에 접근하기 위한 비밀번호를 입력해 주세요.<br>비밀번호를 잊어버린 경우, 운영팀에 문의해 주세요.</p>
+					</div>
+					<div class="mid_right_cont_row">
+						<div class="field_row">
+							<input type="password" id="input_password" class="form_input align_place_c" placeholder="비밀번호를 입력하세요.">
+						</div>
+						<div class="field_row">
+							<button type="button" id="btn_field_submit" class="btn_field_submit" disabled>확인</button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 	</div>
@@ -31,6 +44,22 @@
 		menuRock("#menuicon_01");
 
 
+		// input
+		document.querySelector("#input_password").addEventListener("keyup",(e)=>{
+			inputAction(e.target);
+		});
+		document.querySelector("#input_password").addEventListener("focusout",(e)=>{
+			inputAction(e.target);
+		});
+		function inputAction(target){
+			if(target.value.length>0){
+				target.classList.add("ico_pass");
+				document.querySelector("#btn_field_submit").disabled = false;
+			}else{
+				target.classList.remove("ico_pass");
+				document.querySelector("#btn_field_submit").disabled = true;
+			}
+		}
 	</script>
 </body>
 </html>

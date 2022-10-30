@@ -1053,7 +1053,24 @@ input[type="range"] { position: absolute; /* opacity로 가린 것을 이벤트�
 .primary_emp{color:#009A93 !important;}
 
 .data_table_global_zone{}
-.data_thead_zone{position:sticky;top:0;left:0;width:100%;margin:0 -30px;padding:0 30px;background:#fff;z-index:10;}
+.data_thead_zone{position:sticky;top:0;left:0;width:100%;margin:0 -30px;padding:0 30px;background:#fff;z-index:10;
+    &.type2{
+        background:#fff;padding:0 20px;margin:0 -20px;
+        .data_thead_wrap{background:#F1F3F5;border-bottom:1px solid #DCE5E5;
+            th{position:relative;padding:10px 10px 9px;
+                &:after{display:block;content:'';width:1px;background:#e1e8e9;height:14px;position:absolute;top:50%;left:0;transform: translateY(-50%);}
+                &.type2{
+                    &:after{display:none;}
+                    & + th:after{display:none;}
+                }
+                &:first-of-type{
+                    &:after{display:none;}
+                }
+            }
+            .data_th{}
+        }
+    }
+}
 .data_thead_wrap{}
 .data_thead{
     width:100%;border-collapse:separate;table-layout:fixed;
@@ -1070,16 +1087,26 @@ input[type="range"] { position: absolute; /* opacity로 가린 것을 이벤트�
             &:last-of-type{border-right:0}
         }
     }
+    th.type2{background:#E9ECEF}
     th.part{border-right:1px solid #8c9695;}
 }
 
-.data_tbody_zone{}
+.data_top_guide{text-align: right;color:#434C4C;margin-bottom:10px;}
+
+.data_tbody_zone{
+    &.type2{
+        td{padding:10px;border-bottom:1px solid #DCE5E5;}
+    }
+}
 .data_tbody_wrap{
     td.part{border-right:1px solid #8c9695;}
 }
 .data_tbody{
     width:100%;border-collapse:separate;table-layout:fixed;
-    td{text-align: center;padding:10px 0;border-bottom:1px solid #DCE5E5;}
+    td{text-align: center;padding:10px 0;
+        &.bg2{background:#F8F9FA;}
+        &.type2{padding:3px 5px;}
+    }
 }
 .data_kind_thtext{display:inline-block;color:#677272;font-size:14px;line-height:1;font-weight:600;}
 .data_tbody{
@@ -1097,6 +1124,7 @@ input[type="range"] { position: absolute; /* opacity로 가린 것을 이벤트�
 .data_tb_text{
     display:inline-block;color:#000;line-height:1;font-size:14px;
     &.emp{}
+    &.gray{color:#4C5353;}
 }
 .data_tb_text{}
 input.input_databox{
@@ -1600,6 +1628,8 @@ input.form_input{
 }
 .tb_vdata_main{flex:0 0 16.66666666666667%;box-sizing: border-box;padding:14px 0 14px 28px;
     &.wtype2{flex-basis: 14.28571428571429%;}
+    &.wtype3{flex-basis: 50%;padding:14px 0;}
+    &.ptype2{padding:0;}
 }
 .tb_vdata_ca{}
 .tb_vdata_sub{flex:1;min-width:0;}
@@ -1627,8 +1657,12 @@ input.form_input{
 }
 .tb_vdata_ca,
 .tb_vdata{display:inline-block;line-height:1;font-size: 14px;color:#4C5353;overflow: hidden; text-overflow: ellipsis; display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;word-break: break-all;}
-.tb_vdata_ca{font-weight: 500;}
-.tb_vdata{}
+.tb_vdata_ca{font-weight: 500;
+    &.cloud{}
+}
+.tb_vdata{
+}
+.dark{color:#000 !important;}
 input.input_value{
     border: 1px solid #DCE5E5;width:100%;padding:0 10px;line-height:1;font-size: 14px;border-radius: 2px;color: #4C5353;box-sizing:border-box;text-align:center;height:30px;
     &:disabled{color:#B0BABA;background:#FFFFFF;}
@@ -1661,3 +1695,25 @@ input.input_value{
 .category_text_cell{display:table-cell;vertical-align: middle;min-width:0;padding: 0 15px 0 8px;}
 .category_word{color: #057772;font-weight:500;padding:5px 10px;font-size:12px;background: #E3F2F1;border-radius: 5px;display:inline-block;text-align: center;white-space: nowrap;}
 .category_text{color:#4C5353;font-weight: 500;font-size: 14px;overflow: hidden; text-overflow: ellipsis; display: -webkit-box;-webkit-line-clamp: 1;-webkit-box-orient: vertical;word-break: break-all;}
+
+
+.tb_vdata_main_tr{
+    display:flex;align-items:center;justify-content:center;text-align:center;
+    > li{
+        flex:1;padding:14px 10px;
+        .tb_vdata_ca{}
+    }
+}
+
+.emp_cell_fxwrap{
+    display:flex;position:relative;
+}
+.emp_cell{flex:1;position:relative;}
+.emp_vlist{
+    padding:0 5px;
+    > li {
+        padding:14px 10px;
+        &:last-of-type{}
+    }
+}
+.emp_tape{display:block;width:3px;height:calc(100% + 1px);position:absolute;top:0;left:0;}

@@ -701,24 +701,30 @@ function dataTableSetting(){
         }
       });
     });
-    head_local_call.addEventListener("click",(e)=>{
-        const thisEventObj = e.currentTarget;
-        data_local_layer.classList.remove("active");
-
-        data_body_local_call.forEach((element)=>{
-            element.checked = thisEventObj.checked;
+    if(head_local_call !== null){
+        head_local_call.addEventListener("click",(e)=>{
+            const thisEventObj = e.currentTarget;
+            data_local_layer.classList.remove("active");
+    
+            data_body_local_call.forEach((element)=>{
+                element.checked = thisEventObj.checked;
+            });
         });
-    });
-    btn_local_close.addEventListener("click",(e)=>{
-        const thisEventObj = e.currentTarget;
-        const thisObj_layer = thisEventObj.closest(".data_local_layer");
-        thisObj_layer.classList.remove("active");
-    });
+    }
+    if(btn_local_close !== null){
+        btn_local_close.addEventListener("click",(e)=>{
+            const thisEventObj = e.currentTarget;
+            const thisObj_layer = thisEventObj.closest(".data_local_layer");
+            thisObj_layer.classList.remove("active");
+        });
+    }
     data_table_global_zone.forEach((element)=>{
       const thisObj = element;
       const thisHead = thisObj.querySelector(".data_thead");
       const thisBody = thisObj.querySelector(".data_tbody");
-      thisBody.querySelector("colgroup").innerHTML = thisHead.querySelector("colgroup").innerHTML
+      if(thisBody.querySelector("colgroup") !== null){
+          thisBody.querySelector("colgroup").innerHTML = thisHead.querySelector("colgroup").innerHTML
+      }
     })
   }
 

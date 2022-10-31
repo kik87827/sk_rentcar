@@ -248,7 +248,7 @@ let layerPopup = {
         var domHtml = document.querySelector("html");
         var domBody = document.querySelector("body");
 
-        console.log(1)
+        
         if(target_obj !== null || target_obj.length>0){
             target_dom = document.querySelectorAll(option.target);
             target_dom.forEach((element)=>{
@@ -480,7 +480,6 @@ function scrollTableFunc(){
                 element.classList.toggle("active");
                 fixed_dep_group.classList.toggle("active");
                 scroll_dep_group.classList.toggle("active");
-                console.log(scroll_dep_group)
             }
         });
     });
@@ -522,7 +521,6 @@ function scrollTableFunc(){
             thisScroll.scrollLeft = scrollLeft - walk;
         });
         thisScroll.addEventListener("scroll",(e)=>{
-           //  console.log(e.currentTarget.scrollLeft);
            table_scroll_zone.forEach((element,index)=>{
             table_scroll_zone[index].scrollLeft = e.currentTarget.scrollLeft;
            })
@@ -643,8 +641,6 @@ function multiRange(){
             thumbRight.style.right = 100 - percent + "%"; 
             range.style.right = 100 - percent + "%"; 
         }; 
-        console.log(inputLeft);
-        console.log(inputRight);
         inputLeft.addEventListener("input", setLeftValue); 
         inputRight.addEventListener("input", setRightValue);
     });
@@ -688,10 +684,10 @@ function dataTableSetting(){
         const thisObj_tr = thisEventObj.closest("tr");
         const thisObj_zone = thisEventObj.closest(".data_table_global_zone");
         if(head_local_call.checked){return;}
-        data_body_local_call.forEach((element,index)=>{
-            if(thisIndex === index){return;}
-            element.checked = false;
-        });
+        // data_body_local_call.forEach((element,index)=>{
+        //     if(thisIndex === index){return;}
+        //     element.checked = false;
+        // });
         if(thisEventObj.checked){
             data_local_layer.classList.add("active");
             data_local_layer.style.top = `${window.scrollY + thisObj_tr.getBoundingClientRect().top}px`;
@@ -798,7 +794,6 @@ function dataTableSetting(){
     window.addEventListener("resize",()=>{
         setTimeout(()=>{
             insertAction();
-            console.log('resize')
         },30);
     });
     insertAction();

@@ -7522,4 +7522,172 @@ input.input_value:disabled {
   top: 0;
   left: 0;
 }
+
+#app.loading {
+  position: relative;
+  overflow: hidden;
+}
+#app.loading::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -150px;
+  top: 0;
+  height: 100%;
+  width: 150px;
+  opacity: 0.3;
+  background: rgb(255, 255, 255);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgb(255, 255, 255) 50%, rgba(255, 255, 255, 0) 100%);
+  -webkit-animation: load 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+          animation: load 3s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  z-index: 5;
+}
+#app.loading:after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+#app.loading .header_wrap {
+  background-color: #fff;
+}
+#app.loading * {
+  color: transparent !important;
+  border-color: transparent !important;
+}
+#app.loading p {
+  color: transparent;
+  background: #F1F3F5;
+  border-radius: 5px;
+}
+#app.loading .header_logo_item, #app.loading .boxform_label, #app.loading .sumchart_wrap {
+  position: relative;
+  background: #F1F3F5;
+  overflow: hidden;
+  border-radius: 5px;
+}
+#app.loading .header_logo_item *, #app.loading .boxform_label *, #app.loading .sumchart_wrap * {
+  opacity: 0;
+  color: transparent;
+  border-color: transparent;
+}
+#app.loading .sort_hor_label,
+#app.loading .cont_tabmenu,
+#app.loading .btn_icobox,
+#app.loading .tbcount_row,
+#app.loading .header_menu_text {
+  color: transparent;
+  background: #F1F3F5;
+  border-radius: 5px;
+}
+#app.loading .sort_hor_label:before,
+#app.loading .cont_tabmenu:before,
+#app.loading .btn_icobox:before,
+#app.loading .tbcount_row:before,
+#app.loading .header_menu_text:before {
+  display: none;
+}
+#app.loading .sort_hor_label:after,
+#app.loading .cont_tabmenu:after,
+#app.loading .btn_icobox:after,
+#app.loading .tbcount_row:after,
+#app.loading .header_menu_text:after {
+  display: none;
+}
+#app.loading input.design_check {
+  background: #F1F3F5;
+  border-color: #F1F3F5;
+}
+#app.loading .header_menu_list li.active .header_menu {
+  background-color: transparent !important;
+}
+#app.loading .header_util:after {
+  background: #F1F3F5;
+  border-radius: 100%;
+}
+#app.loading .sumbox_long {
+  background: #fff;
+  border-color: #fff;
+}
+#app.loading .sumbox_long p, #app.loading .sumbox_long a {
+  color: transparent;
+  background: #F1F3F5;
+  border-radius: 5px;
+}
+#app.loading .sb_total_label_row {
+  color: transparent;
+  background: #F1F3F5;
+  border-radius: 5px;
+}
+#app.loading .sb_total_grape_wrap {
+  background: #F1F3F5 !important;
+}
+#app.loading .sb_total_grape_current {
+  background: #F1F3F5 !important;
+}
+#app.loading .btn_moreitem:before,
+#app.loading .btn_moreitem:after {
+  display: none;
+}
+#app.loading .sumbox_title_row {
+  position: relative;
+}
+#app.loading .sumbox_title_row:after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #F1F3F5;
+  overflow: hidden;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#app.loading .sumbox_title_fxwrap, #app.loading .sumbox_title_global_wrap {
+  position: relative;
+  width: 100%;
+}
+#app.loading .sumbox_title_fxwrap:after, #app.loading .sumbox_title_global_wrap:after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #F1F3F5;
+  overflow: hidden;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#app.loading .data_table_wrap {
+  color: transparent;
+  background: #F1F3F5;
+  border-radius: 5px;
+}
+#app.loading .data_table_wrap * {
+  opacity: 0;
+}
+
+@-webkit-keyframes load {
+  from {
+    left: -150px;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+@keyframes load {
+  from {
+    left: -150px;
+  }
+  to {
+    left: 100%;
+  }
+}
 /*# sourceMappingURL=style.css.map */

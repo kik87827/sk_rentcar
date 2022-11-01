@@ -1466,6 +1466,11 @@
 						console.log('callback2')
 					}
 				})
+			} else if (url_2 === "loading") {
+				document.querySelector("#app").classList.add("loading");
+				setTimeout(() => {
+					document.querySelector("#app").classList.remove("loading");
+				}, 5000);
 			}
 		});
 	</script>

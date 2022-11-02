@@ -905,3 +905,34 @@ function dataTableSetting(){
         translateY: matrix.m42
     }
 }
+
+
+function ToastMessage(option){
+    this.appBody = document.querySelector("#app");
+    this.optionType = option.type;
+    this.optionMessage = option.message;
+    this.optionSpeed = option.speed !== undefined ? option.speed : 500;
+    this.optionDelayTime = option.time !== undefined ? option.time : 2000;
+    this.setTimeID = 0;
+    this.setTime2ID = 0;
+    this.toastObj = null;
+
+    let toastAppendParent = document.createElement("div");
+    toastAppendParent.classList.add("toast_parent_layer");
+
+    let templete = `
+        <div class="toast_layer ${this.optionType}" style="transition-duration:${this.optionSpeed}ms"><span class="toast_message">${this.optionMessage}</span></div>
+    `
+    if(this.appBody !== null){
+        toastAppendParent.innerHTML = templete;
+       this.appBody.append(toastAppendParent);
+       toastObj = document.querySelector(".toast_layer");
+    }
+
+    this.setTimeID = setTimeout(()=>{
+        toastObj.classList.add("out");
+        this.setTimeID = setTimeout(()=>{
+            toastObj.remove();
+        },this.optionSpeed+30);
+    },this.optionDelayTime);
+}

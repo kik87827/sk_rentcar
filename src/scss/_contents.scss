@@ -116,13 +116,15 @@ input.boxform_obj:checked + .boxform_label{position:relative;color:#fff;font-wei
     }
 }
 .btn_icobox{display:inline-flex; border-radius: 5px; align-items:center; padding: 7px 10px 7px 12px;border: 1px solid #009A93; background:#fff;
-    &:after{display:block;content:'';margin-left:7px;background-repeat:no-repeat;background-size:100% auto;background-position: 0 0;width:16px;height:16px;flex:0 0 16px;}
+    &:after{display:block;content:'';margin-left:7px;background-repeat:no-repeat;background-size:100% auto;background-position: 50% 50%;width:16px;height:16px;flex:0 0 16px;}
     &.dtype2{border-color:#677272;
+        &:hover{background:#fff;}
         .icobox_text{color:#677272;}
     }
     &.ico_excel:after{background-image:url("../images/icon_excel.png");}
     &.ico_chart:after{background-image:url("../images/icon_bar_chart.png");}
     &.ico_list:after{background-image:url("../images/icon_list.png");}
+    &:hover{background:#DDF1F0;}
 }
 .icobox_text{display:inline-block;color: #009A93;line-height:1;font-size:14px;font-weight:500;}
 .choice_date_box{background: #F1F3F5;border-radius: 5px;font-size:16px;color:#000;font-weight:400;line-height:1;padding:12px 15px;}

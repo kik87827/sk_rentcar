@@ -3552,13 +3552,16 @@ input.boxform_obj:checked + .boxform_label {
   margin-left: 7px;
   background-repeat: no-repeat;
   background-size: 100% auto;
-  background-position: 0 0;
+  background-position: 50% 50%;
   width: 16px;
   height: 16px;
   flex: 0 0 16px;
 }
 .btn_icobox.dtype2 {
   border-color: #677272;
+}
+.btn_icobox.dtype2:hover {
+  background: #fff;
 }
 .btn_icobox.dtype2 .icobox_text {
   color: #677272;
@@ -3571,6 +3574,9 @@ input.boxform_obj:checked + .boxform_label {
 }
 .btn_icobox.ico_list:after {
   background-image: url("../images/icon_list.png");
+}
+.btn_icobox:hover {
+  background: #DDF1F0;
 }
 
 .icobox_text {

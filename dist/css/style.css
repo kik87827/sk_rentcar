@@ -5183,7 +5183,7 @@ select.text_select:disabled {
   margin-bottom: 15px;
 }
 .data_sum_list > li.current .data_sumtext {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 600;
   color: #000;
 }
@@ -5197,6 +5197,14 @@ select.text_select:disabled {
 .data_sum_hitem {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  padding-left: 20px;
+}
+.data_sum_hitem .data_dotbox {
+  position: absolute;
+  top: 4px;
+  left: 0;
 }
 
 .data_dotbox {
@@ -5204,12 +5212,11 @@ select.text_select:disabled {
   width: 8px;
   height: 8px;
   border-radius: 100%;
-  margin-right: 15px;
 }
 
 .data_sumtext_group {
   display: inline-flex;
-  align-items: center;
+  margin: 0 10px 5px 0;
 }
 
 .data_sumtext_cell {
@@ -5223,9 +5230,8 @@ select.text_select:disabled {
   height: 10px;
   background: #a2acac;
   position: absolute;
-  top: 50%;
+  top: 2px;
   right: 5px;
-  transform: translateY(-50%);
 }
 .data_sumtext_cell:last-of-type {
   padding-right: 0;
@@ -5239,12 +5245,17 @@ select.text_select:disabled {
   color: #434C4C;
   display: inline-block;
   line-height: 1;
+  word-break: break-all;
+}
+.data_sumtext.com {
+  white-space: nowrap;
 }
 .data_updown_item {
   display: inline-flex;
   line-height: 0;
   align-items: center;
-  margin-left: 10px;
+  position: Relative;
+  top: -3px;
 }
 .data_updown_item.type_up .data_updown_ico {
   border-bottom-color: #009a93;
@@ -5279,8 +5290,10 @@ select.text_select:disabled {
   margin-left: 5px;
   padding: 3px 7px;
   display: inline-block;
+  position: Relative;
+  top: -3px;
   background-color: #a2acac;
-  font-size: 12px;
+  font-size: 11px;
   line-height: 1;
   color: #fff;
   background: #A2ACAC;

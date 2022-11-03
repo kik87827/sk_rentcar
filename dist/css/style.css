@@ -7577,9 +7577,13 @@ input.input_value:disabled {
 #app.loading .header_wrap {
   background-color: #fff;
 }
+#app.loading .btn_boxobj {
+  background-color: #F1F3F5 !important;
+}
 #app.loading * {
   color: transparent !important;
   border-color: transparent !important;
+  box-shadow: none !important;
 }
 #app.loading p {
   color: transparent;
@@ -7601,6 +7605,7 @@ input.input_value:disabled {
 #app.loading .cont_tabmenu,
 #app.loading .btn_icobox,
 #app.loading .tbcount_row,
+#app.loading .chart_dotguide_list,
 #app.loading .header_menu_text {
   color: transparent;
   background: #F1F3F5;
@@ -7610,6 +7615,7 @@ input.input_value:disabled {
 #app.loading .cont_tabmenu:before,
 #app.loading .btn_icobox:before,
 #app.loading .tbcount_row:before,
+#app.loading .chart_dotguide_list:before,
 #app.loading .header_menu_text:before {
   display: none;
 }
@@ -7617,8 +7623,22 @@ input.input_value:disabled {
 #app.loading .cont_tabmenu:after,
 #app.loading .btn_icobox:after,
 #app.loading .tbcount_row:after,
+#app.loading .chart_dotguide_list:after,
 #app.loading .header_menu_text:after {
   display: none;
+}
+#app.loading .chart_dotguide_list * {
+  opacity: 0;
+}
+#app.loading .boxtab {
+  background: #F1F3F5 !important;
+  color: transparent;
+}
+#app.loading select.form_select,
+#app.loading input.input_calendar {
+  background: #F1F3F5;
+  border-color: #F1F3F5;
+  color: transparent;
 }
 #app.loading input.design_check {
   background: #F1F3F5;
@@ -7640,6 +7660,17 @@ input.input_value:disabled {
   background: #F1F3F5;
   border-radius: 5px;
 }
+#app.loading .onlytext_tab_list {
+  color: transparent;
+  background: #F1F3F5;
+  border-radius: 5px;
+}
+#app.loading .onlytext_tab_list * {
+  color: transparent;
+}
+#app.loading .onlytext_tab_list > li:after {
+  display: none;
+}
 #app.loading .sb_total_label_row {
   color: transparent;
   background: #F1F3F5;
@@ -7655,10 +7686,10 @@ input.input_value:disabled {
 #app.loading .btn_moreitem:after {
   display: none;
 }
-#app.loading .sumbox_title_row {
+#app.loading .sumbox_title_row, #app.loading .chart_slide_target, #app.loading .chart_util_list, #app.loading .sch_chart_middle_row, #app.loading .data_scroll_head_wrap, #app.loading .data_scroll_tb_zone {
   position: relative;
 }
-#app.loading .sumbox_title_row:after {
+#app.loading .sumbox_title_row:after, #app.loading .chart_slide_target:after, #app.loading .chart_util_list:after, #app.loading .sch_chart_middle_row:after, #app.loading .data_scroll_head_wrap:after, #app.loading .data_scroll_tb_zone:after {
   display: block;
   content: "";
   width: 100%;
@@ -7669,6 +7700,10 @@ input.input_value:disabled {
   position: absolute;
   top: 0;
   left: 0;
+}
+#app.loading .sch_chart_middle_row, #app.loading .data_scroll_head_wrap, #app.loading .data_scroll_tb_zone .chart_slide_target {
+  border-radius: 6px;
+  overflow: hidden;
 }
 #app.loading .sumbox_title_fxwrap, #app.loading .sumbox_title_global_wrap {
   position: relative;
@@ -7686,12 +7721,17 @@ input.input_value:disabled {
   top: 0;
   left: 0;
 }
-#app.loading .data_table_wrap {
+#app.loading .data_table_wrap, #app.loading .full_calendar_tb_wrap {
   color: transparent;
   background: #F1F3F5;
   border-radius: 5px;
 }
-#app.loading .data_table_wrap * {
+#app.loading .data_table_wrap *, #app.loading .full_calendar_tb_wrap * {
+  opacity: 0;
+}
+#app.loading .btn_slide_control,
+#app.loading .chart_tooltip_box_layer,
+#app.loading .design_dot_group {
   opacity: 0;
 }
 

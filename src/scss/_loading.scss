@@ -15,10 +15,13 @@
             animation: load 3s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
             z-index:5;
         }
-        &:after{display:block;content:'';width:100%;height:100%;position:fixed;top:0;left:0;z-index:100;}
-        .header_wrap{background-color:#fff;}
+        .cont_tab_list > li:after{display:none;}
+        // &:after{display:block;content:'';width:100%;height:100%;position:fixed;top:0;left:0;z-index:100;}
+        .header_wrap,
+        .text_box{background-color:#fff;}
         .btn_boxobj{background-color:#F1F3F5 !important;}
         *{color:transparent !important;;border-color:transparent !important;box-shadow: none !important;}
+        .sch_tbtop_copy,
         p{color:transparent;background:#F1F3F5;border-radius:5px;}
         .header_logo_item,.boxform_label,.sumchart_wrap{
             position:relative;background:#F1F3F5;overflow:hidden;border-radius:5px;
@@ -29,18 +32,34 @@
         .btn_icobox,
         .tbcount_row,
         .chart_dotguide_list,
-        .header_menu_text{
+        .header_menu_text, .sch_title_fxwrap{
             color:transparent;background:#F1F3F5;border-radius:5px;
             &:before{display:none;}
             &:after{display:none;}
         }
-        .chart_dotguide_list{
+        .chart_dotguide_list , .sch_title_fxwrap,.card_chart_wrap,.text_box{
             *{opacity:0;}
         }
-        .boxtab{background:#F1F3F5 !important;color:transparent}
+        .btn_title_control,
+        .btn_ico_obj,
+        .boxtab,
+        .summary_count_item{background:#F1F3F5 !important;color:transparent;border-radius:5px;}
+        
+        .card_chart_wrap{position:relative;}
+        .card_chart_wrap:after{display:block;content:'';width:calc(100% - 60px);position:absolute;left:30px;top:30px;border-radius:5px;height:calc(100% - 60px);background:#F1F3F5 !important;}
+
+        .btn_ico_util:before{opacity:0;}
+        .btn_ico_util{background:#F1F3F5 !important;color:transparent;border-radius:5px;}
+        .summary_count_item{color:transparent;}
+
+        .cont_title_main{background:#fff !important;border-radius:5px;}
+        .data_table_global_zone .data_thead_wrap,
+        .data_table_global_zone .data_tbody_zone{background:#F1F3F5 !important;}
+        .btn_title_control:after{display:none;}
         select.form_select,
         input.input_calendar{background:#F1F3F5;border-color:#F1F3F5;color:transparent;}
         input.design_check{background:#F1F3F5;border-color:#F1F3F5}
+        input.input_databox{opacity:0;}
         .header_menu_list{
             li.active .header_menu{background-color:transparent !important;}
         }
@@ -66,9 +85,14 @@
             position:relative;
             &:after{display:block;content:'';width:100%;height:100%;background:#F1F3F5;overflow:hidden;border-radius:5px;position:absolute;top:0;left:0;}
         }
-        .sch_chart_middle_row,.data_scroll_head_wrap, .data_scroll_tb_zone
-        .chart_slide_target{border-radius:6px;overflow:hidden;}
-        .sumbox_title_fxwrap,.sumbox_title_global_wrap{
+        .sch_chart_middle_row,
+        .data_scroll_head_wrap, 
+        .data_scroll_tb_zone,
+        .chart_slide_target,
+        .sch_title_fxwrap,
+        .cgrid_middle_row,
+        .ibullet_list > li{border-radius:6px;overflow:hidden;}
+        .sumbox_title_fxwrap,.sumbox_title_global_wrap,.ibullet_list > li, .cgrid_middle_row{
             position:relative;width:100%;
             &:after{display:block;content:'';width:100%;height:100%;background:#F1F3F5;overflow:hidden;border-radius:5px;position:absolute;top:0;left:0;}
         }
@@ -79,6 +103,8 @@
         }
         .btn_slide_control,
         .chart_tooltip_box_layer,
+        .btn_info_obj,
+        .btn_ico_obj.update:after,
         .design_dot_group{opacity:0;}
     }
 }

@@ -1002,7 +1002,8 @@
 			</div>
 		</div>
 	</div>
-	@@include('./include/script.html')
+	@@include('./include/quick.html')
+@@include('./include/script.html')
 	<script>
 		// menuRock("#menu02");
 		// 퍼블확인용
@@ -1032,6 +1033,11 @@
 						dataTableFunc.drawCallBack('#maintain_00_table');
 					}
 				})
+			} else if(url_2 === "loading"){
+				document.querySelector("#app").classList.add("loading");
+				setTimeout(()=>{
+					document.querySelector("#app").classList.remove("loading");
+				},5000);
 			}
 		});
 		callCalendar({

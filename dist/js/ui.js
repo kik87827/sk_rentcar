@@ -1,7 +1,8 @@
 commonLayout();
 window.addEventListener("load", () => {
   localLayer();
-})
+});
+
 
 function menuRock(item) {
   let itemObj = document.querySelector(item);
@@ -11,8 +12,25 @@ function menuRock(item) {
 }
 
 function commonLayout() {
-  let bodyDOM = document.querySelector("body");
+  const btn_pageTop = document.querySelector("#btn_pageTop");
+  const htmlDocu = document.querySelector("html");
+  const bodyDOM = document.querySelector("body");
   bodyDOM.style.minWidth = (1920 - getScrollBarWidth()) + "px";
+
+  if (btn_pageTop !== null) {
+    btn_pageTop.addEventListener("click", (e) => {
+      e.preventDefault();
+      htmlDocu.classList.add("smooth");
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+      }, 30);
+    });
+    window.addEventListener("scroll", () => {
+      if (window.scrollY === 0) {
+        htmlDocu.classList.remove("smooth");
+      }
+    });
+  }
 }
 var dataTableFunc = {
   bindEvent() {

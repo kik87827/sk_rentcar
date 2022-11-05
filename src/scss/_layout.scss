@@ -5,7 +5,7 @@ body{}
 .smooth{scroll-behavior: smooth;}
 #app{background:#F1F3F5;min-height:100vh;}
 .scroll_disabled{position:relative;overflow:hidden !important;}
-.header_wrap{z-index:20;height:70px;background:#078E8E;display:flex;justify-content: space-between;padding:0 0 0 30px;}
+.header_wrap{z-index:20;height:70px;background:#078E8E;display:flex;justify-content: space-between;padding:0 0 0 30px;position:relative;}
 .header_logo_title{display:flex;height:100%;align-items: center;}
 .header_logo_item{display:flex;align-items: flex-end;}
 .header_logo_item > img{width:87px;vertical-align: top;}
@@ -202,6 +202,11 @@ input.date_range_input{border-radius:5px;background:#fff;height:36px;line-height
     border-radius: 100%;
     &.define_text{
         border:1px solid #009A93;
+        &.active{
+            border-color:#009A93; background-color:#009A93;
+            .bottom_item_intext{color:#fff;}
+        }
+        &:hover{background-color:#DDF1F0;}
     }
     &.define_quick{
         border-color:#fff;position:relative;

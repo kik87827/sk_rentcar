@@ -2988,9 +2988,9 @@
 			eventObj.initEvent('click', false, true);
 			document.querySelector("#btn_call_global").dispatchEvent(eventObj);
 		}else if(url_2 === "loading"){
-			document.querySelector("#app").classList.add("loading");
+			document.querySelector("body").classList.add("loading");
 			setTimeout(()=>{
-				document.querySelector("#app").classList.remove("loading");
+				document.querySelector("body").classList.remove("loading");
 			},5000);
 		}
 		

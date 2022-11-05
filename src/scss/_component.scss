@@ -1,4 +1,8 @@
 .toast_layer{
+    opacity:1;transition:.5s;position:sticky;top:0;left:50%;transform:translate(-50%,0);
+    background: rgba(76, 217, 100, 0.1); display:inline-flex;align-items:center;
+
+    &.out{opacity:0}
 }
 .toast_ico{}
-.toast_message{}
+.toast_message{color:#057772;font-size: 14px;display:inline-block;line-height:1;}

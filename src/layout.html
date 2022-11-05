@@ -24,8 +24,13 @@
 		</ul>
 	</div>
 	<!-- // bottom_control_layer -->
+	<!-- <div class="toast_parent_layer">
+		<div class="toast_layer complete">
+			<span class="toast_message">저장되었습니다</span>
+		</div>
+	</div> -->
 	@@include('./include/quick.html')
-@@include('./include/script.html')
+	@@include('./include/script.html')
 	<script>
 		// menuRock("#menu02");
 		// 퍼블확인용
@@ -39,10 +44,21 @@
 			menuRock("#menu02");
 		}
 
-		let toastMessage = new ToastMessage({
-			type : 'complete',
-			message : '저장되었습니다'
-		})
+		if(url_2 === "toast_check"){
+			let toastMessage = new ToastMessage({
+				type : 'check',
+				message : '저장되엇습니다.',
+				time : 2000
+			})
+		}else if(url_2 === "toast_warn"){
+			let toastMessage = new ToastMessage({
+				type : 'warn',
+				message : '숫자만 입력 가능합니다',
+				time : 2000
+			})
+		}
+
+		
 	</script>
 </body>
 </html>

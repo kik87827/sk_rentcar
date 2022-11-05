@@ -1,8 +1,18 @@
 .toast_layer{
-    opacity:1;transition:.5s;position:sticky;top:0;left:50%;transform:translate(-50%,0);
-    background: rgba(76, 217, 100, 0.1); display:inline-flex;align-items:center;
-
+    opacity:0;transition:.5s;align-items:center;
+    background: rgba(76, 217, 100, 0.1); display:inline-flex;align-items:center;padding:11.5px;
+    &.in{opacity:1}
     &.out{opacity:0}
+    &:before{display:block;content:'';width:21px;height:21px;background-repeat:no-repeat; background-position: 0 0; background-size:100% auto;flex:0 0 21px;margin-right:10px;}
+    &.check{
+        &:before{background-image:url("../images/toast_check.png");}
+    }
+    &.warn{
+        background: rgba(255, 149, 0, 0.1);
+        &:before{background-image:url("../images/toast_warn.png");}
+        .toast_message{color:#E05B3E;}
+    }
 }
-.toast_ico{}
 .toast_message{color:#057772;font-size: 14px;display:inline-block;line-height:1;}
+.toast_layer:before{background-image:url("../images/toast_check.png");}
+.toast_parent_layer{position:fixed;top:98px;left:0;width:100%;display:flex;align-items: center;justify-content: center;}

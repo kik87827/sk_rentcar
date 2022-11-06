@@ -952,12 +952,9 @@ function ToastMessage(option) {
   this.optionMessage = option.message;
   this.optionSpeed = option.speed !== undefined ? option.speed : 500;
   this.optionDelayTime = option.time !== undefined ? option.time : 2000;
-  this.headerWrap = document.querySelector(".header_wrap");
-  this.headerWrapHeight = this.headerWrap !== null ? this.headerWrap.getBoundingClientRect().height : 0;
-  this.toastParentObj = null;
+  this.setTimeID = 0;
+  this.setTime2ID = 0;
   this.toastObj = null;
-
-  console.log();
 
   let toastAppendParent = document.createElement("div");
   toastAppendParent.classList.add("toast_parent_layer");
@@ -968,42 +965,13 @@ function ToastMessage(option) {
   if (this.appBody !== null) {
     toastAppendParent.innerHTML = templete;
     this.appBody.append(toastAppendParent);
-    this.toastObj = document.querySelector(".toast_layer");
-    this.toastParentObj = document.querySelector(".toast_parent_layer");
-    setTimeout(()=>{
-      this.toastObj.classList.add("in");
-    },20);
+    toastObj = document.querySelector(".toast_layer");
   }
 
-  
-  let intime_interval = 0;
-  let outtime_interval = 0;
-  let outtime_interval2 = 0;
-
-  intime_interval = setTimeout(() => {
-    outtime_interval = setTimeout(() => {
-      this.toastObj.classList.add("out");
-      outtime_interval2 = setTimeout(() => {
-        this.toastObj.remove();
-      }, this.optionSpeed + 30);
-    }, this.optionDelayTime);
-  }, this.optionSpeed + 30),
-
-  outtime_interval = setTimeout(() => {
-    this.toastObj.classList.add("out");
-    outtime_interval2 = setTimeout(() => {
-      this.toastObj.remove();
+  this.setTimeID = setTimeout(() => {
+    toastObj.classList.add("out");
+    this.setTimeID = setTimeout(() => {
+      toastObj.remove();
     }, this.optionSpeed + 30);
   }, this.optionDelayTime);
-
-  window.addEventListener("scroll",(e)=>{
-      
-      if(this.toastParentObj === null){return;}
-      if(window.scrollY>98){
-        this.toastParentObj.style.top = `28px`;
-      }else{
-        this.toastParentObj.style.top = `${this.headerWrapHeight + 28}px`;
-      }
-      console.log(window.scrollY);
-  });
 }

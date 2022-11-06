@@ -86,6 +86,12 @@
 
 		menuRock("#menuicon_01");
 
+		if (url_2 === "loading") {
+			document.querySelector("body").classList.add("loading");
+			setTimeout(() => {
+				document.querySelector("body").classList.remove("loading");
+			}, 5000);
+		}
 
 		// input
 		document.querySelector("#input_password").addEventListener("keyup", (e) => {

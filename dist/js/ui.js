@@ -320,6 +320,7 @@ function DesignModal(option) {
   this.design_modal_wrap = null;
   this.btn_dmsmidentify = null;
   this.btn_dmsmcancel = null;
+  this.btn_closeModal = null;
   this.duration = option.duration !== undefined ? option.duration : 400;
 
   this.initShow(option);
@@ -328,18 +329,24 @@ function DesignModal(option) {
 DesignModal.prototype.initShow = function(option) {
   var innerPublish = '';
   var objThis = this;
+
+  var iconType = option.icontype !== undefined ? option.icontype : "";
+  var titleText = option.title !== undefined ? option.title : "타이틀";
+
   innerPublish += "<div class='design_modal_wrap'>";
   innerPublish += "  <div class='bg_design_modal'></div>";
   innerPublish += "  <div class='design_modal_tb'>";
   innerPublish += "      <div class='design_modal_td'>";
   innerPublish += "          <div class='design_modal'>";
+  innerPublish += "              <div class='design_modal_title_w'><div class='design_modal_title ico_" + iconType + "'><span class='design_modal_title_intext'>" + titleText + "</span></div></div>";
   innerPublish += "              <div class='design_modal_cont_w'><div class='design_modal_text'></div></div>";
   innerPublish += "              <div class='btn_dmsm_wrap'>";
-  innerPublish += "                  <a href='javascript:;' class='btn_dmsm close_dmtrigger btn_dmsmidentify'>확인</a>";
   if (option.type === "confirm") {
-    innerPublish += "              <a href='javascript:;' class='btn_dmsm close_dmtrigger btn_dmsmcancel'>취소</a>";
+    innerPublish += "              <a href='javascript:;' class='btn_dmsm close_dmtrigger btn_dmsmcancel'>아니오</a>";
   }
+  innerPublish += "                  <a href='javascript:;' class='btn_dmsm close_dmtrigger btn_dmsmidentify'>예</a>";
   innerPublish += "              </div>";
+  innerPublish += "              <a href='javascript:;' class='btn_modal_close'><span class='hdtext'>닫기</span></a>";
   innerPublish += "          </div>";
   innerPublish += "      </div>";
   innerPublish += "  </div>";
@@ -357,6 +364,7 @@ DesignModal.prototype.initShow = function(option) {
   if (option.type === "confirm") {
     this.btn_dmsmcancel = document.querySelector(".btn_dmsmcancel");
   }
+  this.btn_closeModal = document.querySelector(".btn_modal_close");
   this.pagewrap.style.zIndex = 0;
   this.domBody.setAttribute("data-scr", window.pageYOffset);
   this.domBody.style.marginTop = -window.pageYOffset + "px";
@@ -401,6 +409,11 @@ DesignModal.prototype.bindEvent = function(option) {
       if (option.cancel_callback !== undefined) {
         option.cancel_callback();
       }
+    }, false);
+  }
+  if (this.btn_closeModal !== null) {
+    this.btn_closeModal.addEventListener("click", function() {
+      objThis.removeHide();
     }, false);
   }
 }

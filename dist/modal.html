@@ -30,16 +30,52 @@
 	<script src="./js/dynamicListener.min.js"></script>
 	<script src="./js/ui.js"></script>
 	<script>
-		var designAlert = new DesignModal({
-			type: "confirm", // alert, confirm
-			message: "테스트",
-			identify_callback: function() {
-				console.log('확인');
-			},
-			cancel_callback: function() {
-				console.log('취소');
-			}
-		})
+		// var designAlert = new DesignModal({
+		// 	icontype: "", // warn, check
+		// 	title: "확인", // alert, confirm
+		// 	type: "confirm", // alert, confirm
+		// 	message: "편집한 내용이 적용되지 않습니다.<br>그래도 취소 하시겠습니까?",
+		// 	identify_callback: function() {
+		// 		console.log('예');
+		// 	},
+		// 	cancel_callback: function() {
+		// 		console.log('아니오');
+		// 	}
+		// })
+		// 퍼블확인용
+		let url = window.location.href.split('?')[1];
+		let url_2 = url !== undefined ? url.split('#')[0] : null;
+
+		if (url_2 === "type2") {
+			var designAlert = new DesignModal({
+				icontype: "check", // warn, check
+				title: "확인", // 자유롭게
+				type: "alert", // alert, confirm
+				message: "저장되었습니다.",
+				identify_callback: function() {
+					console.log('예');
+				},
+				cancel_callback: function() {
+					console.log('아니오');
+				}
+			})
+		} else {
+			var designAlert = new DesignModal({
+				icontype: "warn", // warn, check
+				title: "취소", // 자유롭게
+				type: "confirm", // alert, confirm
+				message: "편집한 내용이 적용되지 않습니다.<br>그래도 취소 하시겠습니까?",
+				identify_callback: function() {
+					console.log('예');
+				},
+				cancel_callback: function() {
+					console.log('아니오');
+				}
+			})
+		}
+
+
+
 		// 강제로 닫기 designAlert.removeHide();
 	</script>
 </body>

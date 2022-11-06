@@ -427,6 +427,12 @@
 		let url = window.location.href.split('?')[1];
 		let url_2 = url !== undefined ? url.split('#')[0] : null;
 
+		if (url_2 === "loading") {
+			document.querySelector("body").classList.add("loading");
+			setTimeout(() => {
+				document.querySelector("body").classList.remove("loading");
+			}, 5000);
+		}
 
 		menuRock("#menuicon_01");
 	</script>

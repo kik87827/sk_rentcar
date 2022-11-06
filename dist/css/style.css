@@ -3767,6 +3767,9 @@ input.boxform_obj:checked + .boxform_label {
 .btn_icobox.dtype2:hover {
   background: #fff;
 }
+.btn_icobox.dtype2:hover .icobox_text {
+  color: #009A93;
+}
 .btn_icobox.dtype2 .icobox_text {
   color: #677272;
 }
@@ -6513,8 +6516,14 @@ input.input_box::input-placeholder {
   border: 1px solid #009A93;
   background: #009A93;
 }
+.btn_boxobj:hover {
+  background: #07857F;
+}
 .btn_boxobj.type2 {
   background-color: #fff;
+}
+.btn_boxobj.type2:hover {
+  background: #DDF1F0;
 }
 .btn_boxobj.type2 .boxobj_in {
   color: #009A93;
@@ -7137,10 +7146,15 @@ input.input_box::input-placeholder {
 .btn_submitobj.primary .btn_submitobj_in {
   color: #fff;
 }
+.btn_submitobj.primary:hover {
+  background: #07857F;
+}
 .btn_submitobj.small {
   min-width: 74px;
 }
-
+.btn_submitobj:hover {
+  background: #DDF1F0;
+}
 .btn_submitobj_in {
   display: inline-block;
   font-weight: 600;

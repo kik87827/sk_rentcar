@@ -118,7 +118,9 @@ input.boxform_obj:checked + .boxform_label{position:relative;color:#009A93;font-
 .btn_icobox{display:inline-flex; border-radius: 5px; align-items:center; padding: 7px 10px 7px 12px;border: 1px solid #009A93; background:#fff;
     &:after{display:block;content:'';margin-left:7px;background-repeat:no-repeat;background-size:100% auto;background-position: 50% 50%;width:16px;height:16px;flex:0 0 16px;}
     &.dtype2{border-color:#677272;
-        &:hover{background:#fff;}
+        &:hover{background:#fff;
+            .icobox_text{color:#009A93}
+        }
         .icobox_text{color:#677272;}
     }
     &.ico_excel:after{background-image:url("../images/icon_excel.png");}
@@ -1206,8 +1208,10 @@ input.input_box::input-placeholder{color:#869393 !important;font-weight: 350;tex
 }
 .btn_boxobj{
     display:inline-block;padding:10px 20px;border-radius:5px;vertical-align:middle;border:1px solid #009A93;background: #009A93;
+    &:hover{background: #07857F;}
     &.type2{
         background-color:#fff;
+        &:hover{background:#DDF1F0;}
         .boxobj_in{color:#009A93;}
     }
 }
@@ -1479,8 +1483,16 @@ input.input_box::input-placeholder{color:#869393 !important;font-weight: 350;tex
     &.primary{
         background:#009A93;
         .btn_submitobj_in{color:#fff;}
+        &:hover{
+            background:#07857F;
+            .btn_submitobj_in{}
+        }
     }
     &.small{min-width:74px;}
+    &:hover{
+        background:#DDF1F0;
+        .btn_submitobj_in{}
+    }
 }
 .btn_submitobj_in{display:inline-block;font-weight: 600;font-size: 16px; line-height:1;color:#009A93;}
 

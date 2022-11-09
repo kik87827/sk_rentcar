@@ -95,7 +95,7 @@ li.active .header_menu_text{color:#4C5353;font-weight:700;}
 }
 .fullpop_title{font-size:16px;color:#000;line-height:1;letter-spacing:0;font-weight: 600;}
 .fullpop_contlow{border-top:0;border-radius:0 0 10px 10px;min-height:0;background:#F1F3F5;position:relative;overflow:hidden;overflow-y:auto;flex:1;}
-.fullpop_contlow_in{padding:30px;}
+.fullpop_contlow_in{padding:30px;position:relative;}
 .fullpop_contlow.type2 .fullpop_contlow_in{padding:0;background:#fff;}
 .fullpop_contlow.type3 .fullpop_contlow_in{padding:20px;background:#fff;}
 .fullpop_incont{}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+@@include('./include/head.html')
+<body>
+	<div id="app">
+		
+
+		<div id="test" style="padding:50px;">
+			<div class="combo_item">
+				<a href="javascript:;" class="combo_target">선택</a>
+				<div class="combo_option_group">
+					<div class="combo_option_scroll" data-rowCount = "10">
+						<ul class="combo_option_list">
+							<li><a href="javascript:;" class="combo_option">소형</a></li>
+							<li><a href="javascript:;" class="combo_option">중형</a></li>
+							<li><a href="javascript:;" class="combo_option">대형</a></li>
+							<li><a href="javascript:;" class="combo_option">승합</a></li>
+							<li><a href="javascript:;" class="combo_option disabled">SUV</a></li>
+							<li><a href="javascript:;" class="combo_option">수입</a></li>
+							<li><a href="javascript:;" class="combo_option">EV</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="combo_item">
+				<a href="javascript:;" class="combo_target">선택2</a>
+				<div class="combo_option_group">
+					<div class="combo_option_scroll" data-rowCount = "3">
+						<ul class="combo_option_list">
+							<li><a href="javascript:;" class="combo_option">소형2</a></li>
+							<li><a href="javascript:;" class="combo_option">중형2</a></li>
+							<li><a href="javascript:;" class="combo_option disabled">SUV2</a></li>
+							<li><a href="javascript:;" class="combo_option">수입2</a></li>
+							<li><a href="javascript:;" class="combo_option">EV2</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<button type="button" class="btn_guide" id="btn_callLayer">레이어 호출</button>
+
+
+		<!--  -->
+		<!-- 레이어팝업 -->
+		<div class="dimlayer_z fulltype" id="popup_templete">
+			<div class="fullpop_dim"></div>
+			<div class="fullpop_item">
+				<div class="fullpop_titlow">
+					<h4 class="fullpop_title">타이틀</h4>
+				</div>
+				<div class="fullpop_contlow">
+					<div class="fullpop_contlow_in">
+						<div class="combo_item">
+							<a href="javascript:;" class="combo_target">선택</a>
+							<div class="combo_option_group">
+								<div class="combo_option_scroll" data-rowCount = "4">
+									<ul class="combo_option_list">
+										<li><a href="javascript:;" class="combo_option">소형2</a></li>
+										<li><a href="javascript:;" class="combo_option">중형2</a></li>
+										<li><a href="javascript:;" class="combo_option disabled">SUV2</a></li>
+										<li><a href="javascript:;" class="combo_option">수입2</a></li>
+										<li><a href="javascript:;" class="combo_option">EV2</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.<br>
+						내용이 들어갑니다.
+					</div>
+				</div>
+				<!-- <div class="btn_fullsubmit_w">
+					<a href="#" class="btn_quadobj dtype2">저장</a>
+					<a href="#" class="btn_quadobj closetrigger">닫기</a>
+				</div> -->
+				<button type="button" class="btn_layerclose"><span class="hdtext">닫기</span></button>
+			</div>
+		</div>
+		<!-- // 레이어팝업 -->
+		<!-- //  -->
+
+	</div>
+	@@include('./include/quick.html')
+	@@include('./include/script.html')
+
+	
+	<script>
+		document.querySelector("#btn_callLayer").addEventListener("click",(e)=>{
+			layerPopup.show({
+				target : "#popup_templete",
+				openCallback(){
+					console.log('callback')
+				}
+			})
+		});
+	</script>
+</body>
+</html>

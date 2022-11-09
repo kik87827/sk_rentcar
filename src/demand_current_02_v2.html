@@ -40,8 +40,40 @@
 						<dl class="sort_hor_item">
 							<dt><span class="sort_hor_label">차형/차정</span></dt>
 							<dd>
-								<select class="form_select" style="width:160px"><option>전체</option></select>
-								<select class="form_select" style="width:160px"><option>전체</option></select>
+								<!-- <select class="form_select" style="width:160px"><option>전체</option></select>
+								<select class="form_select" style="width:160px"><option>전체</option></select> -->
+								<div class="combo_item" style="width:160px">
+									<a href="javascript:;" class="combo_target">전체</a>
+									<div class="combo_option_group">
+										<div class="combo_option_scroll" data-rowCount = "10">
+											<ul class="combo_option_list">
+												<li><a href="javascript:;" class="combo_option">옵션1</a></li>
+												<li><a href="javascript:;" class="combo_option">옵션2</a></li>
+												<li><a href="javascript:;" class="combo_option">옵션3</a></li>
+												<li><a href="javascript:;" class="combo_option">옵션4</a></li>
+												<li><a href="javascript:;" class="combo_option disabled">옵션5</a></li>
+												<li><a href="javascript:;" class="combo_option">옵션6</a></li>
+												<li><a href="javascript:;" class="combo_option">옵션7</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
+								<div class="combo_item" style="width:160px">
+									<a href="javascript:;" class="combo_target">전체</a>
+									<div class="combo_option_group">
+										<div class="combo_option_scroll" data-rowCount = "10">
+											<ul class="combo_option_list">
+												<li><a href="javascript:;" class="combo_option">옵션1</a></li>
+												<li><a href="javascript:;" class="combo_option">옵션2</a></li>
+												<li><a href="javascript:;" class="combo_option">옵션3</a></li>
+												<li><a href="javascript:;" class="combo_option">옵션4</a></li>
+												<li><a href="javascript:;" class="combo_option disabled">옵션5</a></li>
+												<li><a href="javascript:;" class="combo_option">옵션6</a></li>
+												<li><a href="javascript:;" class="combo_option">옵션7</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
 							</dd>
 						</dl>
 					</div>
@@ -57,7 +89,22 @@
 							<p class="sch_main_range_text type2">2022.05.01 ~ 2022.08.03</p>
 							<span class="sch_guide_else">VS</span>
 							<div class="text_select_group">
-								<select class="text_select"><option value="0">비교년도 선택</option><option value="1">2021</option></select>
+								<!-- <select class="text_select"><option value="0">비교년도 선택</option><option value="1">2021</option></select> -->
+								<div class="combo_item" style="width:160px">
+									<a href="javascript:;" class="combo_target">비교년도 선택</a>
+									<div class="combo_option_group">
+										<div class="combo_option_scroll" data-rowCount = "10">
+											<ul class="combo_option_list">
+												<li><a href="javascript:;" class="combo_option">2022</a></li>
+												<li><a href="javascript:;" class="combo_option">2021</a></li>
+												<li><a href="javascript:;" class="combo_option">2020</a></li>
+												<li><a href="javascript:;" class="combo_option">2019</a></li>
+												<li><a href="javascript:;" class="combo_option">2018</a></li>
+												<li><a href="javascript:;" class="combo_option">2017</a></li>
+											</ul>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 						<div class="sch_top_sub">
@@ -3003,9 +3050,9 @@
 			}
 		});
 
-		window.addEventListener("load",()=>{
-			textSelectFunc(); // 텍스트 길이 만큼 폭조절 textSelect
-		})
+		// window.addEventListener("load",()=>{
+		// 	textSelectFunc(); // 텍스트 길이 만큼 폭조절 textSelect
+		// })
 	</script>
 </body>
 </html>

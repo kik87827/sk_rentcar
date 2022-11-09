@@ -1,5 +1,8 @@
 commonLayout();
 comboFunc();
+dynamicTab();
+quickMenu();
+searchForm();
 window.addEventListener("load",()=>{
     localLayer();
 });
@@ -1063,11 +1066,191 @@ function comboFunc(){
         const appendOption =  document.querySelectorAll(".combo_option_group");
         appendOption.forEach((element,index)=>{
             let comboCall = document.querySelector(`[id='${element.getAttribute("data-option")}']`);
-            element.setAttribute("style",`
-                top : ${comboCall.offsetTop+comboCall.getBoundingClientRect().height + 5}px; 
-                left : ${comboCall.offsetLeft }px;
-                width : ${ comboCall.getBoundingClientRect().width }px;
-            `)
+            let combo_top = comboCall.getBoundingClientRect().top;
+            let fullpop_contlow_top = 0;
+            let combo_left = comboCall.getBoundingClientRect().left;
+            let fullpop_contlow_left = 0;
+
+            if(comboCall.closest(".fullpop_contlow") !== null){
+                fullpop_contlow_top = comboCall.closest(".fullpop_contlow").getBoundingClientRect().top;
+                fullpop_contlow_left = comboCall.closest(".fullpop_contlow").getBoundingClientRect().left;
+                element.setAttribute("style",`
+                    top : ${(combo_top - fullpop_contlow_top) + comboCall.getBoundingClientRect().height + 5}px; 
+                    left : ${combo_left - fullpop_contlow_left}px;
+                    width : ${ comboCall.scrollWidth }px;
+                `)
+            }else{
+                element.setAttribute("style",`
+                    top : ${combo_top + comboCall.getBoundingClientRect().height + 5}px; 
+                    left : ${combo_left}px;
+                    width : ${ comboCall.scrollWidth }px;
+                `)
+            }
+        });
+    }
+}
+
+
+
+function searchForm(){
+    const search_field_wrap = document.querySelectorAll(".search_field_wrap.d_action");
+    const auto_word_layer = document.querySelectorAll(".auto_word_layer");
+    const searchInput = document.querySelectorAll(".search_field_wrap.d_action .input_search");
+    var appendLayer = null;
+    const appBody = document.querySelector("#app");
+    if(searchInput.length){
+        searchInput.forEach((element,index)=>{
+            let eachElement = element;
+            let eachElementParent = element.closest(".search_field_wrap");
+            let eachElementLayer = eachElementParent.querySelector(".auto_word_layer");
+            let eachElementReset = eachElementParent.querySelector(".btn_reset_ico");
+
+            eachElement.addEventListener("focus",(e)=>{
+                if(eachElementLayer !== null){
+                    autoLayerInit(eachElementParent,eachElementLayer,index);
+                    autoLayerPos(eachElementParent);
+                }
+            });
+            eachElement.addEventListener("keydown",(e)=>{
+                let thisEventObj = e.currentTarget;
+                valueCheck(thisEventObj,eachElementParent);
+            });
+            eachElement.addEventListener("focusout",(e)=>{
+                let thisEventObj = e.currentTarget;
+                valueCheck(thisEventObj,eachElementParent);
+            });
+            eachElementReset.addEventListener("click",(e)=>{
+                let thisEventInputObj = eachElementParent.querySelector(".input_search");
+                thisEventInputObj.value = "";
+                eachElementParent.classList.remove("value_true");
+                if(eachElementParent.getAttribute("data-autoLayer") == "true"){
+                    document.querySelector(`[data-autoLayer='${eachElementParent.getAttribute("id")}']`).classList.remove("auto_mode");
+                }
+            });
+        });
+
+        document.querySelectorAll(".auto_word_item").forEach((element)=>{
+            element.addEventListener("click",(e)=>{
+                console.log(112);
+                let thisEventObj = e.currentTarget;
+                let thisEventParentLayer = thisEventObj.closest(".auto_word_layer");
+                let thisEventParentCall = document.querySelector(`[id='${thisEventParentLayer.getAttribute("data-autolayer")}']`);
+                let thisEventParentCallInput = thisEventParentCall.querySelector(".input_search");
+                if(thisEventObj.classList.contains("disabled")){return;}
+                thisEventParentCallInput.value = thisEventObj.textContent;
+                thisEventParentLayer.classList.remove("auto_mode");
+            });
+        });
+
+        document.body.addEventListener("click",(e)=>{
+            if(e.target.closest(".search_field_wrap") !== null || e.target.closest(".auto_word_layer") !== null){
+                return;
+            }
+            auto_word_layer.forEach((element)=>{
+                element.classList.remove("auto_mode");
+            });
+        });
+
+        
+        function autoLayerInit(target,layer,index){
+            let thisElement = target;
+            let auto_word_layer = layer;
+
+            if(thisElement.getAttribute("id") === null){
+                thisElement.setAttribute("id",'search_item_'+index);
+                auto_word_layer.setAttribute("data-autoLayer",'search_item_'+index);
+            }
+            if(thisElement.closest(".fullpop_contlow") !== null){
+                thisElement.closest(".fullpop_contlow").appendChild(auto_word_layer);
+            }else{
+                appBody.appendChild(auto_word_layer);
+            }
+        }
+
+        function autoLayerPos(target){
+            const thisElement = target;
+            appendLayer = document.querySelector(`[data-autoLayer='${thisElement.getAttribute("id")}']`);
+
+            
+
+            if(thisElement.closest(".fullpop_contlow") !== null){
+                appendLayer.setAttribute("style",`
+                    top : ${(thisElement.getBoundingClientRect().top - thisElement.closest(".fullpop_contlow").getBoundingClientRect().top) + thisElement.getBoundingClientRect().height + 5}px; 
+                    left : ${thisElement.getBoundingClientRect().left - thisElement.closest(".fullpop_contlow").getBoundingClientRect().left}px;
+                    width : ${ thisElement.scrollWidth }px;
+                `)
+            }else{
+                appendLayer.setAttribute("style",`
+                    top : ${thisElement.getBoundingClientRect().top + thisElement.getBoundingClientRect().height + 5}px; 
+                    left : ${thisElement.getBoundingClientRect().left }px;
+                    width : ${ thisElement.scrollWidth }px;
+                `)
+            }
+            
+        }
+    }
+
+
+    function offset(el) {
+        var rect = el.getBoundingClientRect(),
+        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+    }
+
+    function valueCheck(target,parent){
+        const thisElement = target;
+        const thisElementParent = parent;
+        appendLayer = document.querySelector(`[data-autoLayer='${thisElementParent.getAttribute("id")}']`);
+        let auto_word_list_wrap = appendLayer.querySelector(".auto_word_list_wrap");
+        let autoLayerCountOption = thisElementParent.getAttribute("data-rowCount") !== undefined ? thisElementParent.getAttribute("data-rowCount") : 5;
+        if(thisElement.value.length){
+            thisElementParent.classList.add("value_true");
+            if(thisElementParent.getAttribute("data-autoLayer") == "true"){
+                appendLayer.classList.add("auto_mode");
+                if(appendLayer.querySelectorAll("li")[autoLayerCountOption] !== null){
+                    auto_word_list_wrap.style.maxHeight = `${appendLayer.querySelectorAll("li")[autoLayerCountOption].offsetTop+7}px`;
+                }
+                appendLayer.classList.add("auto_scroll_show");
+            }
+        }else{
+            thisElementParent.classList.remove("value_true");
+            if(thisElementParent.getAttribute("data-autoLayer") == "true"){
+                appendLayer.classList.remove("auto_mode");
+                appendLayer.classList.remove("auto_scroll_show");
+            }
+        }
+    }
+}
+
+function quickMenu(){
+    const define_quick = document.querySelector(".define_quick");
+    const btn_help = document.querySelector("#btn_help");
+
+    if(define_quick !== null){
+        define_quick.addEventListener("click",(e)=>{
+            e.preventDefault();
+            document.querySelector("html").classList.add("smooth");
+            setTimeout(()=>{
+                window.scrollTo(0,0);
+            },20);
+        });
+        window.addEventListener("scroll",()=>{
+            if(window.scrollY === 0){
+                document.querySelector("html").classList.remove("smooth");
+            }
+        });
+    }
+
+    if(btn_help !== null){
+        btn_help.addEventListener("click",(e)=>{
+            e.preventDefault();
+            layerPopup.show({
+				target : "#help_layer",
+				openCallback(){
+					console.log('callback')
+				}
+			})
         });
     }
 }

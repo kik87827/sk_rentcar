@@ -400,11 +400,33 @@
 									</ul>
 								</div>
 								<div class="sub_ctop_row define_search">
-									<fieldset class="search_field">
+									<!-- <fieldset class="search_field">
 										<legend>검색</legend>
 										<input type="text" placeholder="차정을 검색하세요" class="input_search">
 										<button type="button" class="btn_search_ico"><span class="hdtext">검색</span></button>
-									</fieldset>
+									</fieldset> -->
+									<div class="search_field_wrap d_action" data-autoLayer="true" data-rowCount="5">
+										<fieldset class="search_field">
+											<legend>검색</legend>
+											<input type="text" placeholder="차정을 검색하세요" class="input_search">
+											<button type="button" class="btn_reset_ico"><span class="hdtext">리셋</span></button>
+											<button type="button" class="btn_search_ico"><span class="hdtext">검색</span></button>
+										</fieldset>
+										<!-- layer -->
+										<div class="auto_word_layer">
+											<div class="auto_word_list_wrap">
+												<ul class="auto_word_list">
+													<li><a href="javascript:;" class="auto_word_item">캐스퍼</a></li>
+													<li><a href="javascript:;" class="auto_word_item">캐스퍼2</a></li>
+													<li><a href="javascript:;" class="auto_word_item">캐스퍼3</a></li>
+													<li><a href="javascript:;" class="auto_word_item disabled">캐스퍼4</a></li>
+													<li><a href="javascript:;" class="auto_word_item">캐스퍼5</a></li>
+													<li><a href="javascript:;" class="auto_word_item">캐스퍼6</a></li>
+												</ul>
+											</div>
+										</div>
+										<!-- // layer -->
+									</div>
 								</div>
 							</div>
 							<div class="cbox_mid_row">
@@ -502,11 +524,45 @@
 	<!-- bottom_control_layer -->
 	<div class="bottom_control_layer">
 		<ul class="bottom_control_list">
-			<li><a href="#" class="btn_bottom_item define_text"><span class="bottom_item_intext">도움말</span></a></li>
+			<li><a href="#" class="btn_bottom_item define_text" id="btn_help"><span class="bottom_item_intext">도움말</span></a></li>
 			<li><a href="#" class="btn_bottom_item define_quick"><span class="hdtext">페이지 위로가기</span></a></li>
 		</ul>
 	</div>
 	<!-- // bottom_control_layer -->
+
+	<!-- 레이어팝업 -->
+	<div class="dimlayer_z fulltype" id="help_layer">
+		<div class="fullpop_dim"></div>
+		<div class="fullpop_item wtype2">
+			<div class="fullpop_titlow">
+				<h4 class="fullpop_title">도움말</h4>
+			</div>
+			<div class="fullpop_contlow type2">
+				<div class="fullpop_contlow_in">
+					<div class="bartab_menu_row">
+						<ul class="bartab_menu_list" data-targetGroup="#help_cont_group">
+							<li class="active"><a href="#help_cont01" class="bartab_menu">화면설명</a></li>
+							<li><a href="#help_cont02" class="bartab_menu">용어</a></li>
+						</ul>
+					</div>
+					<div class="bartab_cont_row" id="help_cont_group">
+						<div class="bartab_cont active" id="help_cont01">
+							화면설명
+						</div>
+						<div class="bartab_cont" id="help_cont02">
+							용어
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- <div class="btn_fullsubmit_w">
+            <a href="#" class="btn_quadobj dtype2">저장</a>
+            <a href="#" class="btn_quadobj closetrigger">닫기</a>
+        </div> -->
+			<button type="button" class="btn_layerclose"><span class="hdtext">닫기</span></button>
+		</div>
+	</div>
+	<!-- // 레이어팝업 -->
 	<script src="./js/jquery-3.4.1.min.js"></script>
 	<script src="./js/moment.min.js"></script>
 	<script src="./js/jquery-ui.js"></script>

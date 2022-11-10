@@ -110,9 +110,11 @@
                     '<div class="calendar-time"></div>' +
                 '</div>' +
                 '<div class="drp-buttons">' +
-                    '<span class="drp-selected"></span>' +
-                    '<button class="cancelBtn" type="button"></button>' +
-                    '<button class="applyBtn" disabled="disabled" type="button"></button> ' +
+                    '<div class="drp-left"><span class="drp-today"><span class="drp-today-in">오늘</span></span></div>' +
+                    '<div class="drp-right">' +
+                   // '<span class="drp-selected"></span>' +
+                  //  '<button class="cancelBtn" type="button"></button>' +
+                    '<button class="applyBtn" disabled="disabled" type="button"></button></div>' +
                 '</div>' +
             '</div>';
 

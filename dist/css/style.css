@@ -78,6 +78,8 @@ http://scripts.sil.org/OFL
   font-family: arial;
   font-size: 15px;
   line-height: 1em;
+  color: #434C4C;
+  box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.1);
 }
 
 .daterangepicker:before, .daterangepicker:after {
@@ -164,7 +166,7 @@ http://scripts.sil.org/OFL
 }
 
 .daterangepicker.show-calendar .drp-buttons {
-  display: block;
+  display: flex;
 }
 
 .daterangepicker.auto-apply .drp-buttons {
@@ -190,33 +192,37 @@ http://scripts.sil.org/OFL
 
 .daterangepicker .calendar-table .next span, .daterangepicker .calendar-table .prev span {
   color: #fff;
-  border: solid black;
-  border-width: 0 2px 2px 0;
+  border: solid #8C9695;
+  border-width: 0 1px 1px 0;
   border-radius: 0;
   display: inline-block;
   padding: 3px;
+  position: relative;
+  top: -2px;
 }
 
 .daterangepicker .calendar-table .next span {
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
+  left: -2px;
 }
 
 .daterangepicker .calendar-table .prev span {
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
+  left: 1px;
 }
 
 .daterangepicker .calendar-table th, .daterangepicker .calendar-table td {
   white-space: nowrap;
   text-align: center;
   vertical-align: middle;
-  min-width: 32px;
-  width: 32px;
-  height: 24px;
+  min-width: 26px;
+  width: 26px;
+  height: 26px;
   line-height: 24px;
-  font-size: 12px;
-  border-radius: 4px;
+  font-size: 14px;
+  border-radius: 100%;
   border: 1px solid transparent;
   white-space: nowrap;
   cursor: pointer;
@@ -232,7 +238,7 @@ http://scripts.sil.org/OFL
   width: 100%;
   margin: 0;
   border-spacing: 0;
-  border-collapse: collapse;
+  border-collapse: separate;
 }
 
 .daterangepicker td.available:hover, .daterangepicker th.available:hover {
@@ -260,21 +266,21 @@ http://scripts.sil.org/OFL
 }
 
 .daterangepicker td.start-date {
-  border-radius: 4px 0 0 4px;
+  border-radius: 100px 0 0 100px;
 }
 
 .daterangepicker td.end-date {
-  border-radius: 0 4px 4px 0;
+  border-radius: 0 100px 100px 0;
 }
 
 .daterangepicker td.start-date.end-date {
-  border-radius: 4px;
+  border-radius: 100px;
 }
 
 .daterangepicker td.active, .daterangepicker td.active:hover {
-  background-color: #078E8E;
-  border-color: transparent;
-  color: #fff;
+  background-color: #fff;
+  border: 1px solid #078E8E;
+  color: #078E8E;
 }
 
 .daterangepicker th.month {
@@ -288,11 +294,40 @@ http://scripts.sil.org/OFL
 }
 
 .daterangepicker select.monthselect, .daterangepicker select.yearselect {
-  font-size: 12px;
-  padding: 1px;
-  height: auto;
-  margin: 0;
-  cursor: default;
+  font-size: 14px;
+  color: #434C4C;
+  padding: 0;
+  cursor: pointer;
+  padding-right: 10px;
+  border: 0;
+  margin: 0 5px;
+  text-align: left;
+  position: relative;
+  top: -2px;
+  background: url("../images/ico_datepicker.png") no-repeat 100% 50%/6.5px auto;
+  font-weight: 600;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+.daterangepicker select.monthselect::-ms-value, .daterangepicker select.yearselect::-ms-value {
+  background: none;
+  color: #434C4C;
+}
+.daterangepicker select.monthselect::-ms-expand, .daterangepicker select.yearselect::-ms-expand {
+  display: none;
+}
+.daterangepicker select.monthselect::-ms-value, .daterangepicker select.yearselect::-ms-value {
+  background: none;
+  color: #434C4C;
+}
+.daterangepicker select.monthselect:disabled, .daterangepicker select.yearselect:disabled {
+  background-color: #f7f7f7;
+  color: #999999;
+  opacity: 1;
+}
+.daterangepicker select.monthselect option, .daterangepicker select.yearselect option {
+  text-align: left;
 }
 
 .daterangepicker select.yearselect {
@@ -323,12 +358,13 @@ http://scripts.sil.org/OFL
 
 .daterangepicker .drp-buttons {
   clear: both;
-  text-align: right;
   padding: 8px;
   border-top: 1px solid #ddd;
   display: none;
   line-height: 12px;
   vertical-align: middle;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .daterangepicker .drp-selected {
@@ -341,14 +377,19 @@ http://scripts.sil.org/OFL
   margin-left: 4px;
   font-size: 12px;
   font-weight: 500;
-  padding: 6px 10px;
+  padding: 7px 12px;
   background: #ddd;
-  border-radius: 3px;
+  border-radius: 5px;
   color: #000;
+  /* Primary/700 Primary */
+  background: #009A93;
 }
 .daterangepicker .drp-buttons .btn.btn-primary {
   background: #078E8E;
   color: #fff;
+}
+.daterangepicker .drp-buttons .btn.btn-primary:hover {
+  background: #07857F;
 }
 
 .daterangepicker.show-ranges.single.rtl .drp-calendar.left {
@@ -458,6 +499,34 @@ http://scripts.sil.org/OFL
     clear: none !important;
   }
 }
+.drp-today {
+  display: inline-flex;
+  font-size: 0;
+  line-height: 0;
+}
+.drp-today:before {
+  display: block;
+  content: "";
+  margin-right: 5px;
+  border: 1px solid #009A93;
+  box-sizing: border-box;
+  width: 13px;
+  height: 13px;
+  border-radius: 100%;
+  background: #fff;
+  flex: 0 0 13px;
+}
+
+.drp-today-in {
+  display: inline-block;
+  color: #000;
+  font-size: 12px;
+  line-height: 1;
+  position: relative;
+  top: 1px;
+  font-family: "Pretendard";
+}
+
 /**
  * Swiper 4.5.0
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -3544,6 +3613,7 @@ li.active .header_menu_text {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
+  z-index: 20;
 }
 .dim_layer_wrap.active {
   display: block;
@@ -3561,7 +3631,7 @@ input.date_range_input {
   line-height: 1;
   padding: 0 15px;
   color: #677272;
-  width: 200px;
+  width: 208px;
 }
 
 .mid_rcont_wrap {
@@ -3574,7 +3644,7 @@ input.date_range_input {
   position: fixed;
   bottom: 34px;
   right: 38px;
-  z-index: 50;
+  z-index: 12;
 }
 
 .bottom_control_list > li {

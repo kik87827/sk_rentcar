@@ -1,8 +1,14 @@
-commonLayout();
-comboFunc();
-dynamicTab();
-quickMenu();
-searchForm();
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  commonLayout();
+    comboFunc();
+    dynamicTab();
+    quickMenu();
+    searchForm();
+});
+
+
 window.addEventListener("load",()=>{
     localLayer();
 });
@@ -1066,7 +1072,7 @@ function comboFunc(){
         const appendOption =  document.querySelectorAll(".combo_option_group");
         appendOption.forEach((element,index)=>{
             let comboCall = document.querySelector(`[id='${element.getAttribute("data-option")}']`);
-            let combo_top = comboCall.getBoundingClientRect().top;
+            let combo_top = window.scrollY + comboCall.getBoundingClientRect().top;
             let fullpop_contlow_top = 0;
             let combo_left = comboCall.getBoundingClientRect().left;
             let fullpop_contlow_left = 0;
@@ -1191,7 +1197,7 @@ function searchForm(){
                 `)
             }else{
                 appendLayer.setAttribute("style",`
-                    top : ${thisElement.getBoundingClientRect().top + thisElement.getBoundingClientRect().height + 5}px; 
+                    top : ${window.scrollY + thisElement.getBoundingClientRect().top + thisElement.getBoundingClientRect().height + 5}px; 
                     left : ${thisElement.getBoundingClientRect().left }px;
                     width : ${ thisElement.scrollWidth }px;
                 `)
@@ -1260,7 +1266,10 @@ function quickMenu(){
 				openCallback(){
 					console.log('callback')
 				}
-			})
+			});
         });
+        var eventObj = document.createEvent('Event');
+		eventObj.initEvent('click', false, true);
+		btn_help.dispatchEvent(eventObj);
     }
 }

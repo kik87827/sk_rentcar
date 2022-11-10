@@ -50,3 +50,45 @@
     &:hover{background:#F0FCFB;}
     &.disabled{background:#f2f5f5;color:#adb3b3;cursor:default;}
 }
+
+.guide_para{font-size:13px;color:#4C5353;line-height:1.7;}
+.emp_word{font-weight:700;}
+.dash_guide_list{
+    font-size:13px;color:#4C5353;line-height:1.7;
+    > li{
+        &:before{}
+        &:last-of-type{}
+    }
+}
+.intro_pos + *{margin-top:30px;}
+.dot_guide_list{
+    > li{
+        &:before{}
+        &:last-of-type{}
+    }
+}
+
+.text_block_item{
+    &.last_pos{}
+}
+.text_block_title{}
+.text_block_content{}
+
+.tip_box_group{}
+.tip_box_title_row{}
+.tip_box_title{}
+.tip_box_content_row{
+    .dot_guide_list{}
+}
+
+.text_block_item_group{
+    .text_block_item{}
+    .text_block_title{}
+    .text_block_content{}
+    .dot_guide_list{
+        > li{
+            &:before{}
+            &:last-of-type{}
+        }
+    }
+}

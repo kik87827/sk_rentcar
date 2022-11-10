@@ -1109,15 +1109,17 @@ function comboChangeCallback(option){
 
 
 function searchForm(){
-    const search_field_wrap = document.querySelectorAll(".search_field_wrap.d_action");
+    const search_field_wrap = document.querySelectorAll(".search_field_wrap");
+    const search_field = document.querySelectorAll(".search_field");
     const auto_word_layer = document.querySelectorAll(".auto_word_layer");
-    const searchInput = document.querySelectorAll(".search_field_wrap.d_action .input_search");
+    const searchInput = document.querySelectorAll(".input_search");
     var appendLayer = null;
     const appBody = document.querySelector("#app");
     if(searchInput.length){
         searchInput.forEach((element,index)=>{
             let eachElement = element;
             let eachElementParent = element.closest(".search_field_wrap");
+            let eachElementField = element.closest(".search_field");
             let eachElementLayer = eachElementParent.querySelector(".auto_word_layer");
             let eachElementReset = eachElementParent.querySelector(".btn_reset_ico");
 
@@ -1126,6 +1128,9 @@ function searchForm(){
                     autoLayerInit(eachElementParent,eachElementLayer,index);
                     autoLayerPos(eachElementParent);
                 }
+                if(eachElementField !== null){
+                    eachElementField.classList.add("active");      
+                }
             });
             eachElement.addEventListener("keydown",(e)=>{
                 let thisEventObj = e.currentTarget;
@@ -1133,6 +1138,9 @@ function searchForm(){
             });
             eachElement.addEventListener("focusout",(e)=>{
                 let thisEventObj = e.currentTarget;
+                 if(eachElementField !== null){
+                    eachElementField.classList.remove("active");      
+                }
                 valueCheck(thisEventObj,eachElementParent);
             });
             eachElementReset.addEventListener("click",(e)=>{

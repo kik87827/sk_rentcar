@@ -7527,13 +7527,13 @@ input.input_box::input-placeholder {
 .search_field_wrap {
   position: relative;
 }
-.search_field_wrap.d_action .btn_reset_ico {
+.search_field_wrap .btn_reset_ico {
   display: none;
 }
-.search_field_wrap.d_action.value_true .btn_reset_ico {
+.search_field_wrap.value_true .btn_reset_ico {
   display: block;
 }
-.search_field_wrap.d_action.focus_item {
+.search_field_wrap.focus_item {
   z-index: 20;
 }
 
@@ -7552,6 +7552,9 @@ input.input_box::input-placeholder {
   position: relative;
   overflow: hidden;
   background: #fff;
+}
+.search_field.active {
+  border-color: #009A93;
 }
 
 input.input_search {

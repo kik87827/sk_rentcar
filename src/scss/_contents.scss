@@ -1502,16 +1502,12 @@ input.input_box::input-placeholder{color:#869393 !important;font-weight: 350;tex
 .btn_submitobj_in{display:inline-block;font-weight: 600;font-size: 16px; line-height:1;color:#009A93;}
 
 .search_field_wrap{position:relative;
-    &.d_action{
-        .btn_reset_ico{display:none;}
-        &.value_true{
-            .btn_reset_ico{display:block;}
-        }
-        &.focus_item{
-            z-index:20;
-        }
-
-        
+    .btn_reset_ico{display:none;}
+    &.value_true{
+        .btn_reset_ico{display:block;}
+    }
+    &.focus_item{
+        z-index:20;
     }
 }
 .auto_word_layer{
@@ -1523,7 +1519,7 @@ input.input_box::input-placeholder{color:#869393 !important;font-weight: 350;tex
     }
 }
 .search_field{border: 1px solid #C9CFCF;border-radius: 5px;display:flex;align-items: center;position:relative;overflow:hidden;background:#fff;
-    
+    &.active{border-color:#009A93;}
 }
 input.input_search{width:100%;flex:1;font-size:13px;line-height:1;border:0;padding:0 12px;height:34px;}
 

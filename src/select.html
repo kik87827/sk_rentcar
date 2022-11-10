@@ -6,32 +6,32 @@
 		
 
 		<div id="test" style="padding:50px;">
-			<div class="combo_item">
+			<div class="combo_item" id="select_combo_01">
 				<a href="javascript:;" class="combo_target">선택</a>
 				<div class="combo_option_group">
 					<div class="combo_option_scroll" data-rowCount = "10">
 						<ul class="combo_option_list">
-							<li><a href="javascript:;" class="combo_option">소형</a></li>
-							<li><a href="javascript:;" class="combo_option">중형</a></li>
-							<li><a href="javascript:;" class="combo_option">대형</a></li>
-							<li><a href="javascript:;" class="combo_option">승합</a></li>
-							<li><a href="javascript:;" class="combo_option disabled">SUV</a></li>
-							<li><a href="javascript:;" class="combo_option">수입</a></li>
-							<li><a href="javascript:;" class="combo_option">EV</a></li>
+							<li><a href="javascript:;" data-value="option_0" class="combo_option">소형</a></li>
+							<li><a href="javascript:;" data-value="option_1" class="combo_option">중형</a></li>
+							<li><a href="javascript:;" data-value="option_2" class="combo_option">대형</a></li>
+							<li><a href="javascript:;" data-value="option_3" class="combo_option">승합</a></li>
+							<li><a href="javascript:;" data-value="option_4" class="combo_option disabled">SUV</a></li>
+							<li><a href="javascript:;" data-value="option_5" class="combo_option">수입</a></li>
+							<li><a href="javascript:;" data-value="option_6" class="combo_option">EV</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
-			<div class="combo_item">
+			<div class="combo_item" id="select_combo_02">
 				<a href="javascript:;" class="combo_target">선택2</a>
 				<div class="combo_option_group">
 					<div class="combo_option_scroll" data-rowCount = "3">
 						<ul class="combo_option_list">
-							<li><a href="javascript:;" class="combo_option">소형2</a></li>
-							<li><a href="javascript:;" class="combo_option">중형2</a></li>
-							<li><a href="javascript:;" class="combo_option disabled">SUV2</a></li>
-							<li><a href="javascript:;" class="combo_option">수입2</a></li>
-							<li><a href="javascript:;" class="combo_option">EV2</a></li>
+							<li><a href="javascript:;" data-value="option_0" class="combo_option">소형2</a></li>
+							<li><a href="javascript:;" data-value="option_1" class="combo_option">중형2</a></li>
+							<li><a href="javascript:;" data-value="option_2" class="combo_option disabled">SUV2</a></li>
+							<li><a href="javascript:;" data-value="option_3" class="combo_option">수입2</a></li>
+							<li><a href="javascript:;" data-value="option_4" class="combo_option">EV2</a></li>
 						</ul>
 					</div>
 				</div>
@@ -52,16 +52,16 @@
 				</div>
 				<div class="fullpop_contlow">
 					<div class="fullpop_contlow_in">
-						<div class="combo_item">
+						<div class="combo_item" id="select_combo_03">
 							<a href="javascript:;" class="combo_target">선택</a>
 							<div class="combo_option_group">
 								<div class="combo_option_scroll" data-rowCount = "4">
 									<ul class="combo_option_list">
-										<li><a href="javascript:;" class="combo_option">소형2</a></li>
-										<li><a href="javascript:;" class="combo_option">중형2</a></li>
-										<li><a href="javascript:;" class="combo_option disabled">SUV2</a></li>
-										<li><a href="javascript:;" class="combo_option">수입2</a></li>
-										<li><a href="javascript:;" class="combo_option">EV2</a></li>
+										<li><a href="javascript:;" data-value="option_0" class="combo_option">소형2</a></li>
+										<li><a href="javascript:;" data-value="option_1" class="combo_option">중형2</a></li>
+										<li><a href="javascript:;" data-value="option_2" class="combo_option disabled">SUV2</a></li>
+										<li><a href="javascript:;" data-value="option_3" class="combo_option">수입2</a></li>
+										<li><a href="javascript:;" data-value="option_4" class="combo_option">EV2</a></li>
 									</ul>
 								</div>
 							</div>
@@ -103,6 +103,21 @@
 					console.log('callback')
 				}
 			})
+		});
+
+
+		comboChangeCallback({
+			target : "select_combo_01",
+			callback(value){
+				console.log(value);
+			}
+		});
+
+		comboChangeCallback({
+			target : "select_combo_02",
+			callback(value){
+				console.log(value);
+			}
 		});
 	</script>
 </body>

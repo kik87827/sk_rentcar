@@ -71,34 +71,34 @@
 							<dd>
 								<!-- <select class="form_select" style="width:160px"><option>전체</option></select>
 								<select class="form_select" style="width:160px"><option>전체</option></select> -->
-								<div class="combo_item" style="width:160px">
+								<div class="combo_item" style="width:160px" id="select_combo_01">
 									<a href="javascript:;" class="combo_target">전체</a>
 									<div class="combo_option_group">
 										<div class="combo_option_scroll" data-rowCount="10">
 											<ul class="combo_option_list">
-												<li><a href="javascript:;" class="combo_option">옵션1</a></li>
-												<li><a href="javascript:;" class="combo_option">옵션2</a></li>
-												<li><a href="javascript:;" class="combo_option">옵션3</a></li>
-												<li><a href="javascript:;" class="combo_option">옵션4</a></li>
-												<li><a href="javascript:;" class="combo_option disabled">옵션5</a></li>
-												<li><a href="javascript:;" class="combo_option">옵션6</a></li>
-												<li><a href="javascript:;" class="combo_option">옵션7</a></li>
+												<li><a href="javascript:;" data-value="option_0" class="combo_option">옵션1</a></li>
+												<li><a href="javascript:;" data-value="option_1" class="combo_option">옵션2</a></li>
+												<li><a href="javascript:;" data-value="option_2" class="combo_option">옵션3</a></li>
+												<li><a href="javascript:;" data-value="option_3" class="combo_option">옵션4</a></li>
+												<li><a href="javascript:;" data-value="option_4" class="combo_option disabled">옵션5</a></li>
+												<li><a href="javascript:;" data-value="option_5" class="combo_option">옵션6</a></li>
+												<li><a href="javascript:;" data-value="option_6" class="combo_option">옵션7</a></li>
 											</ul>
 										</div>
 									</div>
 								</div>
-								<div class="combo_item" style="width:160px">
+								<div class="combo_item" style="width:160px" id="select_combo_02">
 									<a href="javascript:;" class="combo_target">전체</a>
 									<div class="combo_option_group">
 										<div class="combo_option_scroll" data-rowCount="10">
 											<ul class="combo_option_list">
-												<li><a href="javascript:;" class="combo_option">옵션1</a></li>
-												<li><a href="javascript:;" class="combo_option">옵션2</a></li>
-												<li><a href="javascript:;" class="combo_option">옵션3</a></li>
-												<li><a href="javascript:;" class="combo_option">옵션4</a></li>
-												<li><a href="javascript:;" class="combo_option disabled">옵션5</a></li>
-												<li><a href="javascript:;" class="combo_option">옵션6</a></li>
-												<li><a href="javascript:;" class="combo_option">옵션7</a></li>
+												<li><a href="javascript:;" data-value="option_0" class="combo_option">옵션1</a></li>
+												<li><a href="javascript:;" data-value="option_1" class="combo_option">옵션2</a></li>
+												<li><a href="javascript:;" data-value="option_2" class="combo_option">옵션3</a></li>
+												<li><a href="javascript:;" data-value="option_3" class="combo_option">옵션4</a></li>
+												<li><a href="javascript:;" data-value="option_4" class="combo_option disabled">옵션5</a></li>
+												<li><a href="javascript:;" data-value="option_5" class="combo_option">옵션6</a></li>
+												<li><a href="javascript:;" data-value="option_6" class="combo_option">옵션7</a></li>
 											</ul>
 										</div>
 									</div>
@@ -119,17 +119,17 @@
 							<span class="sch_guide_else">VS</span>
 							<div class="text_select_group">
 								<!-- <select class="text_select"><option value="0">비교년도 선택</option><option value="1">2021</option></select> -->
-								<div class="combo_item" style="width:160px">
+								<div class="combo_item" style="width:160px" id="combo_year">
 									<a href="javascript:;" class="combo_target">비교년도 선택</a>
 									<div class="combo_option_group">
 										<div class="combo_option_scroll" data-rowCount="10">
 											<ul class="combo_option_list">
-												<li><a href="javascript:;" class="combo_option">2022</a></li>
-												<li><a href="javascript:;" class="combo_option">2021</a></li>
-												<li><a href="javascript:;" class="combo_option">2020</a></li>
-												<li><a href="javascript:;" class="combo_option">2019</a></li>
-												<li><a href="javascript:;" class="combo_option">2018</a></li>
-												<li><a href="javascript:;" class="combo_option">2017</a></li>
+												<li><a href="javascript:;" data-value="2022" class="combo_option">2022</a></li>
+												<li><a href="javascript:;" data-value="2021" class="combo_option">2021</a></li>
+												<li><a href="javascript:;" data-value="2020" class="combo_option">2020</a></li>
+												<li><a href="javascript:;" data-value="2019" class="combo_option">2019</a></li>
+												<li><a href="javascript:;" data-value="2018" class="combo_option">2018</a></li>
+												<li><a href="javascript:;" data-value="2017" class="combo_option">2017</a></li>
 											</ul>
 										</div>
 									</div>
@@ -6148,6 +6148,29 @@
 				document.querySelector("body").classList.remove("loading");
 			}, 5000);
 		}
+
+
+		comboChangeCallback({
+			target: "select_combo_01",
+			callback(value) {
+				console.log(value);
+			}
+		});
+
+
+		comboChangeCallback({
+			target: "select_combo_02",
+			callback(value) {
+				console.log(value);
+			}
+		});
+
+		comboChangeCallback({
+			target: "combo_year",
+			callback(value) {
+				console.log(value);
+			}
+		});
 
 
 		callCalendar({

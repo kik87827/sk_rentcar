@@ -1090,6 +1090,16 @@ function comboFunc(){
     }
 }
 
+function comboChangeCallback(option){
+    addDynamicEventListener(document.body, 'click', `[data-option='${option.target}'] .combo_option`, function(e) {
+        let thisEventObj = e.target;
+        let thisEventObjValue = thisEventObj.getAttribute("data-value");
+        if("callback" in option){
+            option.callback(thisEventObjValue);
+        }
+    });
+}
+
 
 
 function searchForm(){

@@ -972,9 +972,10 @@ function ToastMessage(option) {
   this.optionType = option.type;
   this.optionMessage = option.message;
   this.optionSpeed = option.speed !== undefined ? option.speed : 500;
-  this.optionDelayTime = option.time !== undefined ? option.time : 2000;
+  this.optionDelayTime = option.time !== undefined ? option.time : 1000;
+  this.setTimeID_show = 0;
   this.setTimeID = 0;
-  this.setTime2ID = 0;
+  this.setTimeID_delay = 0;
   this.toastObj = null;
 
   let toastAppendParent = document.createElement("div");
@@ -987,14 +988,20 @@ function ToastMessage(option) {
     toastAppendParent.innerHTML = templete;
     this.appBody.append(toastAppendParent);
     toastObj = document.querySelector(".toast_layer");
+    setTimeout(() => {
+      toastObj.classList.add("in");
+    }, 10);
+    this.setTimeID_show = setTimeout(() => {
+      this.setTimeID_show = setTimeout(() => {
+        toastObj.classList.add("out");
+        this.setTimeID = setTimeout(() => {
+          toastObj.remove();
+        }, this.optionSpeed + 30);
+      }, this.optionDelayTime);
+    }, 500);
   }
 
-  this.setTimeID = setTimeout(() => {
-    toastObj.classList.add("out");
-    this.setTimeID = setTimeout(() => {
-      toastObj.remove();
-    }, this.optionSpeed + 30);
-  }, this.optionDelayTime);
+
 }
 
 

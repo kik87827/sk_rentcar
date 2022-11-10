@@ -2618,12 +2618,117 @@ textarea {
 .dash_guide_list {
   font-size: 13px;
   color: #4C5353;
-  line-height: 1.7;
+  line-height: 1.4;
 }
-.intro_pos + * {
-  margin-top: 30px;
+.dash_guide_list > li {
+  position: relative;
+  padding-left: 12px;
+  margin-bottom: 5px;
+}
+.dash_guide_list > li:before {
+  display: block;
+  content: "-";
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.dash_guide_list > li:last-of-type {
+  margin-bottom: 0;
+}
+.dash_guide_list > li .dot_guide_list {
+  margin: 15px 0 0 15px;
 }
 
+.intro_pos + * {
+  margin-top: 25px;
+}
+
+.dot_guide_list {
+  font-size: 13px;
+  color: #4C5353;
+  line-height: 1.4;
+}
+.dot_guide_list > li {
+  position: relative;
+  padding-left: 8px;
+  margin-bottom: 5px;
+}
+.dot_guide_list > li:before {
+  display: block;
+  content: "";
+  width: 2px;
+  height: 2px;
+  background: #4C5353;
+  border-radius: 100%;
+  position: absolute;
+  top: 8px;
+  left: 0;
+}
+.dot_guide_list > li:last-of-type {
+  margin-bottom: 0;
+}
+
+.text_block_item {
+  color: #4C5353;
+}
+.text_block_item.last_pos {
+  margin-top: 20px;
+}
+.text_block_item:last-of-type {
+  margin-bottom: 0;
+}
+
+.text_block_title {
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.tip_box_group {
+  margin-top: 20px;
+  border-radius: 5px;
+  border: 1px solid #b7d8d6;
+  padding: 15px;
+}
+
+.tip_box_title_row {
+  margin-bottom: 10px;
+}
+
+.tip_box_title {
+  color: #07857F;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.tip_box_content_row .dot_guide_list {
+  color: #363E3E;
+  font-size: 12px;
+}
+.tip_box_content_row .dot_guide_list > li {
+  padding-left: 10px;
+}
+
+.text_block_item_group {
+  color: #363E3E;
+  font-size: 13px;
+}
+.text_block_item_group .text_block_item {
+  margin-bottom: 25px;
+}
+.text_block_item_group .text_block_item:last-of-type {
+  margin-bottom: 0;
+}
+.text_block_item_group .text_block_title {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.text_block_item_group .dot_guide_list > li {
+  padding-left: 12px;
+}
+.text_block_item_group .dot_guide_list > li:before {
+  width: 3px;
+  height: 3px;
+}
 ::-webkit-scrollbar {
   width: 10px;
 }

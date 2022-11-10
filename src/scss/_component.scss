@@ -54,40 +54,55 @@
 .guide_para{font-size:13px;color:#4C5353;line-height:1.7;}
 .emp_word{font-weight:700;}
 .dash_guide_list{
-    font-size:13px;color:#4C5353;line-height:1.7;
+    font-size:13px;color:#4C5353;line-height:1.4;
     > li{
-        &:before{}
-        &:last-of-type{}
+        position:relative;padding-left:12px;margin-bottom:5px;
+        &:before{display:block;content:'-';position:absolute;top:0;left:0;}
+        &:last-of-type{margin-bottom:0;}
+        .dot_guide_list{margin:15px 0 0 15px;}
     }
 }
-.intro_pos + *{margin-top:30px;}
+.intro_pos + *{margin-top:25px;}
 .dot_guide_list{
+    font-size:13px;color:#4C5353;line-height:1.4;
     > li{
-        &:before{}
-        &:last-of-type{}
+        position:relative;padding-left:8px;margin-bottom:5px;
+        &:before{display:block;content:'';width:2px;height:2px;background:#4C5353;border-radius:100%;position:absolute;top:8px;left:0;}
+        &:last-of-type{margin-bottom:0;}
     }
 }
 
 .text_block_item{
-    &.last_pos{}
+    color:#4C5353;
+    &.last_pos{margin-top:20px;}
+    &:last-of-type{margin-bottom:0;}
 }
-.text_block_title{}
+.text_block_title{font-weight:600;margin-bottom:7px;}
 .text_block_content{}
 
-.tip_box_group{}
-.tip_box_title_row{}
-.tip_box_title{}
+.tip_box_group{margin-top:20px;border-radius:5px;border:1px solid #b7d8d6;padding:15px;}
+.tip_box_title_row{margin-bottom:10px;}
+.tip_box_title{color: #07857F;font-weight: 600;line-height:1;}
 .tip_box_content_row{
-    .dot_guide_list{}
+    .dot_guide_list{color:#363E3E;font-size:12px;
+        > li{
+            padding-left:10px;
+        }
+    }
 }
 
 .text_block_item_group{
-    .text_block_item{}
-    .text_block_title{}
+    color:#363E3E;font-size:13px;
+    .text_block_item{
+        margin-bottom:25px;
+        &:last-of-type{margin-bottom:0;}
+    }
+    .text_block_title{font-weight:700;margin-bottom:10px;}
     .text_block_content{}
     .dot_guide_list{
         > li{
-            &:before{}
+            padding-left:12px;
+            &:before{width:3px;height:3px;}
             &:last-of-type{}
         }
     }

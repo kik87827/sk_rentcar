@@ -1268,8 +1268,8 @@ function quickMenu(){
 				}
 			});
         });
-        var eventObj = document.createEvent('Event');
-		eventObj.initEvent('click', false, true);
-		btn_help.dispatchEvent(eventObj);
+        // var eventObj = document.createEvent('Event');
+		// eventObj.initEvent('click', false, true);
+		// btn_help.dispatchEvent(eventObj);
     }
 }

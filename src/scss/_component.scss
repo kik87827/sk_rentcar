@@ -107,3 +107,30 @@
         }
     }
 }
+
+
+
+// component guide
+.source_his_item{margin-bottom:rem(100)}
+.source_his_item:last-of-type{margin-bottom:0}
+.component_title{font-size:24px;color:#000;font-weight:700;border-bottom:2px solid #000;padding-bottom:20px;margin-bottom:20px}
+.component_title_sub{font-size:20px;color:#000;}
+.textarea_size{box-sizing:border-box;width:100%;padding:20px;margin-top:20px;overflow:hidden;resize:none;border:1px solid #ddd;}
+.render_wrap{margin:10px 0 0 0;}
+.component_dep_wrap{}
+.component_dep{margin-bottom:40px;}
+.component_dep:last-of-type{margin-bottom:0;}
+.guide_green_zone{padding:10px;background:#078E8E;}
+.component_group{
+    .btn_search_ico,
+    .btn_reset_ico{display:inline-block;}
+    .input_value{max-width:100px;}
+    .search_field_wrap{max-width:300px;}
+    > *{vertical-align: middle;margin:0;margin-right:10px;}
+}
+.guide_green_zone{
+    > *{vertical-align: middle;margin:0;margin-right:20px;}
+}
+@media (max-width:1023px){
+    .component_title{font-size:16px}
+}

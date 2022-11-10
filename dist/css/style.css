@@ -2798,6 +2798,82 @@ textarea {
   width: 3px;
   height: 3px;
 }
+.source_his_item {
+  margin-bottom: rem(100);
+}
+
+.source_his_item:last-of-type {
+  margin-bottom: 0;
+}
+
+.component_title {
+  font-size: 24px;
+  color: #000;
+  font-weight: 700;
+  border-bottom: 2px solid #000;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.component_title_sub {
+  font-size: 20px;
+  color: #000;
+}
+
+.textarea_size {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 20px;
+  margin-top: 20px;
+  overflow: hidden;
+  resize: none;
+  border: 1px solid #ddd;
+}
+
+.render_wrap {
+  margin: 10px 0 0 0;
+}
+
+.component_dep {
+  margin-bottom: 40px;
+}
+
+.component_dep:last-of-type {
+  margin-bottom: 0;
+}
+
+.guide_green_zone {
+  padding: 10px;
+  background: #078E8E;
+}
+
+.component_group .btn_search_ico,
+.component_group .btn_reset_ico {
+  display: inline-block;
+}
+.component_group .input_value {
+  max-width: 100px;
+}
+.component_group .search_field_wrap {
+  max-width: 300px;
+}
+.component_group > * {
+  vertical-align: middle;
+  margin: 0;
+  margin-right: 10px;
+}
+
+.guide_green_zone > * {
+  vertical-align: middle;
+  margin: 0;
+  margin-right: 20px;
+}
+
+@media (max-width: 1023px) {
+  .component_title {
+    font-size: 16px;
+  }
+}
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -3922,6 +3998,7 @@ input.date_range_input {
   position: relative;
   overflow: hidden;
   padding: 5px;
+  display: inline-block;
 }
 .choice_box_list > .boxform_label:first-of-type {
   border-radius: 5px 0 0 5px;
@@ -6970,6 +7047,12 @@ input.input_box::input-placeholder {
   width: 12px;
   height: 8px;
 }
+.btn_ico_util:hover {
+  color: #009A93;
+}
+.btn_ico_util:hover .btn_ico_util_text {
+  color: #009A93;
+}
 
 .btn_ico_util_text {
   display: inline-block;
@@ -7846,6 +7929,9 @@ input.form_input.ico_pass::input-placeholder {
   background-color: #009A93;
   color: #FFFFFF;
   font-weight: 600;
+}
+.btn_field_submit:hover {
+  background: #07857F;
 }
 .btn_field_submit:disabled {
   background-color: #DEE2E6;

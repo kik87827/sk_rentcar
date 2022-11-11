@@ -4532,6 +4532,11 @@ input.boxform_obj:checked + .boxform_label {
   color: #fff;
 }
 
+div.tr_loading,
+.td_loading {
+  padding: 20px !important;
+}
+
 .tfoot_table_wrap {
   border-top: 1px solid #363E3E;
   background: #f8f9fa;

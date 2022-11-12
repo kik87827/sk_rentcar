@@ -81,10 +81,10 @@ var dataTableFunc = {
     var getPosDom = thisBodywrap.querySelectorAll("tr:not(.depth_two)")[optionRow];
     if (getPosDom !== undefined) {
       thisBodywrap.style.maxHeight = getPosDom.offsetTop + "px";
-      thisHeadwrap.style.paddingRight = getScrollBarWidth() + "px";
-      if (thisFootwrap !== null) {
-        thisFootwrap.style.paddingRight = getScrollBarWidth() + "px";
-      }
+      // thisHeadwrap.style.paddingRight = getScrollBarWidth() + "px";
+      // if(thisFootwrap !== null){
+      //     thisFootwrap.style.paddingRight = getScrollBarWidth() + "px";
+      // }
     }
   }
 }
@@ -459,10 +459,10 @@ function callDimLayer(option) {
     }
   });
   $("input.date_range_input").on('apply.daterangepicker', function(ev, picker) {
-    $(this).val(picker.startDate.format('YYYY-MM-DD') + ' ~ ' + picker.endDate.format('YYYY-MM-DD'));
+    $(this).val(picker.startDate.format('YYYY년 MM월 DD일') + ' ~ ' + picker.endDate.format('YYYY년 MM월 DD일'));
   });
   $("input.date_range_input").on('hide.daterangepicker', function(ev, picker) {
-    $(".choice_date_box").text(picker.startDate.format('YYYY-MM-DD') + ' ~ ' + picker.endDate.format('YYYY-MM-DD'));
+    $(".choice_date_box").text(picker.startDate.format('YYYY년 MM월 DD일') + ' ~ ' + picker.endDate.format('YYYY년 MM월 DD일'));
     $(".dim_layer_wrap").removeClass("active").css({
       top: '',
       left: ''
@@ -904,7 +904,7 @@ function scrollTabSwiper(target) {
     mousewheel: true,
     freeMode: true,
     allowTouchMove: true,
-    touchRatio: 0,
+    //touchRatio : 0,
     on: {
       init: false
     }
@@ -922,16 +922,18 @@ function scrollTabSwiper(target) {
       return;
     }
 
-    if (getTranslateXY(targetDomWrapper).translateX === 0) {
+    if (getTranslateXY(targetDomWrapper).translateX >= 0) {
       prevSwiperControl.classList.remove("active");
       nextSwiperControl.classList.add("active");
     } else {
-      if (tabSwiper.isEnd) {
-        nextSwiperControl.classList.remove("active");
-      } else {
-        nextSwiperControl.classList.add("active");
-        prevSwiperControl.classList.add("active");
-      }
+      prevSwiperControl.classList.add("active");
+      nextSwiperControl.classList.remove("active");
+      // if(tabSwiper.isEnd){
+      //     nextSwiperControl.classList.remove("active");
+      // }else{
+      //     nextSwiperControl.classList.add("active");
+      //     prevSwiperControl.classList.add("active");
+      // }
     }
   }
 
@@ -941,6 +943,7 @@ function scrollTabSwiper(target) {
     tabSwiper.slideTo(0);
     setTimeout(() => {
       prevSwiperControl.classList.remove("active");
+      nextSwiperControl.classList.add("active");
       controlClickIs = false;
     }, 510);
   });
@@ -952,6 +955,7 @@ function scrollTabSwiper(target) {
     tabSwiper.slideTo(targetDomSlide[targetDomSlide.length - 1].dataset.index);
     setTimeout(() => {
       nextSwiperControl.classList.remove("active");
+      prevSwiperControl.classList.add("active");
     }, 510);
   });
 }

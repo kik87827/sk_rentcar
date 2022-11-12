@@ -52,7 +52,7 @@
 }
 
 .guide_para{font-size:13px;color:#4C5353;line-height:1.7;}
-.emp_word{font-weight:700;}
+.emp_word{font-weight:600;}
 .dash_guide_list{
     font-size:13px;color:#4C5353;line-height:1.4;
     > li{
@@ -97,7 +97,7 @@
         margin-bottom:25px;
         &:last-of-type{margin-bottom:0;}
     }
-    .text_block_title{font-weight:700;margin-bottom:10px;}
+    .text_block_title{font-weight:600;margin-bottom:10px;}
     .text_block_content{}
     .dot_guide_list{
         > li{
@@ -113,7 +113,7 @@
 // component guide
 .source_his_item{margin-bottom:rem(100)}
 .source_his_item:last-of-type{margin-bottom:0}
-.component_title{font-size:24px;color:#000;font-weight:700;border-bottom:2px solid #000;padding-bottom:20px;margin-bottom:20px}
+.component_title{font-size:24px;color:#000;font-weight:600;border-bottom:2px solid #000;padding-bottom:20px;margin-bottom:20px}
 .component_title_sub{font-size:20px;color:#000;}
 .textarea_size{box-sizing:border-box;width:100%;padding:20px;margin-top:20px;overflow:hidden;resize:none;border:1px solid #ddd;}
 .render_wrap{margin:10px 0 0 0;}

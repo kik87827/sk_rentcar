@@ -15,7 +15,7 @@ body{}
 .header_menu_list > li{}
 .header_menu_list > li.active{}
 li.active .header_menu{background:#F1F3F5;}
-li.active .header_menu_text{color:#4C5353;font-weight:700;}
+li.active .header_menu_text{color:#4C5353;font-weight:600;}
 .header_menu_list > li:last-of-type{}
 .header_menu{display:flex;padding:0 25px;align-items: center;height:100%;}
 .header_menu_text{font-weight: 400;font-size: 16px;display:inline-block;white-space: nowrap;color:#fff;}
@@ -54,7 +54,7 @@ li.active .header_menu_text{color:#4C5353;font-weight:700;}
         margin-bottom:20px;
         &:last-of-type{margin-bottom:0}
         &.active{
-            .midmenu{font-weight:700;}
+            .midmenu{font-weight:600;}
         }
     }
 }
@@ -65,11 +65,11 @@ li.active .header_menu_text{color:#4C5353;font-weight:700;}
 .hdtext{display:inline-block;width:0;height:0;overflow:hidden;line-height:0;color:transparent;position:absolute;top:0;left:-99999px;}
 .btn_guide{display:inline-block;background:#fff;font-size:16px;padding:15px 30px;border:1px solid #ddd;}
 .guide_page{padding:30px;}
-.guide_big_title{font-weight:700;margin-bottom:30px;}
+.guide_big_title{font-weight:600;margin-bottom:30px;}
 .guide_item_wrap{}
 .guide_item{background:#fff;border-radius:10px;padding:20px;margin-bottom:20px;}
 .guide_item:last-of-type{margin-bottom:0;}
-.guide_item_title{font-size:18px;font-weight:700;}
+.guide_item_title{font-size:18px;font-weight:600;}
 .guide_item_content{margin-top:15px;}
 
 /* popup */
@@ -160,7 +160,7 @@ li.active .header_menu_text{color:#4C5353;font-weight:700;}
 .design_modal_title[class*='ico_']:before{display:block;content:'';width:24px;height:24px;background-repeat: no-repeat;background-position:0 0;background-size:100% auto;}
 .design_modal_title.ico_warn:before{background-image:url("../images/toast_warn.png");}
 .design_modal_title.ico_check:before{background-image:url("../images/toast_check.png");}
-.design_modal_title_intext{flex:1;min-width:0;font-weight: 700;font-size: 16px;display:block;line-height:1;margin-left:6px;}
+.design_modal_title_intext{flex:1;min-width:0;font-weight: 600;font-size: 16px;display:block;line-height:1;margin-left:6px;}
 .design_modal_title_w{}
 
 .btn_modal_close{display:block;width:53px;height:53px;position:absolute;top:0;right:0;font-size:0;line-height:0;}
@@ -192,7 +192,7 @@ li.active .header_menu_text{color:#4C5353;font-weight:700;}
         padding-right:20px;
         &:last-of-type{padding-right:0;}
         &.active{
-            .bartab_menu{font-weight:700;}
+            .bartab_menu{font-weight:600;}
         }
     }
 }

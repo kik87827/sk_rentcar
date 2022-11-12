@@ -51,8 +51,9 @@
 						<p class="field_tit_sub">수요그룹 설정 화면에 접근하기 위한 비밀번호를 입력해 주세요.<br>비밀번호를 잊어버린 경우, 운영팀에 문의해 주세요.</p>
 					</div>
 					<div class="mid_right_cont_row">
-						<div class="field_row">
+						<div class="field_row flex_type">
 							<input type="password" id="input_password" class="form_input align_place_c" placeholder="비밀번호를 입력하세요.">
+							<a href="javascript:;" class="btn_input_blind"><span class="hdtext">마스킹해제</span></a>
 						</div>
 						<div class="field_row">
 							<button type="button" id="btn_field_submit" class="btn_field_submit" disabled>확인</button>
@@ -193,13 +194,25 @@
 
 		function inputAction(target) {
 			if (target.value.length > 0) {
-				target.classList.add("ico_pass");
+				target.closest(".field_row").classList.add("complete");
 				document.querySelector("#btn_field_submit").disabled = false;
 			} else {
-				target.classList.remove("ico_pass");
+				target.closest(".field_row").classList.remove("complete");
 				document.querySelector("#btn_field_submit").disabled = true;
 			}
 		}
+
+		document.querySelector(".btn_input_blind").addEventListener("click", (e) => {
+			e.preventDefault();
+			let currentTarget = e.currentTarget;
+			currentTarget.classList.toggle("type2");
+			if (currentTarget.classList.contains("type2")) {
+				document.querySelector("#input_password").setAttribute("type", "text");
+			} else {
+				document.querySelector("#input_password").setAttribute("type", "password");
+			}
+
+		});
 	</script>
 </body>
 
